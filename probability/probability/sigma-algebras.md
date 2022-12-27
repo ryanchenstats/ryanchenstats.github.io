@@ -88,19 +88,6 @@ By elementary set theory, we know that $\sigma(X) \subseteq \mathcal{F}_n$ for a
 
 **Exercise**: Show that $\sigma(X)$ is indeed still a $\sigma$-algebra. (Hint: Check the three conditions of a $\sigma$-algebra.)
 
-### Algebras and Semi-Algebras
-
-The notion of a $\sigma$-algebra is rather strong in that all countably infinite sequences of sets must be closed in the $\sigma$-algebra. If we relax this rule, and instead impose closure under finitely many unions, then we have an algebra. So:
-
-> **Definition**: Algebra on $\Omega$:
-> 1. $\emptyset \in \mathcal{F}$
-> 2. If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
-> 3. For any countably finite sequence of sets $A_1,...,A_n \in \mathcal{F}$, then $\cup_{i=1}^n A_i \in \mathcal{F}$
-
-In the case of the finite outcome space $\Omega$, the $\sigma$-algebra on $\Omega$ is the same as the algebra on $\Omega$. However in an infinite outcome space, The algebra is not the same as the $\sigma$-algebra. Try and come up with an example in the following exercise.
-
-**Exercise**: Let $\mathcal{A}\_1 \subseteq ... \subseteq \mathcal{A}\_n \subseteq ...$. Show that $\cap\_{i=1}^N \mathcal{A}\_i$ for a finite $N$ forms a $\sigma$-algebra, and find a counter example to show that $\cap_{i=1}^\infty \mathcal{A}\_i$ is not a $\sigma$-algebra. (Hint: Consider a generating $\sigma$-algebra, where for each index $n$, we partition the unit interval $[0,1]$ further.)
-
 # Measures
 
 A **measure** is a function we denote with $\mu: \mathcal{F} \to [0,\infty]$. It is a function that assigns a positive number to a set. Within the realm of probability theory, we will only consider positive measures, and eventually we will only consider measures where $\mu: \mathcal{F} \to [0,1]$. Before we do any of that, it is important to learn about properties of a measure function.
@@ -149,3 +136,40 @@ Then $\inf C\_A \leq \inf C\_B$ so $m^{\*}(A) \leq m^{\*}(B)$. [Q.E.D].
 To rememdy the issues with $m^{\*}(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure. That is, we wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. The natural question to ask is "By how much can we relax property 1?" To begin asking this question, note that there are sets in $2^\mathbb{R}$ that cause $m^{\*}(\cdot)$ to disobey the 4 properties of measure. These sets will be deemed **non-measurable** and trying to assign a measure on these sets is futile. 
 
 This motivates our understanding of $\sigma$-algebras as a collection of sets that are measurable. 
+
+### Algebras, Monotone Classes, and Pi, and Lambda Systems
+
+The notion of a $\sigma$-algebra is rather strong in that all countably infinite sequences of sets must be closed under countable unions in the $\sigma$-algebra. If we relax this rule, and instead impose closure under finitely many unions, then we have an **algebra**. So:
+
+> **Definition**: Algebra on $\Omega$:
+> 1. $\emptyset \in \mathcal{F}$
+> 2. If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
+> 3. For any countably finite sequence of sets $A_1,...,A_n \in \mathcal{F}$, then $\cup_{i=1}^n A_i \in \mathcal{F}$
+
+In the case of the finite outcome space $\Omega$, the $\sigma$-algebra on $\Omega$ is the same as the algebra on $\Omega$. However in an infinite outcome space, The algebra is not the same as the $\sigma$-algebra. Try and come up with an example in the following exercise.
+
+**Exercise**: Let $\mathcal{A}\_1 \subseteq ... \subseteq \mathcal{A}\_n \subseteq ...$. Show that $\cap\_{i=1}^N \mathcal{A}\_i$ for a finite $N$ forms a $\sigma$-algebra, and find a counter example to show that $\cap_{i=1}^\infty \mathcal{A}\_i$ is not a $\sigma$-algebra. (Hint: Consider a generating $\sigma$-algebra, where for each index $n$, we partition the unit interval $[0,1]$ further.)
+
+These logical structures of sets are less restrictive than the $\sigma$ algebra which coupled with the idea of $\sigma$-algebra generation, is very powerful. To foreshadow the power of generation in conjunction with simpler logical structures, note that we may show that two measure functions $\mu, \lambda$ that agree on an algebra will also agree on a $\sigma$-algebra (we may make the same statement for $\pi$-systems too). This is not supposed to make sense to you right now, especially if this is your first exposure to measure theory and before we do any of this, we need to introduce and discuss some properties of these simpler structures. The following introduction of logical structures may seem unmotivated and unconnected at first, but rest assured that they will be useful very soon. Treat the following terms as a list of definitions for now. First, we introduce a $\pi$-system which is a logical structure defined as:
+
+> **Definition**: $\pi$-system $P$ on $\Omega$:
+> 1. $P$ is non-empty
+> 2. If $A, B \in P$ then $A \cap B \in P$
+
+A $\pi$-system can also be generated, for example $\pi(\\{A,B\\})$ is the intersection of all $\pi$-systems that contain the sets $\\{A,B\\}$. $\pi(\\{A,B\\}) = \\{A,B, A\cap B\\}$. 
+
+Now we introduce a $\lambda$-system which is sometimes called a Dynkin system named after [Eugene Dynkin](https://en.wikipedia.org/wiki/Eugene_Dynkin), another Soviet mathematician.
+
+> **Definition**: $\lambda$-system $L$ on $\Omega$:
+> 1. $L$ contains the empty set
+> 2. If $A, B \in L$ then $A \cap B \in L$
+> 3. If $A\_1 \subseteq ...\subseteq A\_n \subset...$ then $\cup_{i=1}^\infty A\_i \in L$
+
+Likewise, a $\lambda$ system can be generated $\lambda(\\{A,B\\})$ is the intersection of all $\lambda$-systems containing the sets $\\{A,B\\}$. This is not a very illustrative example since we must have closure under nested increasing sets in $\lambda$ which is impossible to write out in this manner.
+
+**Exercise**: Enumerate $\lambda(\\{A,B\\})$ and justify why each element in this $\lambda$-system should be in the collection. Assume subsets $A, B$ are both in $\Omega$. 
+
+> **Definition**: Monotone class $\mathcal{M}$:
+> 1. If $A\_1 \subseteq ... \subseteq A\_n \subseteq ...$ then $\cup_{i=1}^\infty A\_i \in \mathcal{M}$
+> 2. If $A\_1 \supseteq ... \supseteq A\_n \supseteq ...$ then $\cap_{i=1}^\infty A\_i \in \mathcal{M}$
+
