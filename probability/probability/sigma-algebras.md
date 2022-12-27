@@ -88,7 +88,7 @@ The notion of a $\sigma$-algebra is rather strong in that all countably infinite
 
 In the case of the finite outcome space $\Omega$, the $\sigma$-algebra on $\Omega$ is the same as the algebra on $\Omega$. However in an infinite outcome space, The algebra is not the same as the $\sigma$-algebra. Try and come up with an example in the following exercise.
 
-**Exercise**: Let $\mathcal{A}\_1 \subseteq ... \subseteq \mathcal{A}\_n \subseteq \hdots$. Show that $\cap\_{i=1}^N \mathcal{A}\_i$ for a finite $N$ forms a $\sigma$-algebra, and find a counter example to show that $\cap_{i=1}^\infty \mathcal{A}\_i$ is not a $\sigma$-algebra. (Hint: Consider a generating $\sigma$-algebra, where for each index $n$, we partition the unit interval $[0,1]$ further.)
+**Exercise**: Let $\mathcal{A}\_1 \subseteq ... \subseteq \mathcal{A}\_n \subseteq ...$. Show that $\cap\_{i=1}^N \mathcal{A}\_i$ for a finite $N$ forms a $\sigma$-algebra, and find a counter example to show that $\cap_{i=1}^\infty \mathcal{A}\_i$ is not a $\sigma$-algebra. (Hint: Consider a generating $\sigma$-algebra, where for each index $n$, we partition the unit interval $[0,1]$ further.)
 
 # Measures
 
