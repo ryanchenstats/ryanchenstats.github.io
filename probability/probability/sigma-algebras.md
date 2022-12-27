@@ -116,5 +116,17 @@ A measure function as mentioned, assigns a number to a measurable set. Intuitive
 
 One proposed measure is the **outer measure**, which attempts to look at the universe of all coverings of sets that can be composed as a union of such compact intervals (we are only considering $\mathbb{R}^1$). That is, by Heine-Borel, for any open covering of $[a,b]$, there is a finite subcover that still covers $[a,b]$. From a review of analysis, it should be clear that a union of compact sets is still compact, thus we can find from any open cover, a finite subcover for any union of collections of compact sets. Then the **outer measure** can be given by:
 
-$$ m^*(A) := \inf \left\lbrace \sum_{i=1}^\infty \ell(I\_i) : \forall \{I\}\_{i>1} \text{ s.t. } A \subseteq \cup_{n=1}^\infty I_i \right\rbrace $$ 
+$$ m^*(A) := \inf \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } A \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace $$ 
 
+where $I_i$ is a compact interval of the form $[a,b]$ and we define $\ell(I) = b-a$. Intuitively, by taking the outer measure, we are trying to find the "smallest" covering of $A$ such that we still fully cover $A$, and we sum the lengths of the intervals $I_i$ to get the outer measure. The outer measure suffices several of the 4 properties, but assuming any 3 properties will imply that the remaining property cannot hold. A detailed treatement on this is given in Chapter 2 of Sheldon Axler's [Measure, Integration and Real Analysis](https://measure.axler.net/). However, we do see some interesting properties about the measure function that hold for the outer measure. A key property is monotonicity.
+
+> **Monotonicity of outer measure**
+> If $A \subseteq B$ then $m^*(A) \leq m^*(B)$
+
+_Proof_: If $A \subseteq B$ then all coverings of $B$ will also cover $A$. So:
+
+$$C_A := \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } A \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace \subseteq \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } B \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace =: C_B$$
+
+Then $\inf C_A \leq \inf C_B$ so $m^*(A) \leq m^*(B) &nbsp;$
+
+To remedy issues with 
