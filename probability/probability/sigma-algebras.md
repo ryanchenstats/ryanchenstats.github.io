@@ -133,4 +133,6 @@ Then $\inf C\_A \leq \inf C\_B$ so $m^*(A) \leq m^*(B)$. [Q.E.D].
 
 #### Lebesgue Measure
 
-To rememdy the issues with $m^*(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure. We wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. This motivates our understanding of $\sigma$-algebras as a collection of sets that are measurable. 
+To rememdy the issues with $m^*(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure. We wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. The natural question to ask is "By how much can we relax property 1?"  
+
+This motivates our understanding of $\sigma$-algebras as a collection of sets that are measurable. 
