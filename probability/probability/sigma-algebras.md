@@ -115,5 +115,6 @@ A measure function as mentioned, assigns a number to a measurable set. Intuitive
 > 4. $\mu(\cup\_{n\geq 1} A\_n) = \sum_{n\geq 1} A\_n$
 
 One proposed measure is the **outer measure**, which attempts to look at the universe of all coverings of sets that can be composed as a union of such compact intervals (we are only considering $\mathbb{R}^1$). That is, by Heine-Borel, for any open covering of $[a,b]$, there is a finite subcover that still covers $[a,b]$. From a review of analysis, it should be clear that a union of compact sets is still compact, thus we can find from any open cover, a finite subcover for any union of collections of compact sets. Then the **outer measure** can be given by:
+
 $$ m^*(A) := \inf \left\lbrace \sum\_{i=1}^\infty \ell(I\_i) : \forall \{I\}\_{i>1} \text{ s.t. } A \subseteq \cup_{n=1}^\infty I_i \right\rbrace $$ 
 
