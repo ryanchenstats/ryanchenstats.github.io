@@ -13,4 +13,4 @@ Before delving into probability, you might ask, "Why are we only focusing on int
 
 One of the core motivations for studying measure theoretic probability is to understand the concept of limits. In analysis, limits of sequences and functions of real numbers were the object of study, but now we want to consider the limit of an event and how probabilities of limits of events will behave. While finite event. 
 
-$A = mx=b$
+$$A = mx=b$$
