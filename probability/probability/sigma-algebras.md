@@ -109,10 +109,10 @@ One classical measure that we are all familiar with is the **Lebesgue measure** 
 
 A measure function as mentioned, assigns a number to a measurable set. Intuitively, a good measure function should exhibit the following properties in measurable space $(\Omega, \mathcal{F})$:
 
-> 1. $\mu : 2^{\mathbb{R}} \to [0,\infty]$
-> 2. $\mu([a,b]) = b-a$
-> 3. $\mu(A) = \mu(A + c)$ for some $c\in\mathbb{R}$
-> 4. $\mu(\cup\_{n\geq 1} A\_n) = \sum_{n\geq 1} A\_n$
+> 1. $\mu : 2^{\mathbb{R}} \to [0,\infty]$, any subset of the real numbers should have a measure
+> 2. $\mu([a,b]) = b-a$, the measure of an interval is simply its length
+> 3. $\mu(A) = \mu(A + c)$ for some $c\in\mathbb{R}$, translating all values within an interval does not affect its measure
+> 4. $\mu(\cup\_{n\geq 1} A\_n) = \sum_{n\geq 1} A\_n$, for a disjoint collection of intervals, the measure of its union should be the sum of each measure
 
 One proposed measure is the **outer measure**, which attempts to look at the universe of all coverings of sets that can be composed as a union of such compact intervals (we are only considering $\mathbb{R}^1$). That is, by Heine-Borel, for any open covering of $[a,b]$, there is a finite subcover that still covers $[a,b]$. From a review of analysis, it should be clear that a union of compact sets is still compact, thus we can find from any open cover, a finite subcover for any union of collections of compact sets. Then the **outer measure** can be given by:
 
