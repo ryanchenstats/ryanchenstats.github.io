@@ -22,7 +22,7 @@ $$\Omega := \{HH,HT,TH,TT\}$$
 
 This is a countable set of events, and in their entirety, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space. Things are easy to calculate here. For example $\mathbb{P}(\text{at least one head}) = \frac{\\|\\{HH,HT,TH\\}\\|}{\\|\Omega\\|} = 3/4$.
 
-In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events with probabilities. Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets a probability assigned to it and we wish to evaluate the probability. In any outcome space we would be interested in events as enumerated below:
+In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events of interest with probabilities because $2^\mathbb{N}$ is clearly uncountable (any $f: 2^\mathbb{N} \to \mathbb{N}$ is a surjection). Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets a probability assigned to it and we wish to evaluate the probability. In any outcome space we would be interested in events as enumerated below:
 
 1. The empty set, which has probability of 0
 2. For a given event, the complement of the event should also be of interest
@@ -110,9 +110,10 @@ One classical measure that we are all familiar with is the **Lebesgue measure** 
 A measure function as mentioned, assigns a number to a measurable set. Intuitively, a good measure function should exhibit the following properties in measurable space $(\Omega, \mathcal{F})$:
 
 > 1. $\mu : \mathcal{F} \to [0,\infty]$
-> 2. $\mu((a,b)) = b-a$
+> 2. $\mu([a,b]) = b-a$
 > 3. $\mu(A) = \mu(A + c)$ for some $c\in\mathbb{R}$
 > 4. $\mu(\cup\_{n\geq 1} A\_n) = \sum_{n\geq 1} A\_n$
 
-One proposed measure is the outer measure, which essentially attempts to look at the universe of all coverings of a given interval $[a,b]$ or any set that can be composed as a union of such compact intervals. That is, by Heine-Borel, for any open covering of $[a,b]$, there is a finite subcover that still covers $[a,b]$. From a review of analysis, it should be clear that a union of compact sets is still compact.
+One proposed measure is the **outer measure**, which attempts to look at the universe of all coverings of sets that can be composed as a union of such compact intervals (we are only considering $\mathbb{R}^1$). That is, by Heine-Borel, for any open covering of $[a,b]$, there is a finite subcover that still covers $[a,b]$. From a review of analysis, it should be clear that a union of compact sets is still compact, thus we can find from any open cover, a finite subcover for any union of collections of compact sets. Then the **outer measure** can be given by:
+$$ m^*(A) := \inf \left\lbrace \sum\_{i=1}^\infty \ell(I\_i) : \forall \{I\}\_{i>1} \text{ s.t. } A \subseteq \cup_{n=1}^\infty I_i \right\rbrace $$ 
 
