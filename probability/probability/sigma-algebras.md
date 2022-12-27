@@ -18,7 +18,7 @@ In a more advanced manner, we can consider the set of all open intervals in $\ma
 
 In probability, one fundamental object of interest is the **outcome space** denoted by $\Omega$. This is the set of all possible observable outcomes. Any subset of $\Omega$ is called an **event** For example, in flipping a coin twice, the outcome space is
 
-$$\Omega := \\{HH,HT,TH,TT\\}$$
+$$\Omega := \{HH,HT,TH,TT\}$$
 
 This is a countable set of events, and in their entirety, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space. Things are easy to calculate here. For example $\mathbb{P}(\text{at least one head}) = \frac{\\|\\{HH,HT,TH\\}\\|}{\\|\Omega\\|} = 3/4$.
 
