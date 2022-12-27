@@ -14,7 +14,7 @@ In probability, one fundamental object of interest is the **outcome space** deno
 
 $$\Omega := \{HH,HT,TH,TT\}$$
 
-This is a countable set of events, and in their entirity, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space. Things are easy to calculate here. For example $\mathbb{P}(\text{at least one head}) = \frac{\|\{HH,HT,TH\}\|}{\|\Omega\|} = 3/4$.
+This is a countable set of events, and in their entirety, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space. Things are easy to calculate here. For example $\mathbb{P}(\text{at least one head}) = \frac{\|\{HH,HT,TH\}\|}{\|\Omega\|} = 3/4$.
 
 In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events with probabilities. Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets a probability assigned to it and we wish to evaluate the probability. In any outcome space we would be interested in events as enumerated below:
 
