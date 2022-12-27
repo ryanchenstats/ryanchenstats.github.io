@@ -26,7 +26,7 @@ These three qualities completely define all sets that are of interest to us. Of 
 
 These three charactersitics of "interesting events" forms a logical structure called the $\sigma$-algebra. A $\sigma$-algebra of events in $\Omega$ is simply the power set $2^\Omega$ which has 16 elements in it. Now if we consider the outcome space of rolling a six-sided die, the $\sigma$-algebra of events is again the power set of $2^\Omega$ where this time $\Omega$ is the set of numbers from 1 to 6. Now lets make the game more complicated, and suppose the computer rolls the dice for us, and it will not tell us the result of the roll. Instead, it will check if the number is 1 or 2 in which it will tell us 'A'. If the roll was a 3 or 4, the computer will tell us 'B'. And finally if the roll was a 5 or 6, the computer will tell us 'C'. So we never observe any numbers, and we only observe the resulting 'A', 'B', or 'C'. Our $\sigma$-algebra will look like: 
 
-$$\Omega := \{\varnul, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{3,4,5,6\}, \{1,2,5,6\}, \{1,2,3,4,5,6\} \}$$
+$$\Omega := \{\emptyset, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{3,4,5,6\}, \{1,2,5,6\}, \{1,2,3,4,5,6\} \}$$
 
 It is not productive to try to imagine what a $\sigma$-algebra should look like. 
 
