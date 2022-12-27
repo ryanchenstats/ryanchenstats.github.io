@@ -14,4 +14,4 @@ In probability, one fundamental object of interest is the outcome space denoted 
 
 $$\Omega := \{HH,HT,TH,TT\}$$
 
-This is a countable set of events, and in their entirity, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space.
+This is a countable set of events, and in their entirity, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space. Things are easy to calculate here. For example $\mathbb{P}()$
