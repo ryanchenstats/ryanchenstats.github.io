@@ -2,7 +2,7 @@
 layout: default
 title: Probability Theory
 parent: All Things Statistics
-nav_order: 2
+nav_order: 3
 has_toc: true
 has_children: true
 usemathjax: true
