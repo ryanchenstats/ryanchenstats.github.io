@@ -13,7 +13,7 @@ Topics that will be discussed are
 * **Mathematical Statistics**: provides an introductory understanding to several statistical concepts such as distribution function, expectations, transformations, and order statistics [calculus]
 * **Statistical Inference**: provides rigor in the theory of estimation and hypothesis testing, both asymptotic and non-asymptotic
 * **Linear Regression**: provides a geometrical view of regression 
-* **Proability Theory**: provide rigor and justifications to several asymptotic statements made in statistics such as the law of large numbers and central limit theorem 
+* **Probability Theory**: provide rigor and justifications to several asymptotic statements made in statistics such as the law of large numbers and central limit theorem 
 
 The topics surrounded by brackets are the topics in which I assume the reader is familiar. Other topics will be discussed if there is interest.
 
