@@ -18,9 +18,9 @@ This is a countable set of events, and in their entirity, forms the outcome spac
 
 In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events with probabilities. Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets a probability assigned to it and we wish to evaluate the probability. In any outcome space we would be interested in events as enumerated below:
 
-1) The empty set, which has probability of 0
-2) For a given event, the complement of the event should also be of interest
-3) For any given set of events, their unions should be also of interest
+1. The empty set, which has probability of 0
+2. For a given event, the complement of the event should also be of interest
+3. For any given set of events, their unions should be also of interest
 
 These three qualities completely define all sets that are of interest to us. Of course, you might wonder, what about set intersections, using the coin flipping example, we might be interested in the quantity $\{HH,HT,TH\} \cap \{HT, HT, TT\}$. Namely, this is the intersection of the event where we get at least one head, and the event where we get at least one tail. The intersection of these two events is $\{HT, TH\}$, which is clearly a set of interest, and it has probability $1/2$. Surprisingly, this set intersection example is already covered by the 3 qualities of "interesting" events.
 
