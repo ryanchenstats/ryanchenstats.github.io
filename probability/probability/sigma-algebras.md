@@ -8,6 +8,17 @@ has_children: true
 usemathjax: true
 ---
 
+# Color Utilities
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
 # Prelude on Sets
 
 A set is nothing but a collection of objects. In probability theory, these objects are often times events. Furthermore, sets in probability theory, much like other branches of math, are usually constructed in a way such that the objects in the sets are endowed with some sort of logic. Taking an example from analysis, $X = \\{x \in \mathbb{R} : x^2 < 2\\}$, the set $X$ is precisely all real numbers who square is less than 2. The logical struture endowed on each object in the set is precisely described as follows: each object inside $X$ must be between $-\sqrt{2}$ and $\sqrt{2}$ and cannot be exactly $\pm \sqrt{2}$. In this sense, a set is constructed to define a logical structure endowed upon all points within the set.
@@ -105,13 +116,15 @@ Note the first point goes without saying when considering a function with a rang
 
 One classical measure that we are all familiar with is the **Lebesgue measure** often denoted with $\lambda$. It is defined as the length of an interval, so that $\lambda((a,b]) = b-a$ and is the same for any combination of open or closed or half open/closed intervals. While in probability theory, the focus is not developing rigor in the measure function, it is helpful to know about how mathematics thinks of a measure function.
 
+# 
+
 ### Aside: Measure Functions
 
 A measure function as mentioned, assigns a number to a measurable set. Intuitively, a good measure function should exhibit the following properties in measurable space $(\Omega, \mathcal{F})$:
 
 > 1. $\mu : 2^{\mathbb{R}} \to [0,\infty]$, any subset of the real numbers should have a measure
 > 2. $\mu([a,b]) = b-a$, the measure of an interval is simply its length
-> 3. $\mu(A) = \mu(A + c)$ for some $c\in\mathbb{R}$, translating all values within an interval does not affect its measure
+> 3. $\mu(A) = \mu(A + c)$ for some $c\in\mathbb{R}$, shifting an interval by a constant $c$ does not affect its measure
 > 4. $\mu(\cup\_{n\geq 1} A\_n) = \sum_{n\geq 1} A\_n$, for a disjoint collection of intervals, the measure of its union should be the sum of each measure
 
 One proposed measure is the **outer measure**, which attempts to look at the universe of all coverings of sets that can be composed as a union of such compact intervals (we are only considering $\mathbb{R}^1$). That is, by Heine-Borel, for any open covering of $[a,b]$, there is a finite subcover that still covers $[a,b]$. From a review of analysis, it should be clear that a union of compact sets is still compact, thus we can find from any open cover, a finite subcover for any union of collections of compact sets. Then the **outer measure** can be given by:
