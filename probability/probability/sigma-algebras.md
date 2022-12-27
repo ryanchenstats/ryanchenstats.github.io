@@ -8,7 +8,7 @@ has_children: true
 usemathjax: true
 ---
 
-# Color Utilities
+# Sigma Algebras and Measurability
 {: .no_toc }
 
 ## Table of contents
