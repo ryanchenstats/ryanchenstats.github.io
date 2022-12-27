@@ -22,7 +22,7 @@ $$\Omega := \{HH,HT,TH,TT\}$$
 
 This is a countable set of events, and in their entirety, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space. Things are easy to calculate here. For example $\mathbb{P}(\text{at least one head}) = \frac{\\|\\{HH,HT,TH\\}\\|}{\\|\Omega\\|} = 3/4$.
 
-In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events of interest with probabilities because $2^\mathbb{N}$ is clearly uncountable (any $f: 2^\mathbb{N} \to \mathbb{N}$ is a surjection). Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets a probability assigned to it and we wish to evaluate the probability. In any outcome space we would be interested in events as enumerated below:
+In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events of interest with probabilities along with the fact that $2^\mathbb{N}$ is clearly uncountable (any $f: 2^\mathbb{N} \to \mathbb{N}$ is a surjection). Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets a probability assigned to it and we wish to evaluate the probability (see [Aside: Measures](#aside-measure-functions) for mathematical understanding of sets of interest). In any outcome space we would be interested in events as enumerated below:
 
 1. The empty set, which has probability of 0
 2. For a given event, the complement of the event should also be of interest
@@ -133,6 +133,6 @@ Then $\inf C\_A \leq \inf C\_B$ so $m^*(A) \leq m^*(B)$. [Q.E.D].
 
 #### Lebesgue Measure
 
-To rememdy the issues with $m^*(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure. We wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. The natural question to ask is "By how much can we relax property 1?"  
+To rememdy the issues with $m^*(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure. That is, we wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. The natural question to ask is "By how much can we relax property 1?" To begin asking this question. note that there are sets in $2^\mathbb{R}$ that cause $m^*(\cdot)$ to disobey the 4 properties of measure. These sets will be deemed **non-measurable** and trying to assign a measure on these sets is futile. 
 
 This motivates our understanding of $\sigma$-algebras as a collection of sets that are measurable. 
