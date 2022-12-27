@@ -37,9 +37,9 @@ $$\Omega := \{\emptyset, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{3,4,5,6\}, \{
 Taking points 1, 2, and 3 above, we can translate the characteristics of an interesting set into mathematics. So the $\sigma$-algebra (for our purposes, this is also a $\sigma$-field or $\sigma$-ring) defined on $\Omega$ is the collection of events $\mathcal{F}$ such that
 
 > **Definition**: $\sigma$-algebra on $\Omega$:
-> $\emptyset \in \mathcal{F}$
-> If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
-> For any countable (need not be finite) sequence of sets $A_1,...,A_n,...\in \mathcal{F}$, then $\cup_{i=1}^\infty A_i \in \mathcal{F}$
+> 1. $\emptyset \in \mathcal{F}$
+> 2. If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
+> 3. For any countable (need not be finite) sequence of sets $A_1,...,A_n,...\in \mathcal{F}$, then $\cup_{i=1}^\infty A_i \in \mathcal{F}$
 
 At this point, we should reflect back on the prelude to set theory. A $\sigma$-algebra really is a logical structure, defining what it means to be a set of "interest." Specifically, given any set of elements in $\mathcal{F}$ we know their complements are also in $\mathcal{F}$, and their unions are also in $\mathcal{F}$.
 
@@ -82,9 +82,9 @@ By elementary set theory, we know that $\sigma(X) \subseteq \mathcal{F}_n$ for a
 The notion of a $\sigma$-algebra is rather strong in that all countably infinite sequences of sets must be closed in the $\sigma$-algebra. If we relax this rule, and instead impose closure under finitely many unions, then we have an algebra. So:
 
 > **Definition**: Algebra on $\Omega$:
-> $\emptyset \in \mathcal{F}$
-> If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
-> For any countably finite sequence of sets $A_1,...,A_n \in \mathcal{F}$, then $\cup_{i=1}^n A_i \in \mathcal{F}$
+> 1. $\emptyset \in \mathcal{F}$
+> 2. If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
+> 3. For any countably finite sequence of sets $A_1,...,A_n \in \mathcal{F}$, then $\cup_{i=1}^n A_i \in \mathcal{F}$
 
 In the case of the finite outcome space $\Omega$, the $\sigma$-algebra on $\Omega$ is the same as the algebra on $\Omega$. However in an infinite outcome space, The algebra is not the same as the $\sigma$-algebra. Try and come up with an example in the following exercise.
 
@@ -95,8 +95,8 @@ In the case of the finite outcome space $\Omega$, the $\sigma$-algebra on $\Omeg
 A **measure** is a function we denote with $\mu: \mathcal{F} \to [0,\infty]$. It is a function that assigns a positive number to a set. Within the realm of probability theory, we will only consider positive measures, and eventually we will only consider measures where $\mu: \mathcal{F} \to [0,1]$. Before we do any of that, it is important to learn about properties of a measure function.
 
 > **Definition**: Measure functions
-> $\mu(A) \geq 0$ for any $A \in \mathcal{F}$
-> $\mu(\emptyset) = 0$
-> If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{n=1}^\infty \mu(A\_n)$
+> 1. $\mu(A) \geq 0$ for any $A \in \mathcal{F}$
+> 2. $\mu(\emptyset) = 0$
+> 3. If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{n=1}^\infty \mu(A\_n)$
 
-The first point is listed as property 0 since it goes without saying when considering a function with a range of $[0,\infty]$.
+Note the first point goes without saying when considering a function with a range of $[0,\infty]$. As mentioned above, a set is measaurablbe if and only if is is in a $\sigma$-algebra $\mathcal{F}$ over an outcome space $\Omega$. Thus we call $(\Omega, \mathcal{F})$ a _measurable space_. If a particular measure function $\mu$ is endowed upon this measurable space, then the triple $(\Omega, \mathcal{F}, \mu)$ denotes a _measure space_. 
