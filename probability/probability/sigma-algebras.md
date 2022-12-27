@@ -97,6 +97,6 @@ A **measure** is a function we denote with $\mu: \mathcal{F} \to [0,\infty]$. It
 > **Definition**: Measure functions
 > 0. $\mu(A) \geq 0$ for any $A \in \mathcal{F}$
 > 1. $\mu(\emptyset) = 0$
-> 2. If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{i=1}^\infty \mu(A\_n)$
+> 2. If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{n=1}^\infty \mu(A\_n)$
 
 The first point is listed as property 0 since it goes without saying when considering a function with a range of $[0,\infty]$.
