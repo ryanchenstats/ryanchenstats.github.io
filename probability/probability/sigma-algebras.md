@@ -65,7 +65,7 @@ By now, you should have noticed that I used the term "generated" in quotes. Gene
 ---
 **Definition**: Sigma-Algebra generation
 
-For all $\sigma$-algebras that contain $X$, denoted as $\mathcal{F}_n$, for all indexing $n$ (i.e. $X \in \mathcal{F}_n$), $\sigma(X) = \cap_{i\in \mathbb{N}} \mathcal{F}_n$.
+For all $\sigma$-algebras that contain $X$, denoted as $\mathcal{F}_n$, which is indexed by $n$, $\sigma(X) = \cap_{i\in \mathbb{N}} \mathcal{F}_n$.
 
 ---
 
