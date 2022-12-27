@@ -109,7 +109,7 @@ One classical measure that we are all familiar with is the **Lebesgue measure** 
 
 A measure function as mentioned, assigns a number to a measurable set. Intuitively, a good measure function should exhibit the following properties in measurable space $(\Omega, \mathcal{F})$:
 
-> 1. $\mu : \mathcal{F} \to [0,\infty]$
+> 1. $\mu : 2^{\mathbb{R}} \to [0,\infty]$
 > 2. $\mu([a,b]) = b-a$
 > 3. $\mu(A) = \mu(A + c)$ for some $c\in\mathbb{R}$
 > 4. $\mu(\cup\_{n\geq 1} A\_n) = \sum_{n\geq 1} A\_n$
@@ -120,6 +120,8 @@ $$ m^*(A) := \inf \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1}
 
 where $I_i$ is a compact interval of the form $[a,b]$ and we define $\ell(I) = b-a$. Intuitively, by taking the outer measure, we are trying to find the "smallest" covering of $A$ such that we still fully cover $A$, and we sum the lengths of the intervals $I_i$ to get the outer measure. The outer measure suffices several of the 4 properties, but assuming any 3 properties will imply that the remaining property cannot hold. A detailed treatement on this is given in Chapter 2 of Sheldon Axler's [Measure, Integration and Real Analysis](https://measure.axler.net/). However, we do see some interesting properties about the measure function that hold for the outer measure. A key property is monotonicity.
 
+(Note that we can also define an inner measure by finding the size of the "largest" subset within $A$)
+
 > **Monotonicity of outer measure**
 > If $A \subseteq B$ then $m^*(A) \leq m^*(B)$
 
@@ -127,6 +129,8 @@ _Proof_: If $A \subseteq B$ then all coverings of $B$ will also cover $A$. So:
 
 $$C_A := \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } A \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace \subseteq \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } B \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace =: C_B$$
 
-Then $\inf C_A \leq \inf C_B$ so $m^*(A) \leq m^*(B) &nbsp;$
+Then $\inf C\_A \leq \inf C\_B$ so $m^*(A) \leq m^*(B)$. [Q.E.D].
 
-To remedy issues with 
+#### Lebesgue Measure
+
+To rememdy the issues with $m^*(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure. We wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. This motivates our understanding of $\sigma$-algebras as a collection of sets that are measurable. 
