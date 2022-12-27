@@ -100,3 +100,19 @@ A **measure** is a function we denote with $\mu: \mathcal{F} \to [0,\infty]$. It
 > 3. If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{n=1}^\infty \mu(A\_n)$
 
 Note the first point goes without saying when considering a function with a range of $[0,\infty]$. As mentioned above, a set is measaurablbe if and only if is is in a $\sigma$-algebra $\mathcal{F}$ over an outcome space $\Omega$. Thus we call $(\Omega, \mathcal{F})$ a _measurable space_. If a particular measure function $\mu$ is endowed upon this measurable space, then the triple $(\Omega, \mathcal{F}, \mu)$ denotes a _measure space_. 
+
+**Exercise**: Given the measure space $(\Omega, \mathcal{F}, \mu)$, show that for any $B\in\mathcal{F}$, $\mu(B\cap A) = \mu\_B(A)$ is a measure function hence $(\Omega, \mathcal{F}, \mu\_B)$ forms a measure space.
+
+One classical measure that we are all familiar with is the **Lebesgue measure** often denoted with $\lambda$. It is defined as the length of an interval, so that $\lambda((a,b]) = b-a$ and is the same for any combination of open or closed or half open/closed intervals. While in probability theory, the focus is not developing rigor in the measure function, it is helpful to know about how mathematics thinks of a measure function.
+
+### Aside: Measure Functions
+
+A measure function as mentioned, assigns a number to a measurable set. Intuitively, a good measure function should exhibit the following properties in measurable space $(\Omega, \mathcal{F})$:
+
+> 1. $\mu : \mathcal{F} \to [0,\infty]$
+> 2. $\mu((a,b)) = b-a$
+> 3. $\mu(A) = \mu(A + c)$ for some $c\in\mathbb{R}$
+> 4. $\mu(\cup\_{n\geq 1} A\_n) = \sum_{n\geq 1} A\_n$
+
+One proposed measure is the outer measure, which essentially attempts to look at the universe of all coverings of a given interval $[a,b]$ or any set that can be composed as a union of such compact intervals. That is, by Heine-Borel, for any open covering of $[a,b]$, there is a finite subcover that still covers $[a,b]$. From a review of analysis, it should be clear that a union of compact sets is still compact.
+
