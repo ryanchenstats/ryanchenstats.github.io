@@ -43,7 +43,7 @@ These three qualities completely define all sets that are of interest to us. Of 
 
 These three charactersitics of "interesting events" forms a logical structure called the $\sigma$-algebra. A $\sigma$-algebra of events in $\Omega$ is simply the power set $2^\Omega$ which has 16 elements in it. Now if we consider the outcome space of rolling a six-sided die, the $\sigma$-algebra of events is again the power set of $2^{\\{1,...,6\\}}$ which has $2^6 = 64$ elements. Now lets make the game more complicated, and suppose the computer rolls the dice for us, and it will not tell us the result of the roll. Instead, it will check if the number is 1 or 2 in which it will tell us 'A'. If the roll was a 3 or 4, the computer will tell us 'B'. And finally if the roll was a 5 or 6, the computer will tell us 'C'. So we never observe any numbers, and we only observe the resulting 'A', 'B', or 'C'. Our $\sigma$-algebra will look like: 
 
-$$\Omega := \{\emptyset, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{3,4,5,6\}, \{1,2,5,6\}, \{1,2,3,4,5,6\} \}$$
+$$\Omega := \{\varnothing, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{3,4,5,6\}, \{1,2,5,6\}, \{1,2,3,4,5,6\} \}$$
 
 1, 2, and 3 motivate the structure of a $\sigma$-algebra. Recall that the goal of probability is to assign a "size" of these sets of "interest" and the larger the size, the more "probable" the event can occur. In order to understand size and measurability, we should study measures and why a $\sigma$-algebra is critical in the development of a measure.  
 
@@ -81,7 +81,7 @@ So instead of defining a measure on all subsets of $\mathbb{R}$, a **measure** s
 
 > **Definition**: Measure functions
 > 1. $\mu(A) \geq 0$ for any $A \in \mathcal{F}$
-> 2. $\mu(\emptyset) = 0$
+> 2. $\mu(\varnothing) = 0$
 > 3. If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{n=1}^\infty \mu(A\_n)$
 
 Note the first point goes without saying when considering a function with a range of $[0,\infty]$. As mentioned above, a set is measaurable if and only if it is a "nice" set, which are elements of $\mathcal{F}$ over an outcome space $\Omega$. Thus we call $(\Omega, \mathcal{F})$ a _measurable space_. If a particular measure function $\mu$ is endowed upon this measurable space, then the triple $(\Omega, \mathcal{F}, \mu)$ denotes a _measure space_. 
@@ -96,7 +96,7 @@ These "nice" sets are called _measurable sets_, and these are the sets defined t
 Points 1, 2, and 3 in [Motivation for Sigma-Algebras and Measurability](#motivation-for-sigma-algebras-and-measurability) defines the "nice" sets of "interest." We can translate the characteristics of an "interesting" set into mathematics. That is, a $\sigma$-algebra (for our purposes, this is also a $\sigma$-field or $\sigma$-ring) defined on $\Omega$ is the collection of events $\mathcal{F} \subseteq 2^\Omega$ such that
 
 > **Definition**: $\sigma$-algebra on $\Omega$:
-> 1. $\emptyset \in \mathcal{F}$
+> 1. $\varnothing \in \mathcal{F}$
 > 2. If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
 > 3. For any countable (need not be finite) sequence of sets $A_1,...,A_n,...\in \mathcal{F}$, then $\cup_{i=1}^\infty A_i \in \mathcal{F}$
 
@@ -142,7 +142,7 @@ By elementary set theory, we know that $\sigma(X) \subseteq \mathcal{F}_n$ for a
 The notion of a $\sigma$-algebra is rather strong in that all countably infinite sequences of sets must be closed under countable unions in the $\sigma$-algebra. If we relax this rule, and instead impose closure under finitely many unions, then we have an **algebra**. So:
 
 > **Definition**: Algebra on $\Omega$:
-> 1. $\emptyset \in \mathcal{F}$
+> 1. $\varnothing \in \mathcal{F}$
 > 2. If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
 > 3. For any countably finite sequence of sets $A_1,...,A_n \in \mathcal{F}$, then $\cup_{i=1}^n A_i \in \mathcal{F}$
 
@@ -242,7 +242,7 @@ To show a function is $\mathcal{A}/\mathcal{B}$-measurable, and $\mathcal{B}$ is
 
 _Proof_: Consider the set $\mathcal{G} := \\{F \in \mathcal{F} : T^{-1}(F) \in \mathcal{A}\\}$. This $\mathcal{G}$ collects all measurable sets in the image of $T$ that has a pre-image in $\mathcal{A}$, the measurable sets in the domain. If we can show $\mathcal{G}$ is also a $\sigma$-algebra, it will be one that contains $\mathcal{F}$. So if the collection of measurable images of $T$, given by $\mathcal{F}$, have preimages in $\mathcal{A}$, then the collection of measurable images of $T$ is also a $\sigma$-algebra that is at least as large as $\sigma(\mathcal{F})$ - making $T$ measurable.
 
-First, $T^{-1}(\emptyset) = \emptyset \in \mathcal{A}$ so $\emptyset \in \mathcal{G}$. Second, if $A\in\mathcal{G}$, then $T^{-1}(A) \in \mathcal{A}$. As $\mathcal{A}$ is a $\sigma$-algebra, $(T^{-1}(A))^C \in \mathcal{A}$ and by property of pre-images $T^{-1}(A^C) \in \mathcal{A}$ implying $A^C \in \mathcal{G}$. If $A\_1,...,A\_n,...$ are in $\mathcal{G}$ then $T^{-1}(A\_n) \in \mathcal{A}$ for all $n$. As $\mathcal{A}$ is a $\sigma$-algebra, $\cup T^{-1}(A\_n) \in \mathcal{A}$ and by property of pre-images, it is equivalent to state $T^{-1}(\cup A\_n) \in \mathcal{A}$. Thus $\cup A\_n \in \mathcal{G}$. Therefore $\mathcal{G}$ is a $\sigma$-algebra containing $\mathcal{F}$ so $\mathcal{G} \supseteq \sigma(\mathcal{F}) = \mathcal{B}$. 
+First, $T^{-1}(\varnothing) = \varnothing \in \mathcal{A}$ so $\varnothing \in \mathcal{G}$. Second, if $A\in\mathcal{G}$, then $T^{-1}(A) \in \mathcal{A}$. As $\mathcal{A}$ is a $\sigma$-algebra, $(T^{-1}(A))^C \in \mathcal{A}$ and by property of pre-images $T^{-1}(A^C) \in \mathcal{A}$ implying $A^C \in \mathcal{G}$. If $A\_1,...,A\_n,...$ are in $\mathcal{G}$ then $T^{-1}(A\_n) \in \mathcal{A}$ for all $n$. As $\mathcal{A}$ is a $\sigma$-algebra, $\cup T^{-1}(A\_n) \in \mathcal{A}$ and by property of pre-images, it is equivalent to state $T^{-1}(\cup A\_n) \in \mathcal{A}$. Thus $\cup A\_n \in \mathcal{G}$. Therefore $\mathcal{G}$ is a $\sigma$-algebra containing $\mathcal{F}$ so $\mathcal{G} \supseteq \sigma(\mathcal{F}) = \mathcal{B}$. 
 
 **So the set of all images in the generating set that have a measurable pre-image is a $\sigma$-algebra**. This means the set of all images with a measurable pre-image is also measurable in the image too. Thus $T$ is measurable provided that its generating set has a pre-image that is measurable with respect to the domain $\sigma$-algebra. $\tag*{∎}$
 
