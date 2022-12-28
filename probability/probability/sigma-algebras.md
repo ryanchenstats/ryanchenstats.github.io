@@ -236,7 +236,7 @@ Once the idea of measurable spaces is established, we are ready to talk about me
 
 $$\forall B \in \sigma(Y), \{A : f(A) = B\} \in \mathcal{A} $$
 
-That is, the preimage of any measurable set with respect to $\mathcal{B}$ is going to be measurable with respect to $\mathcal{A}$. A measurable function $X$ mapping a measurable outcome space $(\Omega, \mathbb{F})$ to $(\mathbb{R}, \mathcal{B})$ is called a **random variable**. The sole requirement is that $X$ must be measurable. In some texts, they refer to $X$ as being $\mathbb{F}/\mathbb{B}$- measurable. 
+That is, the preimage of any measurable set with respect to $\mathcal{B}$ is going to be measurable with respect to $\mathcal{A}$. A measurable function $X$ mapping a measurable outcome space $(\Omega, \mathbb{F})$ to $(\mathbb{R}, \mathcal{B})$ is called a **random variable**. The sole requirement is that $X$ must be measurable. In some texts, they refer to $X$ as being $\mathcal{F}/\mathcal{B}$- measurable. 
 
 **Exercise**: Show that a continuous function $f: \mathbb{R} \to \mathbb{R}$ is measurable $\mathcal{B}/\mathcal{B}$-measurable. 
 
