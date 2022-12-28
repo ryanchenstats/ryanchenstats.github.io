@@ -8,12 +8,6 @@ has_children: true
 usemathjax: true
 ---
 
-$$
-   \newcommand{\reals}{\mathbb{R}}
-   \newcommand{\pr}{\mathbb{P}}
-   \newcommand{\cv}[1]{\mathcal{#1}}
-$$
-
 # Probability as a Measure
 {: .no_toc }
 
@@ -24,6 +18,8 @@ $$
 {:toc}
 
 ---
+
+$\newcommand{\reals}{\mathbb{R}}$ $\newcommand{\pr}{\mathbb{P}}$ $\newcommand{\cv}[1]{\mathcal{#1}}$
 
 # Laws of Probability
 
