@@ -173,6 +173,8 @@ Likewise, a $\lambda$-system can be generated. $\lambda(\\{A,B\\})$ is the inter
 
 **Exercise**: Show that a $\lambda$-system that is also a $\pi$-system is a $\sigma$-algebra
 
+#### Monotone Class and Monotone Class Theorem
+
 > **Definition**: Monotone class $\mathcal{M}$:
 > 1. If $A\_1 \subseteq ... \subseteq A\_n \subseteq ...$ then $\cup_{i=1}^\infty A\_i \in \mathcal{M}$
 > 2. If $A\_1 \supseteq ... \supseteq A\_n \supseteq ...$ then $\cap_{i=1}^\infty A\_i \in \mathcal{M}$
@@ -185,3 +187,6 @@ Likewise, monotone classes can be generated, and $\mathcal{M}(X)$ is defined as 
 
 The above exercise tells us that $\mathcal{M}(A) = \sigma(A)$. Thus if we want to show some property is true for all elements of $\sigma(A)$, it suffices to consider the property on $\mathcal{M}(A)$ where we only need to check for closure under nested unions and intersections, provided $A$ is an algebra of sets.
 
+### Extension of Measures
+
+It is 
