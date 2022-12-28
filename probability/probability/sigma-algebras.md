@@ -181,6 +181,5 @@ Likewise, monotone classes can be generated, and $\mathcal{M}(X)$ is defined as 
 **Exercise**: Show that if $A$ is an algebra, then $\mathcal{M}(A)$ is a $\sigma$-algebra.
 **Exercise**(Monotone Class Theorem): Furthermore, show that $\mathcal{M}(A) = \sigma(A)$. (Hint, showing $\sigma(A) \subseteq \mathcal{M}(A)$ is straightforward and follows from the previous exercise. To show $\mathcal{M}(A) \subseteq \sigma(A)$, collect sets in $\mathcal{M}(A)$ such that the collection is closed under intersection to show that $\mathcal{M}(A)$ is closed under intersections, making it a $\pi$-system. Then collect sets in $\mathcal{M}(A)$ such that properties of the $\lambda$-system hold. Thus $\mathcal{M}(A) \subseteq \sigma(A)$. Refer to the "principle of good sets"). 
 
-The above exercise tells us that $\mathcal{A} = \sigma(A)$. Thus if we want to show some property is true for all elements of $\sigma(A)$, it suffices to consider the property on $\mathcal{M}(A)$ where we only need to check for closure under nested unions and intersections, provided $A$ is an algebra of sets.
+The above exercise tells us that $\mathcal{M}(A) = \sigma(A)$. Thus if we want to show some property is true for all elements of $\sigma(A)$, it suffices to consider the property on $\mathcal{M}(A)$ where we only need to check for closure under nested unions and intersections, provided $A$ is an algebra of sets.
 
-  
