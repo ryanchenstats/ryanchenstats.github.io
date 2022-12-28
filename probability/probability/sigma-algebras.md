@@ -170,6 +170,7 @@ Now we introduce a $\lambda$-system which is sometimes called a Dynkin system na
 Likewise, a $\lambda$ system can be generated $\lambda(\\{A,B\\})$ is the intersection of all $\lambda$-systems containing the sets $\\{A,B\\}$. This is not a very illustrative example since we must have closure under nested increasing sets in $\lambda$ which is impossible to write out in this manner.
 
 **Exercise**: Enumerate $\lambda(\\{A,B\\})$ and justify why each element in this $\lambda$-system should be in the collection. Assume subsets $A, B$ are both in $\Omega$. 
+
 **Exercise**: Show that a $\lambda$-system that is also a $\pi$-system is a $\sigma$-algebra
 
 > **Definition**: Monotone class $\mathcal{M}$:
@@ -179,6 +180,7 @@ Likewise, a $\lambda$ system can be generated $\lambda(\\{A,B\\})$ is the inters
 Likewise, monotone classes can be generated, and $\mathcal{M}(X)$ is defined as the intersection of all monotone classes containing $X$. 
 
 **Exercise**: Show that if $A$ is an algebra, then $\mathcal{M}(A)$ is a $\sigma$-algebra.
+
 **Exercise**(Monotone Class Theorem): Furthermore, show that $\mathcal{M}(A) = \sigma(A)$. (Hint, showing $\sigma(A) \subseteq \mathcal{M}(A)$ is straightforward and follows from the previous exercise. To show $\mathcal{M}(A) \subseteq \sigma(A)$, collect sets in $\mathcal{M}(A)$ such that the collection is closed under intersection to show that $\mathcal{M}(A)$ is closed under intersections, making it a $\pi$-system. Then collect sets in $\mathcal{M}(A)$ such that properties of the $\lambda$-system hold. Thus $\mathcal{M}(A) \subseteq \sigma(A)$. Refer to the "principle of good sets"). 
 
 The above exercise tells us that $\mathcal{M}(A) = \sigma(A)$. Thus if we want to show some property is true for all elements of $\sigma(A)$, it suffices to consider the property on $\mathcal{M}(A)$ where we only need to check for closure under nested unions and intersections, provided $A$ is an algebra of sets.
