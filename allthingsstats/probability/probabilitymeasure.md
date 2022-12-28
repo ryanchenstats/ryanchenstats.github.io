@@ -19,11 +19,11 @@ usemathjax: true
 
 ---
 
-\{
+$$
    \newcommand{\reals}{\mathbb{R}}
    \newcommand{\pr}{\mathbb{P}}
    \newcommand{\cv}[1]{\mathcal{#1}}
-\}
+$$
 
 # Laws of Probability
 
