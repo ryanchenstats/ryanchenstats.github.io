@@ -19,12 +19,6 @@ usemathjax: true
 
 ---
 
-$$
-   \newcommand{\reals}{\mathbb{R}}
-   \newcommand{\pr}{\mathbb{P}}
-   \newcommand{\cv}[1]{\mathcal{#1}}
-$$
-
 # Laws of Probability
 
 There are three main axioms in probability determined by A. N. Kolmogorov and hence called Kolmogorov's axioms. Given a **probability space** $(\Omega, \cv{F}, \pr)$ They are:
@@ -33,3 +27,15 @@ There are three main axioms in probability determined by A. N. Kolmogorov and he
 2. $\pr(A) \geq 0$ for all $A \in \cv{F}$
 3. For disjoint sequence $A\_1,...,A\_n,...\in\cv{F}$, $\pr(\cup A\_i) = \sum \pr(A_i)$ 
 
+
+
+
+
+
+
+
+$$
+   \newcommand{\reals}{\mathbb{R}}
+   \newcommand{\pr}{\mathbb{P}}
+   \newcommand{\cv}[1]{\mathcal{#1}}
+$$
