@@ -80,7 +80,7 @@ where $I_i$ is a compact interval of the form $[a,b]$ and we define $\ell(I) = b
 (Note that we can also define an inner measure by finding the size of the "largest" subset within $A$)
 
 > **Monotonicity of outer measure**
-> If $A \subseteq B$ then $m^*(A) \leq m^*(B)$
+> If $A \subseteq B$ then $m^{\*}(A) \leq m^{\*}(B)$
 
 _Proof_: If $A \subseteq B$ then all coverings of $B$ will also cover $A$. So:
 
