@@ -8,6 +8,12 @@ has_children: true
 usemathjax: true
 ---
 
+$$
+   \newcommand{\reals}{\mathbb{R}}
+   \newcommand{\pr}{\mathbb{P}}
+   \newcommand{\cv}[1]{\mathcal{#1}}
+$$
+
 # Probability as a Measure
 {: .no_toc }
 
@@ -29,13 +35,3 @@ There are three main axioms in probability determined by A. N. Kolmogorov and he
 
 
 
-
-
-
-
-
-$$
-   \newcommand{\reals}{\mathbb{R}}
-   \newcommand{\pr}{\mathbb{P}}
-   \newcommand{\cv}[1]{\mathcal{#1}}
-$$
