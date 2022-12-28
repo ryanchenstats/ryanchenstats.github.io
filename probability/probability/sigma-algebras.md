@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sigma Algebras and Measurability
+title: Measure Theory and Sigma Algebras
 parent: Probability Theory
 grand_parent: All Things Statistics
 has_toc: false
@@ -8,7 +8,7 @@ has_children: true
 usemathjax: true
 ---
 
-# Sigma Algebras and Measurability
+# Measure Theory and Sigma Algebras
 {: .no_toc }
 
 ## Table of contents
@@ -33,7 +33,7 @@ $$\Omega := \{HH,HT,TH,TT\}$$
 
 This is a countable set of events, and in their entirety, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space. Things are easy to calculate here. For example $\mathbb{P}(\text{at least one head}) = \frac{\\|\\{HH,HT,TH\\}\\|}{\\|\Omega\\|} = 3/4$.
 
-In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events of interest with probabilities along with the fact that $2^\mathbb{N}$ is clearly uncountable (any $f: 2^\mathbb{N} \to \mathbb{N}$ is a surjection). Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets a probability assigned to it and we wish to evaluate the probability (see [Aside: Measure Functions](#aside-measure-functions) for mathematical understanding of sets of interest). In any outcome space we would be interested in events as enumerated below:
+In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events of interest with probabilities along with the fact that $2^\mathbb{N}$ is clearly uncountable (any $f: 2^\mathbb{N} \to \mathbb{N}$ is a surjection). Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets a probability assigned to it and we wish to evaluate the probability. In any outcome space we would be interested in events as enumerated below:
 
 1. The empty set, which has probability of 0
 2. For a given event, the complement of the event should also be of interest
@@ -45,30 +45,81 @@ These three charactersitics of "interesting events" forms a logical structure ca
 
 $$\Omega := \{\emptyset, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{3,4,5,6\}, \{1,2,5,6\}, \{1,2,3,4,5,6\} \}$$
 
-Taking points 1, 2, and 3 above, we can translate the characteristics of an interesting set into mathematics. So the $\sigma$-algebra (for our purposes, this is also a $\sigma$-field or $\sigma$-ring) defined on $\Omega$ is the collection of events $\mathcal{F}$ such that
+1, 2, and 3 motivate the structure of a $\sigma$-algebra. A $\sigma$-algebra represents a collection or series of logical steps to determine sets of "interest." While this is true, the motivation is far from developed. Recall that the goal of probability is to assign a "size" of these sets of "interest" and the larger the size, the more "probable" the event can occur. In order to understand size and measurability, we should study measures and why a $\sigma$-algebra is critical in the development of a measure.  
+
+# Measures
+
+A **measure** is a function we denote with $\mu: \mathcal{F} \to [0,\infty]$. It is a function that assigns a positive number to a set. Within the realm of probability theory, we will only consider positive measures, and eventually we will only consider measures where $\mu: \mathcal{F} \to [0,1]$. Before we do any of that, it is important to learn about properties of a measure function.
+
+> **Definition**: Measure functions
+> 1. $\mu(A) \geq 0$ for any $A \in \mathcal{F}$
+> 2. $\mu(\emptyset) = 0$
+> 3. If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{n=1}^\infty \mu(A\_n)$
+
+Note the first point goes without saying when considering a function with a range of $[0,\infty]$. As mentioned above, a set is measaurablbe if and only if is is in a $\sigma$-algebra $\mathcal{F}$ over an outcome space $\Omega$. Thus we call $(\Omega, \mathcal{F})$ a _measurable space_. If a particular measure function $\mu$ is endowed upon this measurable space, then the triple $(\Omega, \mathcal{F}, \mu)$ denotes a _measure space_. 
+
+**Exercise**: Given the measure space $(\Omega, \mathcal{F}, \mu)$, show that for any $B\in\mathcal{F}$, $\mu(B\cap A) = \mu\_B(A)$ is a measure function hence $(\Omega, \mathcal{F}, \mu\_B)$ forms a measure space.
+
+One classical measure that we are all familiar with is the **Lebesgue measure** often denoted with $\lambda$. It is defined as the length of an interval, so that $\lambda((a,b]) = b-a$ and is the same for any combination of open or closed or half open/closed intervals. While in probability theory, the focus is not developing rigor in the measure function, it is helpful to know about how mathematics thinks of a measure function. 
+
+## Measure Functions
+
+A **measure function** (a measur_able_ function is a **different concept**), assigns a number to a measurable set. Intuitively, a good measure function should exhibit the following properties in measurable space $(\Omega, \mathcal{F})$:
+
+> 1. $\mu : 2^{\mathbb{R}} \to [0,\infty]$, any subset of the real numbers should have a measure
+> 2. $\mu([a,b]) = b-a$, the measure of an interval is simply its length
+> 3. $\mu(A) = \mu(A + c)$ for some $c\in\mathbb{R}$, shifting an interval by a constant $c$ does not affect its measure
+> 4. $\mu(\cup\_{n\geq 1} A\_n) = \sum_{n\geq 1} A\_n$, for a disjoint collection of intervals, the measure of its union should be the sum of each measure
+
+One proposed measure is the **outer measure**, which attempts to look at the universe of all coverings of sets that can be composed as a union of such compact intervals (we are only considering $\mathbb{R}^1$). That is, by Heine-Borel, for any open covering of $[a,b]$, there is a finite subcover that still covers $[a,b]$. From a review of analysis, it should be clear that a union of compact sets is still compact, thus we can find from any open cover, a finite subcover that covers a union of compact sets. Then the **outer measure** can be given by:
+
+$$ m^*(A) := \inf \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } A \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace $$ 
+
+where $I_i$ is a compact interval of the form $[a,b]$ and we define $\ell(I) = b-a$. Intuitively, by taking the outer measure, we are trying to find the "smallest" covering of $A$ such that we still fully cover $A$, and we sum the lengths of the intervals $I_i$ to get the outer measure. The outer measure suffices several of the 4 properties, but assuming any 3 properties will imply that the remaining property cannot hold. A detailed treatement on this is given in Chapter 2 of Sheldon Axler's [Measure, Integration and Real Analysis](https://measure.axler.net/). However, we do see some interesting properties about the measure function that hold for the outer measure. A key property is _monotonicity_.
+
+(Note that we can also define an inner measure by finding the size of the "largest" subset within $A$)
+
+> **Monotonicity of outer measure**
+> If $A \subseteq B$ then $m^*(A) \leq m^*(B)$
+
+_Proof_: If $A \subseteq B$ then all coverings of $B$ will also cover $A$. So:
+
+$$C_A := \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } A \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace \subseteq \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } B \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace =: C_B$$
+
+Then $\inf C\_A \leq \inf C\_B$ so $m^{\*}(A) \leq m^{\*}(B)$. [Q.E.D].
+
+### Lebesgue Measure
+
+To rememdy the issues mentioned above with $m^{\*}(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure and we cannot give them up. That is, we wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. The natural question to ask is "By how much can we relax property 1?" To begin asking this question, note that there are sets in $2^\mathbb{R}$ that cause $m^{\*}(\cdot)$ to disobey the 4 properties of measure. These sets are called **non-measurable** and trying to assign a measure on these sets is futile. 
+
+This motivates our understanding of $\sigma$-algebras as a collection of sets that are measurable. 
+
+### Sigma Algebras
+
+Taking points 1, 2, and 3 defining sets of "interest," we can translate the characteristics of an interesting set into mathematics. So the $\sigma$-algebra (for our purposes, this is also a $\sigma$-field or $\sigma$-ring) defined on $\Omega$ is the collection of events $\mathcal{F}$ such that
 
 > **Definition**: $\sigma$-algebra on $\Omega$:
 > 1. $\emptyset \in \mathcal{F}$
 > 2. If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
 > 3. For any countable (need not be finite) sequence of sets $A_1,...,A_n,...\in \mathcal{F}$, then $\cup_{i=1}^\infty A_i \in \mathcal{F}$
 
-At this point, we should reflect back on the prelude to set theory. A $\sigma$-algebra really is a logical structure, defining what it means to be a set of "interest." Specifically, given any set of elements in $\mathcal{F}$ we know their complements are also in $\mathcal{F}$, and their unions are also in $\mathcal{F}$.
+At this point, we should reflect back on the prelude to set theory. A $\sigma$-algebra really is a logical structure, defining what it means to be a set of "interest." Specifically, given any set of elements in $\mathcal{F}$ we know their complements are also in $\mathcal{F}$, and their unions are also in $\mathcal{F}$. We call any set in the $\sigma$-algebra to be measurable.
 
 **Exercise**: Show that countable intersections are closed under $\mathcal{F}$, i.e. if $A_1,...,A_n,...$ then $\cap_{i=1}^\infty A_i \in \mathcal{F}$ (Hint: use De Morgan's Laws.)
 
 **Exercise**: Write the $\sigma$-algebra of the outcome space of flipping two coins. (Hint: There should be 16 elements in the resulting sigma algebra.)
 
-Note in the outcome space of a dice roll, depending on how we as observers will record outcomes, i.e. recording $\\{1,2\\}$ as the same event (in the previous example, this would be the event of observing 'A') or recording $\\{1\\}, \\{2\\}$ as two seperate events, the $\sigma$-algebras will be of different size. This is clear, since above, we noted that the $\sigma$-algebra "generated" on $\\{1,2,3,4,5,6\\}$ would have a cardinality of 64, while the $\sigma$-algebra "generated" on $\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\}$ has a cardinality of 8. $\sigma$-algebras can be viewed in relation to each other, and it would convey the idea of "level of information." Denote $\mathcal{A}_1 = \sigma(\\{1,2,3,4,5,6\\})$ to be the $\sigma$-algebra "generated" by $\\{1,2,3,4,5,6\\}$. Denote also $\mathcal{A}_2 = \sigma(\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\})$ to be the $\sigma$-algebra "generated" by $\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\}$.
+Note in the outcome space of a dice roll, depending on how we as observers will record outcomes, the $\sigma$-algebras will be of different size, i.e. recording $\\{1,2\\}$ as the same event (in the previous example, this would be the event of observing 'A') or recording $\\{1\\}, \\{2\\}$ as two seperate events. This is clear, since above, we noted that the $\sigma$-algebra "generated" on $\\{1,2,3,4,5,6\\}$ would have a cardinality of 64, while the $\sigma$-algebra "generated" on $\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\}$ has a cardinality of 8. $\sigma$-algebras can be viewed in relation to each other, and it would convey the idea of "level of information." Denote $\mathcal{A}_1 = \sigma(\\{1,2,3,4,5,6\\})$ to be the $\sigma$-algebra "generated" by $\\{1,2,3,4,5,6\\}$. Denote also $\mathcal{A}_2 = \sigma(\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\})$ to be the $\sigma$-algebra "generated" by $\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\}$.
 
-**Exercise**: Show that $\mathcal{A}_1 \supseteq \mathcal{A}_2$. (Hint: Both are $\sigma$-algebras, and it suffices to show all elements in $\mathcal{A}_2$ are in $\mathcal{A}_1$. To be thorough, find an element that is in $\mathcal{A}_2$ but not in $\mathcal{A}_1$.)
+**Exercise**: Show that $\mathcal{A}_1 \supseteq \mathcal{A}_2$ as defined above. (Hint: Both are $\sigma$-algebras, and it suffices to show all elements in $\mathcal{A}_2$ are in $\mathcal{A}_1$. To be thorough, find an element that is in $\mathcal{A}_2$ but not in $\mathcal{A}_1$.)
 
-If you were successful in the exercise above, then you have shown that one $\sigma$-algebra is "smaller" than the other. Essentially, the scenario that produced the collection of sets of interest, $\mathcal{A}_2$, yields less information to you as an observer about your data generating process, when compared to the information from the scenario producing $\mathcal{A}_1$. That is, an observer in the scenario producing $\mathcal{A}_1$ will have interest in all events in $\mathcal{A}_2$ but an observer in the scenario producing $\mathcal{A}_2$ will not be able to even know of the existence of some events in $\mathcal{A}_1$. 
+If you were successful in the exercise above, then you have shown that one $\sigma$-algebra is "smaller" than the other. Essentially, the scenario that produced the collection of sets of interest, $\mathcal{A}_2$, yields less information about your data generating process to you, when compared to the information from the scenario producing $\mathcal{A}_1$. That is, an observer in the scenario producing $\mathcal{A}_1$ will can in theory measure in all events in $\mathcal{A}_2$ but an observer in the scenario producing $\mathcal{A}_2$ will not be able to even know of the existence of some events in $\mathcal{A}_1$. 
 
-To tie this back into measure theory, if we have a quantity of interest, we can measure it. It we do not know if a set even exists, we cannot measure it. Namely, in the scenario producing $\mathcal{A}_2$, the set $\\{1\\}$ does not exist in $\mathcal{A}_2$, so $\\{1\\}$ is not $\mathcal{A}_2$-measurable. But of course, it is $\mathcal{A}_1$-measurable. 
+Namely, in the scenario producing $\mathcal{A}_2$, the set $\\{1\\}$ does not exist in $\mathcal{A}_2$, so $\\{1\\}$ is not $\mathcal{A}_2$-measurable. But of course, it is $\mathcal{A}_1$-measurable. So, if we can observe a quantity, we can measure it. If we do not know a quantity exists, we cannot measure it. 
 
 # Generation of Sigma-Algebras
 
-By now, you should have noticed that I used the term "generated" in quotes. Generation has a specific meaning when it comes to set theory, and a $\sigma$-algebra generated by some set $X$ is defined as the following: 
+By now, you should have noticed that we used the term "generated" in quotes. Generation has a specific meaning when it comes to set theory, and a $\sigma$-algebra generated by some set $X$ is defined as the following: 
 
 > **Definition**: Sigma-Algebra generation
 > Let $\mathcal{F}\_n$ denote a $\sigma$-algebra that contains $X$, and we index each with $n$. The collection of $\sigma$-algebras is given by $\\{\mathcal{F}\_n\\}\_{n\in J}$. This means that $J$ is the indexing set of $\mathcal{F}\_n$. Then the $\sigma$-algebra generated by $X$ is defined as $\sigma(X) = \cap_{n\in J} \mathcal{F}\_n$.
@@ -88,52 +139,6 @@ By elementary set theory, we know that $\sigma(X) \subseteq \mathcal{F}_n$ for a
 
 **Exercise**: Show that $\sigma(X)$ is indeed still a $\sigma$-algebra. (Hint: Check the three conditions of a $\sigma$-algebra.)
 
-# Measures
-
-A **measure** is a function we denote with $\mu: \mathcal{F} \to [0,\infty]$. It is a function that assigns a positive number to a set. Within the realm of probability theory, we will only consider positive measures, and eventually we will only consider measures where $\mu: \mathcal{F} \to [0,1]$. Before we do any of that, it is important to learn about properties of a measure function.
-
-> **Definition**: Measure functions
-> 1. $\mu(A) \geq 0$ for any $A \in \mathcal{F}$
-> 2. $\mu(\emptyset) = 0$
-> 3. If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{n=1}^\infty \mu(A\_n)$
-
-Note the first point goes without saying when considering a function with a range of $[0,\infty]$. As mentioned above, a set is measaurablbe if and only if is is in a $\sigma$-algebra $\mathcal{F}$ over an outcome space $\Omega$. Thus we call $(\Omega, \mathcal{F})$ a _measurable space_. If a particular measure function $\mu$ is endowed upon this measurable space, then the triple $(\Omega, \mathcal{F}, \mu)$ denotes a _measure space_. 
-
-**Exercise**: Given the measure space $(\Omega, \mathcal{F}, \mu)$, show that for any $B\in\mathcal{F}$, $\mu(B\cap A) = \mu\_B(A)$ is a measure function hence $(\Omega, \mathcal{F}, \mu\_B)$ forms a measure space.
-
-One classical measure that we are all familiar with is the **Lebesgue measure** often denoted with $\lambda$. It is defined as the length of an interval, so that $\lambda((a,b]) = b-a$ and is the same for any combination of open or closed or half open/closed intervals. While in probability theory, the focus is not developing rigor in the measure function, it is helpful to know about how mathematics thinks of a measure function. 
-
-## Aside: Measure Functions
-
-A measure function as mentioned, assigns a number to a measurable set. Intuitively, a good measure function should exhibit the following properties in measurable space $(\Omega, \mathcal{F})$:
-
-> 1. $\mu : 2^{\mathbb{R}} \to [0,\infty]$, any subset of the real numbers should have a measure
-> 2. $\mu([a,b]) = b-a$, the measure of an interval is simply its length
-> 3. $\mu(A) = \mu(A + c)$ for some $c\in\mathbb{R}$, shifting an interval by a constant $c$ does not affect its measure
-> 4. $\mu(\cup\_{n\geq 1} A\_n) = \sum_{n\geq 1} A\_n$, for a disjoint collection of intervals, the measure of its union should be the sum of each measure
-
-One proposed measure is the **outer measure**, which attempts to look at the universe of all coverings of sets that can be composed as a union of such compact intervals (we are only considering $\mathbb{R}^1$). That is, by Heine-Borel, for any open covering of $[a,b]$, there is a finite subcover that still covers $[a,b]$. From a review of analysis, it should be clear that a union of compact sets is still compact, thus we can find from any open cover, a finite subcover for any union of collections of compact sets. Then the **outer measure** can be given by:
-
-$$ m^*(A) := \inf \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } A \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace $$ 
-
-where $I_i$ is a compact interval of the form $[a,b]$ and we define $\ell(I) = b-a$. Intuitively, by taking the outer measure, we are trying to find the "smallest" covering of $A$ such that we still fully cover $A$, and we sum the lengths of the intervals $I_i$ to get the outer measure. The outer measure suffices several of the 4 properties, but assuming any 3 properties will imply that the remaining property cannot hold. A detailed treatement on this is given in Chapter 2 of Sheldon Axler's [Measure, Integration and Real Analysis](https://measure.axler.net/). However, we do see some interesting properties about the measure function that hold for the outer measure. A key property is monotonicity.
-
-(Note that we can also define an inner measure by finding the size of the "largest" subset within $A$)
-
-> **Monotonicity of outer measure**
-> If $A \subseteq B$ then $m^*(A) \leq m^*(B)$
-
-_Proof_: If $A \subseteq B$ then all coverings of $B$ will also cover $A$. So:
-
-$$C_A := \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } A \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace \subseteq \left\lbrace \sum_{i=1}^\infty \ell(I_i) : \forall \{I\}_{i>1} \text{ s.t. } B \subseteq \bigcup_{n=1}^\infty I_i \right\rbrace =: C_B$$
-
-Then $\inf C\_A \leq \inf C\_B$ so $m^{\*}(A) \leq m^{\*}(B)$. [Q.E.D].
-
-### Lebesgue Measure
-
-To rememdy the issues with $m^{\*}(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure. That is, we wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. The natural question to ask is "By how much can we relax property 1?" To begin asking this question, note that there are sets in $2^\mathbb{R}$ that cause $m^{\*}(\cdot)$ to disobey the 4 properties of measure. These sets will be deemed **non-measurable** and trying to assign a measure on these sets is futile. 
-
-This motivates our understanding of $\sigma$-algebras as a collection of sets that are measurable. 
 
 ## Algebras, Monotone Classes, and Pi, and Lambda Systems
 
@@ -223,3 +228,5 @@ A critical implication of this theorem is that we are now able to generalize our
 #### Technical Remark of Caratheodory's Extension Results
 
 In some situations, we are unable to fully define a measure for every possible set in a $\sigma$-algebra as they may be very large. In many cases, it is futile to try and enumerate all elements in a $\sigma$-algebra. If we take the Borel $\sigma$-algebra of $[0,1]$ there are an uncountably many different sets in the $\sigma$-algebra. However, if we do know how to define a measure $\tilde{\lambda}$ on a $\pi$-system $\mathcal{A}$, then we can use this $\tilde{\lambda}$ to measure sets in $\sigma(\mathcal{A})$. Furthuremore, we know that a measure $\lambda$ defined on $\sigma(\mathcal{A})$ will agree with the $\tilde{\lambda}$ measured on sets in $\sigma(\mathcal{A})$. We can treat this as if we will never know what the measure $\lambda$ is doing, but we know it will agree with our well-defined $\tilde{\lambda}$. Thus we can use $\tilde{\lambda}$ and $\lambda$ interchangeably when measuring sets in $\sigma(\mathcal{A})$. 
+
+For now, we rest measure theory and in the next part, we will begin talking about probability as a measure function.
