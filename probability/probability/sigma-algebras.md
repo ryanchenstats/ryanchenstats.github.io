@@ -45,26 +45,11 @@ These three charactersitics of "interesting events" forms a logical structure ca
 
 $$\Omega := \{\emptyset, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{3,4,5,6\}, \{1,2,5,6\}, \{1,2,3,4,5,6\} \}$$
 
-1, 2, and 3 motivate the structure of a $\sigma$-algebra. A $\sigma$-algebra represents a collection or series of logical steps to determine sets of "interest." While this is true, the motivation is far from developed. Recall that the goal of probability is to assign a "size" of these sets of "interest" and the larger the size, the more "probable" the event can occur. In order to understand size and measurability, we should study measures and why a $\sigma$-algebra is critical in the development of a measure.  
+1, 2, and 3 motivate the structure of a $\sigma$-algebra. Recall that the goal of probability is to assign a "size" of these sets of "interest" and the larger the size, the more "probable" the event can occur. In order to understand size and measurability, we should study measures and why a $\sigma$-algebra is critical in the development of a measure.  
 
 # Measures
 
-A **measure** is a function we denote with $\mu: \mathcal{F} \to [0,\infty]$. It is a function that assigns a positive number to a set. Within the realm of probability theory, we will only consider positive measures, and eventually we will only consider measures where $\mu: \mathcal{F} \to [0,1]$. Before we do any of that, it is important to learn about properties of a measure function.
-
-> **Definition**: Measure functions
-> 1. $\mu(A) \geq 0$ for any $A \in \mathcal{F}$
-> 2. $\mu(\emptyset) = 0$
-> 3. If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{n=1}^\infty \mu(A\_n)$
-
-Note the first point goes without saying when considering a function with a range of $[0,\infty]$. As mentioned above, a set is measaurablbe if and only if is is in a $\sigma$-algebra $\mathcal{F}$ over an outcome space $\Omega$. Thus we call $(\Omega, \mathcal{F})$ a _measurable space_. If a particular measure function $\mu$ is endowed upon this measurable space, then the triple $(\Omega, \mathcal{F}, \mu)$ denotes a _measure space_. 
-
-**Exercise**: Given the measure space $(\Omega, \mathcal{F}, \mu)$, show that for any $B\in\mathcal{F}$, $\mu(B\cap A) = \mu\_B(A)$ is a measure function hence $(\Omega, \mathcal{F}, \mu\_B)$ forms a measure space.
-
-One classical measure that we are all familiar with is the **Lebesgue measure** often denoted with $\lambda$. It is defined as the length of an interval, so that $\lambda((a,b]) = b-a$ and is the same for any combination of open or closed or half open/closed intervals. While in probability theory, the focus is not developing rigor in the measure function, it is helpful to know about how mathematics thinks of a measure function. 
-
-## Measure Functions
-
-A **measure function** (a measur_able_ function is a **different concept**), assigns a number to a measurable set. Intuitively, a good measure function should exhibit the following properties in measurable space $(\Omega, \mathcal{F})$:
+A **measure function** (a _measurable_ function is a **different concept**), assigns a number to a measurable set. Intuitively, a good measure function should exhibit the following properties in measurable space $(\Omega, \mathcal{F})$:
 
 > 1. $\mu : 2^{\mathbb{R}} \to [0,\infty]$, any subset of the real numbers should have a measure
 > 2. $\mu([a,b]) = b-a$, the measure of an interval is simply its length
@@ -90,20 +75,32 @@ Then $\inf C\_A \leq \inf C\_B$ so $m^{\*}(A) \leq m^{\*}(B)$. $\tag*{∎}$
 
 ### Lebesgue Measure
 
-To rememdy the issues mentioned above with $m^{\*}(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure and we cannot give them up. That is, we wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. The natural question to ask is "By how much can we relax property 1?" To begin asking this question, note that there are sets in $2^\mathbb{R}$ that cause $m^{\*}(\cdot)$ to disobey the 4 properties of measure. These sets are called **non-measurable** and trying to assign a measure on these sets is futile. Instead, we can only define a measure on measurable sets. At the most fundamental level, we can define a measure on $[a,b]$ which is $b-a$. This is the **Lebesgue measure** defined for an interval. We can further develop the Lebesgue measure of a Borel set to be its outer measure, but we will not go in that direction.
+To rememdy the issues mentioned above with $m^{\*}(\cdot)$, we must relax one of the 4 properties above. Property 2, 3, and 4 are desirable properties of a measure and we cannot give them up. That is, we wish for the length of an interval $[a,b]$ to be $b-a$, to be translational invariant, and to be additive. Then the only property to relax is 1, in the sense that we cannot assign measure to all subsets of $\mathbb{R}$. The natural question to ask is "By how much can we relax property 1?" To begin asking this question, note that there are sets in $2^\mathbb{R}$ that cause $m^{\*}(\cdot)$ to disobey the 4 properties of measure. These sets are called **non-measurable** and trying to assign a measure on these sets is futile. Instead, we can only define a measure on measurable sets. At the most fundamental level, we can define a measure on $[a,b]$ which is $b-a$ (property 2). This is the **Lebesgue measure** defined for an interval, thereby defining a measure on the subset of all subsets of $\mathbb{R}$.
 
-However, understanding the pitfalls of measures motivates our understanding of $\sigma$-algebras as a collection of sets that are measurable. 
+So instead of defining a measure on all subsets of $\mathbb{R}$, a **measure** should be a function $\mu: \mathcal{F} \to [0,\infty]$ where $\mathcal{F}$ is some subset of $2^\mathbb{R}$. It is a function that assigns a positive number to some "nice" set that is a subset of $2^{\mathbb{R}}$. This measure function must satisfy the following properties.
+
+> **Definition**: Measure functions
+> 1. $\mu(A) \geq 0$ for any $A \in \mathcal{F}$
+> 2. $\mu(\emptyset) = 0$
+> 3. If $A\_1,...,A\_n,...$ are all disjoint, then $\mu(\cup\_{n=1}^\infty A\_n) = \sum\_{n=1}^\infty \mu(A\_n)$
+
+Note the first point goes without saying when considering a function with a range of $[0,\infty]$. As mentioned above, a set is measaurable if and only if it is a "nice" set, which are elements of $\mathcal{F}$ over an outcome space $\Omega$. Thus we call $(\Omega, \mathcal{F})$ a _measurable space_. If a particular measure function $\mu$ is endowed upon this measurable space, then the triple $(\Omega, \mathcal{F}, \mu)$ denotes a _measure space_. 
+
+These "nice" sets are called _measurable sets_, and these are the sets defined to exist in collections which are called $\sigma$-algebras.
+
+**Exercise**: Given the measure space $(\Omega, \mathcal{F}, \mu)$, show that for any $B\in\mathcal{F}$, $\mu(B\cap A) = \mu\_B(A)$ is a measure function hence $(\Omega, \mathcal{F}, \mu\_B)$ forms a measure space.
+
 
 # Sigma Algebras
 
-Taking points 1, 2, and 3 in [Motivation for Sigma-Algebras and Measurability](#motivation-for-sigma-algebras-and-measurability) defining sets of "interest," we can translate the characteristics of an interesting set into mathematics. So the $\sigma$-algebra (for our purposes, this is also a $\sigma$-field or $\sigma$-ring) defined on $\Omega$ is the collection of events $\mathcal{F}$ such that
+Points 1, 2, and 3 in [Motivation for Sigma-Algebras and Measurability](#motivation-for-sigma-algebras-and-measurability) defines the "nice" sets of "interest." We can translate the characteristics of an "interesting" set into mathematics. That is, a $\sigma$-algebra (for our purposes, this is also a $\sigma$-field or $\sigma$-ring) defined on $\Omega$ is the collection of events $\mathcal{F} \subseteq 2^\Omega$ such that
 
 > **Definition**: $\sigma$-algebra on $\Omega$:
 > 1. $\emptyset \in \mathcal{F}$
 > 2. If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$, (so by 1. we have $\Omega \in \mathcal{F}$)
 > 3. For any countable (need not be finite) sequence of sets $A_1,...,A_n,...\in \mathcal{F}$, then $\cup_{i=1}^\infty A_i \in \mathcal{F}$
 
-At this point, we should reflect back on the prelude to set theory. A $\sigma$-algebra really is a logical structure, defining what it means to be a set of "interest." Specifically, given any set of elements in $\mathcal{F}$ we know their complements are also in $\mathcal{F}$, and their unions are also in $\mathcal{F}$. We call any set in the $\sigma$-algebra to be measurable.
+At this point, we should reflect back on the prelude to set theory. A $\sigma$-algebra really is a logical structure, defining what it means to be a set of "interest" or a "nice" set. Specifically, given any set of elements in $\mathcal{F}$ we know their complements are also in $\mathcal{F}$, and their unions are also in $\mathcal{F}$. Again, we call any set in the $\sigma$-algebra to be measurable.
 
 **Exercise**: Show that countable intersections are closed under $\mathcal{F}$, i.e. if $A_1,...,A_n,...$ then $\cap_{i=1}^\infty A_i \in \mathcal{F}$ (Hint: use De Morgan's Laws.)
 
