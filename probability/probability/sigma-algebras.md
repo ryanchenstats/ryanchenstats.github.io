@@ -242,7 +242,7 @@ To show a function is $\mathcal{A}/\mathcal{B}$-measurable, and $\mathcal{B}$ is
 
 _Proof_: Consider the set $\mathcal{G} := \\{F \in \mathcal{F} : T^{-1}(F) \in \mathcal{A}\\}$. This $\mathcal{G}$ collects all measurable sets in the image of $T$ that has a pre-image in $\mathcal{A}$, the measurable sets in the domain. If we can show $\mathcal{G}$ is also a $\sigma$-algebra, it will be one that contains $\mathcal{F}$. So if the collection of measurable images of $T$, given by $\mathcal{F}$, have preimages in $\mathcal{A}$, then the collection of measurable images of $T$ is also a $\sigma$-algebra that is at least as large as $\sigma(\mathcal{F})$ - making $T$ measurable.
 
-First, $T^{-1}(\emptyset) = \emptyset \in \mathcal{A}$ so $\emptyset \in \mathcal{G}$. Second, if $A\in\mathcal{G}$, then $T^{-1}(A) \in \mathcal{A}$. As $\mathcal{A}$ is a $\sigma$-algebra, $(T^{-1}(A))^C \in \matcal{A}$ and by property of pre-images $T^{-1}(A^C) \in \mathcal{A}$ implying $A^C \in \mathcal{G}$. If $A\_1,...,A\_n,...$ are in $\mathcal{G}$ then $T^{-1}(A\_n) \in \mathcal{A}$ for all $n$. As $\mathcal{A}$ is a $\sigma$-algebra, $\cup T^{-1}(A\_n) \in \mathcal{A}$ and by property of pre-images, it is equivalent to state $T^{-1}(\cup A\_n) \in \mathcal{A}$. Thus $\cup A\_n \in \mathcal{G}$. Therefore $\mathcal{G}$ is a $\sigma$-algebra containing $\mathcal{F}$ so $\mathcal{G} \supseteq \sigma(\mathcal{F}) = \mathcal{B}$. 
+First, $T^{-1}(\emptyset) = \emptyset \in \mathcal{A}$ so $\emptyset \in \mathcal{G}$. Second, if $A\in\mathcal{G}$, then $T^{-1}(A) \in \mathcal{A}$. As $\mathcal{A}$ is a $\sigma$-algebra, $(T^{-1}(A))^C \in \mathcal{A}$ and by property of pre-images $T^{-1}(A^C) \in \mathcal{A}$ implying $A^C \in \mathcal{G}$. If $A\_1,...,A\_n,...$ are in $\mathcal{G}$ then $T^{-1}(A\_n) \in \mathcal{A}$ for all $n$. As $\mathcal{A}$ is a $\sigma$-algebra, $\cup T^{-1}(A\_n) \in \mathcal{A}$ and by property of pre-images, it is equivalent to state $T^{-1}(\cup A\_n) \in \mathcal{A}$. Thus $\cup A\_n \in \mathcal{G}$. Therefore $\mathcal{G}$ is a $\sigma$-algebra containing $\mathcal{F}$ so $\mathcal{G} \supseteq \sigma(\mathcal{F}) = \mathcal{B}$. 
 
 **So the set of all images in the generating set that have a measurable pre-image is a $\sigma$-algebra**. This means the set of all images with a measurable pre-image is also measurable in the image too. Thus $T$ is measurable provided that its generating set has a pre-image that is measurable with respect to the domain $\sigma$-algebra. $\tag*{∎}$
 
@@ -250,7 +250,7 @@ As an example, suppose we have an outcome space $\Omega$ of tossing two coins an
 
 **Exercise**: Show that a continuous function $f: \mathbb{R} \to \mathbb{R}$ is measurable $\mathcal{B}/\mathcal{B}$-measurable. 
 
-**Exercise**: Given two measurable functions $f: (X, \sigma(X)) \to (Y, \sigma(Y))$ and $g: (Y, \sigma(Y)) \to (Z, \sigma(Z))$, consider the composition $f\circ g = g(f) : (X,\simga(X))\to (Z,\sigma(Z))$ is $\sigma(X)/\sigma(Z)$ measurable.
+**Exercise**: Given two measurable functions $f: (X, \sigma(X)) \to (Y, \sigma(Y))$ and $g: (Y, \sigma(Y)) \to (Z, \sigma(Z))$, consider the composition $f\circ g = g(f) : (X,\sigma(X))\to (Z,\sigma(Z))$ is $\sigma(X)/\sigma(Z)$ measurable.
 
 **Exercise**: Let $X\_n :(\Omega, \mathcal{F}) \to (\mathbb{R}, \mathcal{B})$ be a sequence of measurable functions and $X_n$ converges to $X$. Show that $X$ is $\mathcal{F}/\mathcal{B}$-measurable. 
 
