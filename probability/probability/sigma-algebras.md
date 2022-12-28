@@ -230,4 +230,14 @@ In some situations, we are unable to fully define a measure for every possible s
 
 **Exercise**: Show that any Borel set $B$ in $\mathbb{R}$ can be expressed as a $S \subset B \subset T$ where $\lambda(T\setminus B) < \varepsilon$ and $\lambda(B\setminus S) < \delta$ for any $\varepsilon, \delta > 0$ and $S, T$ are disjoint countable unions of compact sets in $\mathbb{R}$.
 
-For now, we rest measure theory and in the next part, we will begin talking about probability as a measure function.
+# Measurable Functions
+
+Once the idea of measurable spaces is established, we are ready to talk about measurable functions. A general function is simply a map from one space to another space. We call $f$ a measurable function if the pre-image of a measurable set $B \in \mathcal{B}$ is in $\mathcal{F}$, the $\sigma$-algebra defined over the domain of $f$. In math, this means that for a function $f: X \to Y$ to be measurable, where we endow $\sigma$-algebras onto $X$ and $Y$, i.e. $(X, \mathcal{A})$ and $(Y, \mathcal{B})$ are general measure spaces,
+
+$$\forall B \in \simga(Y), \{A : f(A) = B\} \in \mathcal{A} $$
+
+That is, the preimage of any measurable set with respect to $\mathcal{B}$ is going to be measurable with respect to $\mathcal{A}$. A measurable function $X$ mapping a measurable outcome space $(\Omega, \mathbb{F})$ to $(\mathbb{R}, \mathcal{B})$ is called a **random variable**. The sole requirement is that $X$ must be measurable. In some texts, they refer to $X$ as being $\mathbb{F}/\mathbb{B}$- measurable. 
+
+**Exercise**: Show that a continuous function $f: \mathbb{R} \to \mathbb{R}$ is measurable $\mathcal{B}/\mathcal{B}$-measurable. 
+
+At this point, we now rest the measure theory and in the next part, we will begin talking about probability as a measure function and random variables as a measurable function.
