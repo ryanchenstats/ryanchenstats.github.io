@@ -246,7 +246,7 @@ First, $T^{-1}(\varnothing) = \varnothing \in \mathcal{A}$ so $\varnothing \in \
 
 **So the set of all images in the generating set that have a measurable pre-image is a $\sigma$-algebra**. This means the set of all images with a measurable pre-image is also measurable in the image too. Thus $T$ is measurable provided that its generating set has a pre-image that is measurable with respect to the domain $\sigma$-algebra. $\tag*{∎}$
 
-As an example, suppose we have an outcome space $\Omega$ of tossing two coins and a $\sigma$-algebra generated $\sigma(\Omega)$. Denote $Y: (\Omega: \sigma(\Omega)) \to (\\{0,1,2\\}, \sigma(\\{0,1,2\\}))$. If we take any element in the generating $\\{0,1,2\\}$, note it maps to some event in $\sigma(\Omega)$. This makes $Y$ a measurable random variable, since checking measurability of the pre-image of the generating set is enough.
+As an example, suppose we have an outcome space $\Omega$ of tossing two coins and a $\sigma$-algebra generated $\sigma(\Omega)$. Denote $Y: (\Omega, \sigma(\Omega)) \to (\\{0,1,2\\}, \sigma(\\{0,1,2\\}))$. If we take any element in the generating $\\{0,1,2\\}$, note it maps to some event in $\sigma(\Omega)$. This makes $Y$ a measurable random variable, since checking measurability of the pre-image of the generating set is enough.
 
 **Exercise**: Show that a continuous function $f: \mathbb{R} \to \mathbb{R}$ is measurable $\mathcal{B}/\mathcal{B}$-measurable. 
 
