@@ -231,4 +231,6 @@ A critical implication of this theorem is that we are now able to generalize our
 
 In some situations, we are unable to fully define a measure for every possible set in a $\sigma$-algebra as they may be very large. In many cases, it is futile to try and enumerate all elements in a $\sigma$-algebra. If we take the Borel $\sigma$-algebra of $[0,1]$ there are an uncountably many different sets in the $\sigma$-algebra. However, if we do know how to define a measure $\tilde{\lambda}$ on a $\pi$-system $\mathcal{A}$, a measure exists on sets in $\sigma(\mathcal{A})$ and will agree with $\tilde{\lambda}$ as also measured on sets in $\sigma(\mathcal{A})$. This implies the existence of a measure on a $\sigma$-algebra and its uniqueness.
 
+**Exercise**: Show that any Borel set $B$ in $\mathbb{R}$ can be expressed as a $S \subset B \subset T$ where $\lambda(T\setminus B) < \varepsilon$ and $\lambda(B\setminus S) < \delta$ for any $\varepsilon, \delta > 0$ and $S, T$ are disjoint countable unions of compact sets in $\mathbb{R}$.
+
 For now, we rest measure theory and in the next part, we will begin talking about probability as a measure function.
