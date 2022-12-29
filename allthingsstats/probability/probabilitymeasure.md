@@ -37,7 +37,7 @@ Sub-additivity refers to the idea that if $A\_1,...,A\_n,...$ is a countable seq
 
 $$\pr\left(\bigcup_{i\geq 1}A_i\right) \leq \sum_{i\geq1} \pr(A_i)$$
 
-_Proof_: Let $B\_1 = A\_1$, and $B_n = A\_n\setminus \cup\_{k < n} A\_k$. Then the sequence of sets $B\_n$ are disjoint. This gives:
+_Proof_: Let $B\_1 = A\_1$, and $B_n = A\_n\setminus \cup\_{k < n} A\_k$. Then the sequence of sets $B\_n$ are mutually disjoint. This gives:
 
 $$\bigcup_{n\geq 1} A_n = \bigcup_{n\geq 1} B_n$$
 
