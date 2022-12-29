@@ -31,6 +31,12 @@ There are three main axioms in probability determined by A. N. Kolmogorov and he
 
 We can derive some critical results on continuity and sub-additivity of the probability measure function $\pr: \cv{F}\to [0,1]$ from these axioms.
 
+## Continuity
+
+Continuity of probability refers to the idea that $\lim \pr(A\_n) = \pr(\lim A\_n)$ provided a limit exists. It turns out we can do this if $A\_n$ is a nested decreasing or increasing sequence. If a) $A_1\subseteq...\subseteq A_n \subseteq ...$, or if b) $$A_1\supseteq...\supseteq A_n \supseteq ...$$ then:
+
+$$\lim_{n\to\infty} \pr(A_n) = \pr\left(\lim_{n\to\imfty} A_n\right)$$ 
+
 ## Sub-Additivity
 
 Sub-additivity refers to the idea that if $A\_1,...,A\_n,...$ is a countable sequence of events that need not be disjoint, then
