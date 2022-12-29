@@ -37,4 +37,13 @@ Sub-additivity refers to the idea that if $A\_1,...,A\_n,...$ is a countable seq
 
 $$\pr\left(\bigcup_{i\geq 1}A_i\right) \leq \sum_{i\geq1} \pr(A_i)$$
 
+_Proof_: Let $B\_1 = A\_1$, and $B_n = A\_n\setminus \cup\_{k < n} A\_\k$. Then the sequence of sets $B\_n$ are disjoint. This gives:
+
+$$\bigcup_{n\geq 1} A_n = \bigcup_{n\geq 1} B_n$$
+
+and we know $\pr(\cup\_{n\geq 1} A_n) = \pr(\cup\_{n\geq 1} B_n) = \sum \pr(B\_n)$ by Kolmogorov's axioms. Now:
+
+$$\pr(B_n) = \pr(A_n\setminus \cup_{k < n} A_k) \leq \pr(A_n)$$
+
+So putting it all together $\pr(\cup\_{n\geq 1} A_n) = \pr(\cup\_{n\geq 1} B_n) = \sum \pr(B\_n) \leq \sum \pr(A\_n)$. Thus proves the sub-additivity of the probability measure. $\tag*{∎}$
 
