@@ -23,11 +23,18 @@ $\newcommand{\reals}{\mathbb{R}}$ $\newcommand{\pr}{\mathbb{P}}$ $\newcommand{\c
 
 # Laws of Probability
 
-There are three main axioms in probability determined by A. N. Kolmogorov and hence called Kolmogorov's axioms. Given a **probability space** $(\Omega, \cv{F}, \pr)$ They are:
+There are three main axioms in probability determined by A. N. Kolmogorov and hence called Kolmogorov's axioms. Given a **probability measure space** $(\Omega, \cv{F}, \pr)$:
 
 1. $\pr(\Omega) = 1$
 2. $\pr(A) \geq 0$ for all $A \in \cv{F}$
 3. For disjoint sequence $A\_1,...,A\_n,...\in\cv{F}$, $\pr(\cup A\_i) = \sum \pr(A_i)$ 
 
+We can derive some critical results on continuity and sub-additivity of the probability measure function $\pr: \cv{F}\to [0,1]$ from these axioms.
+
+## Sub-Additivity
+
+Sub-additivity refers to the idea that if $A\_1,...,A\_n,...$ is a countable sequence of events that need not be disjoint, then
+
+$$\pr\left(\bigcup_{i\geq 1}A_i\right) \leq \sum_{i\geq1} \pr(A_i)$$
 
 
