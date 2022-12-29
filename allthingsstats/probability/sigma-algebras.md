@@ -19,6 +19,8 @@ usemathjax: true
 
 ---
 
+$\newcommand{\reals}{\mathbb{R}}$ $\newcommand{\pr}{\mathbb{P}}$ $\newcommand{\cv}[1]{\mathcal{#1}}$
+
 # Prelude on Sets
 
 A set is nothing but a collection of objects. In probability theory, these objects are often times events. Furthermore, sets in probability theory, much like other branches of math, are usually constructed in a way such that the objects in the sets are endowed with some sort of logic. Taking an example from analysis, $X = \\{x \in \mathbb{R} : x^2 < 2\\}$, the set $X$ is precisely all real numbers who square is less than 2. The logical struture endowed on each object in the set is precisely described as follows: each object inside $X$ must be between $-\sqrt{2}$ and $\sqrt{2}$ and cannot be exactly $\pm \sqrt{2}$. In this sense, a set is constructed to define a logical structure endowed upon all points within the set.
