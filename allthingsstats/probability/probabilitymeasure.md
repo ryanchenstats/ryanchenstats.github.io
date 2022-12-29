@@ -35,7 +35,7 @@ We can derive some critical results on continuity and sub-additivity of the prob
 
 Continuity of probability refers to the idea that $\lim \pr(A\_n) = \pr(\lim A\_n)$ provided a limit exists. It turns out we can do this if $A\_n$ is a nested decreasing or increasing sequence. If a) $A_1\subseteq...\subseteq A_n \subseteq ...$, or if b) $$A_1\supseteq...\supseteq A_n \supseteq ...$$ then:
 
-$$\lim_{n\to\infty} \pr(A_n) = \pr\left(\lim_{n\to\imfty} A_n\right)$$ 
+$$\lim_{n\to\infty} \pr(A_n) = \pr\left(\lim_{n\to\infty} A_n\right)$$ 
 
 ## Sub-Additivity
 
