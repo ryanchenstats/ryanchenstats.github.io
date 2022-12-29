@@ -31,19 +31,15 @@ In probability, one fundamental object of interest is the **outcome space** deno
 
 $$\Omega := \{HH,HT,TH,TT\}$$
 
-This is a countable set of events, and in their entirety, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space. Things are easy to calculate here. For example $\mathbb{P}(\text{at least one head}) = \frac{\\|\\{HH,HT,TH\\}\\|}{\\|\Omega\\|} = 3/4$.
+This is a countable set of events, and in their entirety, forms the outcome space $\Omega$. Here $\Omega$ has a cardinality of 4, and it is a finite outcome space. Things are easy to calculate here. For example $\mathbb{P}(\text{at least one head}) = \frac{\\|\\{HH,HT,TH\\}\\|}{\\|\Omega\\|} = 3/4$. That is, the "size" of the event "at least one head" is 75 percent of the space of all possible events. Essentially we normalize the measurement of the event of interest to the measurement of the size of the whole outcome space.
 
-In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events of interest with probabilities along with the fact that $2^\mathbb{N}$ is clearly uncountable (any $f: 2^\mathbb{N} \to \mathbb{N}$ is a surjection). Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets a probability assigned to it and we wish to evaluate the probability. In any outcome space we would be interested in events as enumerated below:
+In the example above, the outcome space is finite, and all possible subsets of the outcome space is enumerable and we can assign probabilities to each event in $2^\Omega$. However in an infinite outcome space, it is no longer possible to enumerate all the events of interest with probabilities and since $2^\mathbb{N}$ is clearly uncountable (any $f: 2^\mathbb{N} \to \mathbb{N}$ is a surjection). Instead, we focus our attention to subsets of "interest." In this context, a set is interesting if these sets can have a probability assigned to it and we wish to evaluate the probability. In any outcome space we would be interested in events as enumerated below:
 
 1. The empty set, which has probability of 0
-2. For a given event, the complement of the event should also be of interest
-3. For any given set of events, their unions should be also of interest
+2. If we know a given event exists, its complement of the event should also be of interest
+3. If we know a given set of events exist, their unions should be also of interest
 
-These three qualities completely define all sets that are of interest to us. Of course, you might wonder, what about set intersections, using the coin flipping example, we might be interested in the quantity $\\{HH,HT,TH\\} \cap \\{HT, HT, TT\\}$. Namely, this is the intersection of the event where we get at least one head, and the event where we get at least one tail. The intersection of these two events is $\\{HT, TH\\}$, which is clearly a set of interest, and it has probability $1/2$. Surprisingly, this set intersection example is already covered by the 3 qualities of "interesting" events. The exercise immediately below will help you understand why we have closure under intersections despite never mentioning intersections.
-
-These three charactersitics of "interesting events" forms a logical structure called the $\sigma$-algebra. A $\sigma$-algebra of events in $\Omega$ is simply the power set $2^\Omega$ which has 16 elements in it. Now if we consider the outcome space of rolling a six-sided die, the $\sigma$-algebra of events is again the power set of $2^{\\{1,...,6\\}}$ which has $2^6 = 64$ elements. Now lets make the game more complicated, and suppose the computer rolls the dice for us, and it will not tell us the result of the roll. Instead, it will check if the number is 1 or 2 in which it will tell us 'A'. If the roll was a 3 or 4, the computer will tell us 'B'. And finally if the roll was a 5 or 6, the computer will tell us 'C'. So we never observe any numbers, and we only observe the resulting 'A', 'B', or 'C'. Our $\sigma$-algebra will look like: 
-
-$$\Omega := \{\varnothing, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{3,4,5,6\}, \{1,2,5,6\}, \{1,2,3,4,5,6\} \}$$
+These three qualities completely define all sets that are of interest to us. Of course, you might wonder, what about set intersections, using the coin flipping example, we might be interested in the quantity $\\{HH,HT,TH\\} \cap \\{HT, HT, TT\\}$. Namely, this is the intersection of the event where we get at least one head, and the event where we get at least one tail. The intersection of these two events is $\\{HT, TH\\}$, which is clearly a set of interest, and it has probability $1/2$. Surprisingly, this set intersection example is already covered by the 3 qualities of "interesting" events. 
 
 1, 2, and 3 motivate the structure of a $\sigma$-algebra. Recall that the goal of probability is to assign a "size" of these sets of "interest" and the larger the size, the more "probable" the event can occur. In order to understand size and measurability, we should study measures and why a $\sigma$-algebra is critical in the development of a measure.  
 
@@ -106,21 +102,25 @@ At this point, we should reflect back on the prelude to set theory. A $\sigma$-a
 
 **Exercise**: Write the $\sigma$-algebra of the outcome space of flipping two coins. (Hint: There should be 16 elements in the resulting sigma algebra.)
 
-Note in the outcome space of a dice roll, depending on how we as observers will record outcomes, the $\sigma$-algebras will be of different size, i.e. recording $\\{1,2\\}$ as the same event (in the previous example, this would be the event of observing 'A') or recording $\\{1\\}, \\{2\\}$ as two seperate events. This is clear, since above, we noted that the $\sigma$-algebra "generated" on $\\{1,2,3,4,5,6\\}$ would have a cardinality of 64, while the $\sigma$-algebra "generated" on $\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\}$ has a cardinality of 8. $\sigma$-algebras can be viewed in relation to each other, and it would convey the idea of "level of information." Denote $\mathcal{A}_1 = \sigma(\\{1,2,3,4,5,6\\})$ to be the $\sigma$-algebra "generated" by $\\{1,2,3,4,5,6\\}$. Denote also $\mathcal{A}_2 = \sigma(\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\})$ to be the $\sigma$-algebra "generated" by $\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\}$.
+As an example consider the outcome space of rolling a six-sided die. The $\sigma$-algebra of events is the power set of $2^{\\{1,...,6\\}}$ which has $2^6 = 64$ elements. Now lets make the game more complicated, and suppose the computer rolls the dice for us, and it will not tell us the result of the roll. Instead, it will check if the number is 1 or 2 in which it will tell us 'A'. If the roll was a 3 or 4, the computer will tell us 'B'. And finally if the roll was a 5 or 6, the computer will tell us 'C'. So we never observe any numbers, and we only observe the resulting 'A', 'B', or 'C'. Our $\sigma$-algebra will look like: 
+
+$$\Omega := \{\varnothing, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{3,4,5,6\}, \{1,2,5,6\}, \{1,2,3,4,5,6\} \}$$
+
+You might have noticed, these $\sigma$-algebras have different cardinality, and that the $\sigma$-algebra depends on how we observe outcomes. For example if we record $\\{1,2\\}$ as the same event (in the previous example, this would be the event of observing 'A') or recording $\\{1\\}, \\{2\\}$ as two seperate events, the $\sigma$-algebras would be different. Specifically, in the system where we do not differentiate between pairs of numbers, the $\sigma$-algebra has a cardinality of 8. However, if each outcome can be observed, the $\sigma$-algebra would have a cardinality of 64. $\sigma$-algebras convey the idea of "level of information." Smaller $\sigma$-algebras convey less information.
+
+Denote $\mathcal{A}_1 = \sigma(\\{1,2,3,4,5,6\\})$ to be the $\sigma$-algebra "generated" by $\\{1,2,3,4,5,6\\}$. Denote also $\mathcal{A}_2 = \sigma(\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\})$ to be the $\sigma$-algebra "generated" by $\\{\\{1,2\\},\\{3,4\\},\\{5,6\\}\\}$.
 
 **Exercise**: Show that $\mathcal{A}_1 \supseteq \mathcal{A}_2$ as defined above. (Hint: Both are $\sigma$-algebras, and it suffices to show all elements in $\mathcal{A}_2$ are in $\mathcal{A}_1$. To be thorough, find an element that is in $\mathcal{A}_2$ but not in $\mathcal{A}_1$.)
 
-If you were successful in the exercise above, then you have shown that one $\sigma$-algebra is "smaller" than the other. Essentially, the scenario that produced the collection of sets of interest, $\mathcal{A}_2$, yields less information about your data generating process to you, when compared to the information from the scenario producing $\mathcal{A}_1$. That is, an observer in the scenario producing $\mathcal{A}_1$ will can in theory measure in all events in $\mathcal{A}_2$ but an observer in the scenario producing $\mathcal{A}_2$ will not be able to even know of the existence of some events in $\mathcal{A}_1$. 
+If you were successful in the exercise above, then you have shown that one $\sigma$-algebra is "smaller" than the other. Essentially, the scenario that produced the collection of sets of interest, $\mathcal{A}_2$, yields less information about your data generating process to you, when compared to the information from the scenario producing $\mathcal{A}_1$. That is, an observer in the scenario producing $\mathcal{A}_1$ will can in theory measure in all events in $\mathcal{A}_2$ but an observer in the scenario producing $\mathcal{A}_2$ will not have the granularity to observer some events in $\mathcal{A}_1$. If we cannot be granular enough to observe an event, we cannot measure the event. Therefore, a $\sigma$-algebra tells us everything we need to know about a game, system, or scenario, at least with respect to measurablility.
 
-Namely, in the scenario producing $\mathcal{A}_2$, the set $\\{1\\}$ does not exist in $\mathcal{A}_2$, so $\\{1\\}$ is not $\mathcal{A}_2$-measurable. But of course, it is $\mathcal{A}_1$-measurable. So, if we can observe a quantity, we can measure it. If we do not know a quantity exists, we cannot measure it. 
+## Generators and the Generation of Sigma-Algebras
 
-## Generation of Sigma-Algebras
-
-By now, you should have noticed that we used the term "generated" in quotes. Generation has a specific meaning when it comes to set theory, and a $\sigma$-algebra generated by some set $X$ is defined as the following: 
+Clearly, we have seen that granularity is important when creating a $\sigma$-algebras. Thus far, we have described a situation first, and then described the resulting $\sigma$-algebra as sets to be measured. But as previously mentioned, we only need to consider the $\sigma$-algebra when dealing with measurability. Suppose we know a situtation or scenario with an outcome space $\mathcal{X}$ which is part of a larger outcome space $\Omega$. It would be useful to consider a $\sigma$-algebra that only includes events that can be deduced from sets in $\mathcal{X}$, while ignoring events that can be deduced from some alternative subset of $\Omega$. To do so, we **generate** a $\sigma$-algebra using $\mathcal{X}$. Specifically, this means:
 
 > **Definition**: Sigma-Algebra generation
-> Let $\mathcal{F}\_n$ denote a $\sigma$-algebra that contains $X$, and we index each with $n$. The collection of $\sigma$-algebras is given by $\\{\mathcal{F}\_n\\}\_{n\in J}$. This means that $J$ is the indexing set of $\mathcal{F}\_n$. Then the $\sigma$-algebra generated by $X$ is defined as $\sigma(X) = \cap_{n\in J} \mathcal{F}\_n$.
-
+> Let $\mathcal{F}\_n$ denote a $\sigma$-algebra that contains $\mathcal{X}$, and we index each $\sigma$-algebra with $n$. So for all $n$, the $\sigma$-algebra $\mathcal{F}\_n$ contains $\mathcal{X}$. Then the $\sigma$-algebra generated by $X$ is defined as:
+> $$\sigma(X) = \cap_{n\in J} \mathcal{F}\_n$$
 
 By elementary set theory, we know that $\sigma(X) \subseteq \mathcal{F}_n$ for any $\mathcal{F}_n$ that is a $\sigma$-algebra containing $X$. Recal from above, we defined a Borel $\sigma$-algebra $\mathcal{B}$ to be the $\sigma$-algebra generated by the open intervals in $\mathbb{R}$ also known as $B := \\{(a,b) : -\infty \leq a < b \leq \infty\\}$. Some examples of sets that are in $\mathcal{B}$:
 
@@ -132,7 +132,7 @@ By elementary set theory, we know that $\sigma(X) \subseteq \mathcal{F}_n$ for a
 
 **Exercise**: Show that $\mathcal{B}$ as generated by $B$, can also be generated by the following set: $B_C := \\{(a,b]: -\infty \leq a < b \leq \infty\\}$.
 
-**Exercise**: Show that if $X \subseteq Y$ then $\sigma(X) \subseteq \sigma(Y)$.
+**Exercise**: Show that if $X \subseteq Y$ then $\sigma(X) \subseteq \sigma(Y)$. (Hint: Try to show $X$ is in $\sigma(Y)$ first.)
 
 **Exercise**: Show that $\sigma(X)$ is indeed still a $\sigma$-algebra. (Hint: Check the three conditions of a $\sigma$-algebra.)
 
