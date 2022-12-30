@@ -34,3 +34,11 @@ Suppose we have a random variable $X(\omega) : (\Omega, \cv{F}, \pr) \to (\reals
 
 $$\E(X) = \int_\Omega X(\omega) \pr(d\omega) = \int_\reals x \lambda(dx)$$
 
+## Defining Integration
+
+At this point, integration ought to be defined. In the Riemann sense, integration is not entirely well defined. We see pitfalls of Riemann integration when integrating some pathological functions. This is particularly troublesome because it means Riemann integration is not a general enough technique. For example, let $f(\omega) = \ind_{\omega \in \mathbb{Q}}$. where $\omega \in (0,1)$. It is easy to show the lower and upper Riemann sums do not agree, thus the Riemann integral is not defined. 
+
+**Exercise**: Show that Riemann integration is not defined for the function above.
+
+
+
