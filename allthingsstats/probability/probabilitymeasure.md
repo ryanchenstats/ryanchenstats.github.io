@@ -65,3 +65,41 @@ So putting it all together $\pr(\cup\_{n\geq 1} A_n) = \pr(\cup\_{n\geq 1} B_n) 
 
 **Exercise**: Assume we did not assume countable additivity, but we assumed finite additivity and sub-additivity. Prove that countable additivity still holds.
 
+**Exercise**: Consider a sequence of events $A\_1,...,A\_n,... \in \cv{F}$ in probability space $(\Omega, \cv{F}, \pr)$. If for any pair of events $\pr(A\_k \cap A\_j) = 0$ then show $\pr(\cup A\_n) = \sum\_{n=1}^\infty \pr(A\_n)$. Be careful, $\pr(A\_k \cap A\_j) = 0$ does not necessarily imply $A\_k \cap A\_j = \nul$. (Hint: consider the finite case of $n$ events, then send $n$ to $\infty$.)
+
+# Limit Inferior and Limit Superior of Events
+
+The basic laws of probability have been built. There is nothing particularly interesting regarding basic probability laws, but we have now defined it as a measure and showed some basic properties. In the end, we hope to learn something about limiting behavior of these probability measures. Limits not not always defined, but from analysis, we know that $\limsup$ and $\liminf$ are always defined and when they are equivalent, then the limit exists and is defined.
+
+From analysis, we know that $\limsup a\_n$ is essentially the largest completion value attainable occuring infinitely many times with respect to $n$, and $\limsup a\_n$ is the lowest completion value attainable. So if we have $a\_n := \sin \pi n$, then $\liminf a\_n = -1$ and $\limsup a\_n = 1$. The $\inf$ and $\sup$ portions are only meaningful since a partial ordering is defined on the real numbers. Likewise in sets, the partial ordering is $\subseteq$. We are ready to define $\liminf$ and $\limsup$ for sets now. Given a sequence of sets $A\_n$:
+
+$$\liminf_{n\to\infty} A_n = \bigcup_{N\geq 1} \bigcap_{n > N} A_n$$
+
+$$\limsup_{n\to\infty} A_n = \bigcap_{N\geq 1} \bigcup_{n > N} A_n$$ 
+
+It is important to digest what exactly this means, especially if this is the first time seeing this type of set notation. 
+
+## Limit Inferior
+
+An event $\omega$ is in $\liminf A\_n$ if and only if it is in $\cup\_{N\geq 1} \cap\_{n > N} A\_n$. This means, there exists some $N$, such that we can find $\omega$ in _all_ $A\_n$ for any $n$ larger than $N$. This means $\omega$ is in $A\_n$ eventually, and that there are only finitely many $A_n$'s that do not contain $\omega$. To contexualize, I can pick an $N$ such that if this chosen $N$ is large enough, I can guarantee that $\omega$ is in $A\_n$ for all indices $n$ greater than the picked $N$.
+
+## Limit Superior
+
+An event $\omega$ is in $\limsup A\_n$ if and only if it is in $\cap\_{N\geq 1} \cup\_{n > N} A\_n$. This means, for all $N$, we can find $\omega$ in some $A\_n$ for any $n$ larger than $N$. To contexualize, if you give me any number $N$, I can still find at least one $A\_n$ that contains $\omega$ where the index $n$ is larger than the provided $N$. This concept is known as _infinitely often_ and is typically abbreviated as i.o. 
+
+**Exercise**: Consider a sequence of numbers $a\_n$ where $a\_n := -1$  when $n$ is even and $a\_n := 1$ when $n$ is odd. Is $a_n$ odd eventually, or is it odd infinitely often? Is $a_n$ even eventually or odd infinitely often?
+
+**Exercise**: Let $A\_n := [0, 1/n]$ be a set of numbers indexed by $n$. Describe what is in the set $\cup\_{N\geq 1} \cap\_{n> N} A\_n$ and what is in $\cap\_{N\geq 1} \cup\_{n> N} A\_n$?
+
+**Exercise**: Let $A\_n := [0,1/3)$, for $n$ mod $3 = 0$, $A\_n := [1/3, 2/3)$ for $n$ mod $3 = 1$ and $A\_n := [2/3, 1)$ for $n$ mod $3 = 2$. What is in $\liminf A\_n$ and what is in $\limsup A\_n$?
+
+**Exercise**: Prove $\liminf A\_n \subseteq \limsup A\_n$. 
+
+## Baby "Fatou"
+
+For those exposed to some measure theory, [Fatou's lemma](https://en.wikipedia.org/wiki/Fatou%27s_lemma) may look familiar. Here, we present a relation similar to Fatou's lemma which we coin as Baby "Fatou."
+
+$$\pr\left(\liminf_{n\to\infty} A_n\right) \leq \liminf_{n\to\infty} \pr(A_n) \leq \limsup_{n\to\infty} \pr(A_n) \leq \pr\left(\limsup_{n\to\infty} A_n\right)$$ 
+
+
+
