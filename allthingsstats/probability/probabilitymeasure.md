@@ -19,7 +19,7 @@ usemathjax: true
 
 ---
 
-$\newcommand{\reals}{\mathbb{R}}$ $\newcommand{\nats}{\mathbb{N}}$  $\newcommand{\pr}{\mathbb{P}}$ $\newcommand{\cv}[1]{\mathcal{#1}}$ $\newcommand{\nul}{\varnothing}$
+$\newcommand{\reals}{\mathbb{R}}$ $\newcommand{\nats}{\mathbb{N}}$ $\newcommand{\ind}{\mathbb{1}}$  $\newcommand{\pr}{\mathbb{P}}$ $\newcommand{\cv}[1]{\mathcal{#1}}$ $\newcommand{\nul}{\varnothing}$ $\newcommand{\eps}{\varepsilon}$ 
 
 # Laws of Probability
 
@@ -202,5 +202,30 @@ To realize how remarkable this result is, it is critical to understand what we a
 
 The probability space of infinite coin flips is any permutation of a repeating sequence of $\\{H,T\\}$. That is, each element of $\Omega$ is an infinitely long chain of $H$ and $T$'s. The number of chains is $2^\nats$ which is an uncountable set. Yet the result of the Borel-Cantelli lemma tells us that almost all the chains will contain the chain of heads, and the chain of heads will occur infinitely often. Only a small number of sequences will contain finitely many chains of heads. In fact, this small number is so small, that it has measure of exactly 0 in relation to the size of $\Omega$. 
 
+### Proving Limit Supremum of a Random Variable
+
+We will prove that $\limsup X\_n/\log n = 1$ almost surely, where $X\_n \sim Exp(1)$ and are all iid therefore $\pr(X\_n > k) = e^{-k}$. To prove this, we should hope that $\limsup X\_n/\log n > 1-\eps$ happens with probability 1, and $\liminf X\_n /\log n < 1+\eps$ happens with probability 1. That is, the sequence $X\_n/\log n$ must be arbitrarily close to 1, infinitely often, and the sequence $X\_n/\log n$ must be arbitarily close to 1 in eventuality.
+
+So, to evaulate $\pr(\limsup X\_n > (1-\eps)\log n)$, we can use Borel-Cantelli. $\pr(X\_n > (1-\eps)\log n) = e^{-(1-\eps)\log n} = \frac{1}{n^{1-\eps}}$. This sequence over $n$ is divergent, so $\pr(\limsup X\_n > (1-\eps)\log n) = 1$ by Borel-Cantelli. This holds for all $\eps > 0$.
+
+To evaluate $\pr(\liminf X\_n < (1+\eps) \log n)$, we can consider the complement $1-\pr(\limsup X\_n > (1+\eps) \log n)$. So if we examine $\pr(X\_n \geq (1+\eps)\log n)$, by the same argument as above, we will be summing $\sum \frac{1}{n^{1+\eps}}$ which is convergent as it is a harmonic series with $n^{-p}$ where $p>1$. So $\pr(\limsup X\_n \geq (1+\eps) \log n) = 0$ thus $\pr(\liminf X\_n < (1+\eps) \log n) = 1$. This is true for all $\eps > 0$. 
+
+We will now need to evaluate the following:
+
+$$\cap_{\eps > 0} \left[\limsup X\_n > (1-\eps)\log n \right] \cap \left[ \liminf X\_n < (1+\eps) \log n \right]$$
+
+However, $\eps > 0$ is an uncountable set, so we can rewrite this to take intersections over a countable index:
+
+$$\cap_{k \in \nats} \left[\limsup X\_n > (1-\frac{1}{k})\log n \right] \cap \left[ \liminf X\_n < (1+\frac{1}{k}) \log n \right]$$
+
+The probability of the set above is 1, thus we have the required conditions needed to show $\limsup X\_n/\log n = 1$ with probabilty 1.  
+
 ### Proving Convergence Almost Surely
 
+Proving convergence almost surely is on of the more signficant tasks in statstics, as the strong law of large numbers involves almost sure convergence. The following is an example of almost sure convergence, proven with the Borel-Cantelli lemma mechanism.
+
+Let $\pr(X\_n = 1) = 1/n^2$ and $\pr(X\_n = 0) = 1-1/n^2$ for independent $X\_n$. We should expect $X\_n$ converges almost surely to 0. First, $\pr(X\_n = 1) = 1/n^2$ so summing over $n$ produces a convergent sum. Thus $\limsup X\_n = 1$ happens with probability 0. But if we examine $\pr(X\_n = 0) = 1-1/n^2$, this produces a divergent sum, so $X\_n = 0$ infinitely often happens with probability 1. 
+
+To converge almost surely, we need to show that the random variable has the same limit superior and limit inferior. So if we check that $\liminf X\_n = 0$ happens with probability 1 as well, then $\lim X\_n = 0$ with probability 1. To check $\liminf X\_n = 0$ with probability 1, we check its complement $\limsup X\_n = 1$ which we determined has probability 0 from above. So $\liminf X\_n = 0$ happens with probabilty 1. 
+
+Thus $\lim X\_n = 0$ with probability 1 so we say $X\_n$ converges to 0 almost surely.  
