@@ -37,7 +37,7 @@ Continuity of probability refers to the idea that $\lim \pr(A\_n) = \pr(\lim A\_
 
 $$\lim_{n\to\infty} \pr(A_n) = \pr\left(\lim_{n\to\infty} A_n\right)$$ 
 
-_Proof_: The sets $A\_n$ are increasing so for any $A\_n \cap A\_{n+1} = A\_n$. Thus define $B\_{n} = A\_{n}\setminus A\_{n-1}$ where we let $A\_0 = \nul$. Here $B\_n$ becomes a sequence of disjoint sets with $\cup\_{n=1}^N B\_n = \cup\_{n=1}^N A\_n = A\_N$ for all $N$. Therefore,
+_Proof_ : The sets $A\_n$ are increasing so for any $A\_n \cap A\_{n+1} = A\_n$. Thus define $B\_{n} = A\_{n}\setminus A\_{n-1}$ where we let $A\_0 = \nul$. Here $B\_n$ becomes a sequence of disjoint sets with $\cup\_{n=1}^N B\_n = \cup\_{n=1}^N A\_n = A\_N$ for all $N$. Therefore,
 
 $$\pr\left(\bigcup_{n \geq 1} A_n \right) = \pr\left(\cup_{n\geq 1} B_n \right) = \lim_{N\to\infty} \sum_{n=1}^N \pr(B_n) = \lim_{N\to\infty} \pr(A_N)$$ 
 
@@ -51,7 +51,7 @@ Sub-additivity refers to the idea that if $A\_1,...,A\_n,...$ is a countable seq
 
 $$\pr\left(\bigcup_{i\geq 1}A_i\right) \leq \sum_{i\geq1} \pr(A_i)$$
 
-_Proof_: Let $B\_1 = A\_1$, and $B_n = A\_n\setminus \cup\_{k < n} A\_k$. Then the sequence of sets $B\_n$ are mutually disjoint. This gives:
+_Proof_ : Let $B\_1 = A\_1$, and $B_n = A\_n\setminus \cup\_{k < n} A\_k$. Then the sequence of sets $B\_n$ are mutually disjoint. This gives:
 
 $$\bigcup_{n\geq 1} A_n = \bigcup_{n\geq 1} B_n$$
 
@@ -102,4 +102,24 @@ For those exposed to some measure theory, [Fatou's lemma](https://en.wikipedia.o
 $$\pr\left(\liminf_{n\to\infty} A_n\right) \leq \liminf_{n\to\infty} \pr(A_n) \leq \limsup_{n\to\infty} \pr(A_n) \leq \pr\left(\limsup_{n\to\infty} A_n\right)$$ 
 
 
+We prove the first $\leq$. The second $\leq$ follows by definition from analysis.
 
+_Proof_ : Using the definition of $\liminf$:
+
+$$\pr\left(\liminf_{n\to\infty} A_n\right) = \pr\left(\bigcup_{N \geq 1} \bigcap_{n > N} A_n\right)$$
+
+Note that $\cap\_{n>N} A\_n$ is an increasing sequence of sets as $N$ gets larger (less intersections make resulting sets less restrictive). Thus by continuity of probability,
+
+$$\pr\left(\bigcup_{N \geq 1} \bigcap_{n > N} A_n\right) = \lim_{N\to\infty} \pr\left(\bigcap_{n > N} A_n\right)$$
+
+Since $\cap\_{n > N} A\_n \subseteq A_{N+1}$ then $\pr(\cap\_{n>N} A\_n) \leq \pr(A\_{N+1})$. Therefore,
+
+$$\liminf_{n\to\infty} \pr(\cap_{n>N} A_n) \leq \liminf_{N\to\infty} \pr(A\_{N+1})$$
+
+Putting the above two equations together:
+
+$$\pr\left(\bigcup_{N \geq 1} \bigcap_{n > N} A_n\right) \leq \liminf_{N\to\infty} \pr(A_{N+1})$$
+
+which can be rewritten as:
+
+$$\pr\left(\liminf_{n\to\infty} A_n\right) \leq \liminf_{n\to\infty} \pr(A_n)$$ $\tag*{∎}$ 
