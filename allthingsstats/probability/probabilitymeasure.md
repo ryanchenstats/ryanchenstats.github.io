@@ -62,5 +62,6 @@ $$\pr(B_n) = \pr(A_n\setminus \cup_{k < n} A_k) \leq \pr(A_n)$$
 So putting it all together $\pr(\cup\_{n\geq 1} A_n) = \pr(\cup\_{n\geq 1} B_n) = \sum \pr(B\_n) \leq \sum \pr(A\_n)$. Thus proves the sub-additivity of the probability measure. $\tag*{∎}$
 
 **Exercise** (Finite additivity): Prove that the probability measure is finitely additive, i.e. for $(\Omega, \cv{F}, \pr)$, if $A\_1,...,A\_N \in \cv{F}$ disjoint then $\pr(\cup\_{i=1}^N A\_i) = \sum\_{i=1}^N \pr(A\_i)$
+
 **Exercise**: Assume we did not assume countable additivity, but we assumed finite additivity and sub-additivity. Prove that countable additivity still holds.
 
