@@ -3,6 +3,7 @@ layout: default
 title: Measure Theory and Sigma Algebras
 parent: Probability Theory
 grand_parent: All Things Statistics
+nav_order: 1
 has_toc: false
 has_children: true
 usemathjax: true
