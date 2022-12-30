@@ -212,11 +212,11 @@ To evaluate $\pr(\liminf X\_n < (1+\eps) \log n)$, we can consider the complemen
 
 We will now need to evaluate the following:
 
-$$\cap_{\eps > 0} \left[\limsup X\_n > (1-\eps)\log n \right] \cap \left[ \liminf X\_n < (1+\eps) \log n \right]$$
+$$\bigcap_{\eps > 0} \left[\limsup X_n > (1-\eps)\log n \right] \cap \left[ \liminf X_n < (1+\eps) \log n \right]$$
 
 However, $\eps > 0$ is an uncountable set, so we can rewrite this to take intersections over a countable index:
 
-$$\cap_{k \in \nats} \left[\limsup X\_n > (1-\frac{1}{k})\log n \right] \cap \left[ \liminf X\_n < (1+\frac{1}{k}) \log n \right]$$
+$$\bigcap_{k \in \nats} \left[\limsup X_n > \left(1-\frac{1}{k}\right)\log n \right] \cap \left[ \liminf X_n < \left(1+\frac{1}{k}\right) \log n \right]$$
 
 The probability of the set above is 1, thus we have the required conditions needed to show $\limsup X\_n/\log n = 1$ with probabilty 1.  
 
