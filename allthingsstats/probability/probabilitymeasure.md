@@ -97,6 +97,8 @@ An event $\omega$ is in $\limsup A\_n$ if and only if it is in $\cap\_{N\geq 1} 
 
 **Exercise**: Prove $(\limsup A\_n)^C = (\liminf A\_n)$. (Hint: Use De Morgan's laws.)
 
+Note: the last two exercises are important properties of $\liminf$ and $\limsup$ of sets. Make sure you understand them.
+
 ## Baby "Fatou"
 
 For those exposed to some measure theory, [Fatou's lemma](https://en.wikipedia.org/wiki/Fatou%27s_lemma) may look familiar. Here, we present a relation similar to Fatou's lemma which we coin as Baby "Fatou."
@@ -166,7 +168,8 @@ $$1-\lim_{N\to\infty} \pr\left(\bigcap_{n\geq N} A_n^C\right) = 1-\lim_{N\to\inf
 
 Using the relationship between $e^{-x} \geq 1 - x$, we have:
 
-$$1-\lim_{N\to\infty} \prod_{n=N}^\infty (1-\pr\left(A_n\right)) \leq 1-\lim_{N\to\infty} e^{-\sum_{n=N}^\infty \pr\left(A_n\right)} \to 0$$
+$$1-\lim_{N\to\infty} \prod_{n=N}^\infty (1-\pr\left(A_n\right)) \geq 1-\lim_{N\to\infty} e^{-\sum_{n=N}^\infty \pr\left(A_n\right)} \to 1$$
 
-since $\sum \pr(A\_n) = \infty$. So $\pr(\liminf A\_n^C) \leq 0$ thus $\pr(\limsup A\_n) \geq 1$. Thus it must be that $\pr(\limsup A\_n) = 1$. $\tag*{∎}$ 
+as $\sum \pr(A\_n) = \infty$. So $\pr(\liminf A\_n^C) \geq 1$ thus $\pr(\limsup A\_n) \leq 1$. Thus it must be that $\pr(\limsup A\_n) = 1$. $\tag*{∎}$ 
 
+These Borel-Cantelli lemmas, abbreviated as BC lemma 1 (and 2) are critical in understanding convergence concepts in probability. BC lemma provides a relationship between the convergence rate of a sequence of measures $\pr(A\_n)$ and the limiting measure of the sequence. From a previous 
