@@ -180,7 +180,7 @@ So if $\pr(\limsup A\_n) = 0$ then it implies $\pr(\liminf A\_n) = 0$. On the ot
 
 If $A\_1,...,A\_n,...$ are an independent sequence, then the Borel Cantelli lemmas form an if and only if statement, that is, we also know that when $\pr(\limsup A\_n) = 1$ implies the probability sums diverge. The analogous statement can be made for BC lemma 1. 
 
-## Application of Borel-Cantelli Lemmas
+## Applications of Borel-Cantelli Lemmas
 
 There are several applications of Borel-Cantelli. Several are detailed in Durrett or Billingsley. Below are a few, to provide examples of how the BC lemmas are invoked. 
 
