@@ -229,3 +229,10 @@ Let $\pr(X\_n = 1) = 1/n^2$ and $\pr(X\_n = 0) = 1-1/n^2$ for independent $X\_n$
 To converge almost surely, we need to show that the random variable has the same limit superior and limit inferior. So if we check that $\liminf X\_n = 0$ happens with probability 1 as well, then $\lim X\_n = 0$ with probability 1. To check $\liminf X\_n = 0$ with probability 1, we check its complement $\limsup X\_n = 1$ which we determined has probability 0 from above. So $\liminf X\_n = 0$ happens with probabilty 1. 
 
 Thus $\lim X\_n = 0$ with probability 1 so we say $X\_n$ converges to 0 almost surely.  
+
+**Note on Exercises on Borel-Cantelli**: There are several key exercises that will enhance understanding of Borel-Cantelli lemmas. I highly recommend working through examples and exercises from Durrett Chapter 2.3. A few critical exercises are listed below as well:
+
+**Exercise**: Let $\\{A\_n\\}_{n\geq 1}$ be a sequence of independent events. Prove $\pr(\cup A\_n) = 1$ if and only if $\sum \pr(A\_n) = \infty$ aka $\pr(A\_n \text{ i.o.}) = 1$. (Hint: One direction is trivial. For the other direction, leverage the fact that events are independent.)
+
+**Exercise**: Let $X\_1,...,X\_n,...$ be independent random variables. Show that $\sup X\_n < \infty$ almost surely if and only if $\sum \pr(X\_n > M) < \infty$ for some $M$. (Hint: For one direction, the contrapositive may be easier to prove.)
+
