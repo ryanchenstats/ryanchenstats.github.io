@@ -95,6 +95,8 @@ An event $\omega$ is in $\limsup A\_n$ if and only if it is in $\cap\_{N\geq 1} 
 
 **Exercise**: Prove $\liminf A\_n \subseteq \limsup A\_n$. 
 
+**Exercise**: Prove $(\limsup A\_n)^C = (\liminf A\_n)$. (Hint: Use De Morgan's laws.)
+
 ## Baby "Fatou"
 
 For those exposed to some measure theory, [Fatou's lemma](https://en.wikipedia.org/wiki/Fatou%27s_lemma) may look familiar. Here, we present a relation similar to Fatou's lemma which we coin as Baby "Fatou."
@@ -127,3 +129,44 @@ $$\pr\left(\liminf_{n\to\infty} A_n\right) \leq \liminf_{n\to\infty} \pr(A_n)$$
 This demonstrates the leftmost inequality and the second inequality follows from basic analysis. $\tag*{∎}$ 
 
 **Exercise**: Prove the $\limsup$ relation, (right-most inequality)
+
+# Borel-Cantelli Lemmas
+
+Now that we have discussed the $\limsup$ and $\liminf$ procedures on events, we can now talk about how to measure these limiting events. Later on, we will see that limiting procedures in general, will always have probability 0 or 1 provided some technical details. For now, we focus on some conditions regarding the measure of these limiting procedures. The rules governing the probability of these limiting procedures are called the Borel-Cantelli lemmas. 
+
+## First Borel-Cantelli Lemma:
+
+> Let $A\_1,...,A\_n,...$ is a sequence of events indexed by $n$. 
+
+$$\sum_{i=1}^\infty \pr(A_n) < \infty \implies \pr\left(\limsup_{n\to\infty} A_n\right) = 0$$
+
+This tells use that if the sum of the probabilities over $n$ converges quick enough to 0, then $A_n$ happens infinitely often (w.r.t. n) almost never (almost never means with measure 0, or with probability 0).
+
+_Proof_ : Let $A\_1,...,A\_n,...$ be a sequence of events such that the sum of the probability is convergent. Then,
+
+$$\pr\left(\bigcap_{N \geq 1} \bigcup_{n\geq N} A_n\right) = \lim_{N\to\infty}\sum_{N=1}^\infty \pr\left(\bigcup_{n \geq N} A_n\right) \leq \lim_{N\to\infty} \sum_{n=N}^\infty \pr\left(A_N\right) = 0$$ 
+
+The last equality is by the Cauchy criteria of tail sums of convergent sequences from analysis. Since $\pr(\limsup A\_n) \leq 0$ then it must be 0 by non-negativity of probability. $\tag*{∎}$ 
+
+For the next lemma, we need to define **independence** of events. Two sets are independent if $\pr(A\_j \cap A\_k) = \pr(A\_j)\pr(A\_k)$. We will discuss more about independence later but this definition is sufficient to understand the second Borel-Cantelli lemma.
+
+## Second Borel-Cantelli Lemma:
+
+> Let $A\_1,...,A\_n,...$ is a sequence of jointly independent events indexed by $n$. 
+
+$$\sum_{i=1}^\infty \pr(A_n) = \infty \implies \pr\left(\limsup_{n\to\infty} A_n\right) = 1$$
+
+_Proof_ : Let $A\_1,...,A\_n,...$ be a sequence of independent events such that the sum of the probability is infinite. Then,
+
+$$\pr\left(\bigcap_{N \geq 1} \bigcup_{n\geq N} A_n\right) = 1 - \pr\left(\bigcup_{N \geq 1} \bigcap_{n\geq N} A_n^C\right) = 1 - \lim_{N\to\infty} \pr\left(\bigcap_{n\geq N} A_n^C\right)$$
+
+The above is by the continuity of probability. Then by independence,
+
+$$1-\lim_{N\to\infty} \pr\left(\bigcap_{n\geq N} A_n^C\right) = 1-\lim_{N\to\infty} \prod_{n=N}^\infty \pr\left(A_n^C\right) = 1-\lim_{N\to\infty} \prod_{n=N}^\infty (1-\pr\left(A_n\right))$$
+
+Using the relationship between $e^{-x} \geq 1 - x$, we have:
+
+$$1-\lim_{N\to\infty} \prod_{n=N}^\infty (1-\pr\left(A_n\right)) \leq 1-\lim_{N\to\infty} e^{-\sum_{n=N}^\infty \pr\left(A_n\right)} \to 0$$
+
+since $\sum \pr(A\_n) = \infty$. So $\pr(\liminf A\_n^C) \leq 0$ thus $\pr(\limsup A\_n) \geq 1$. Thus it must be that $\pr(\limsup A\_n) = 1$. $\tag*{∎}$ 
+
