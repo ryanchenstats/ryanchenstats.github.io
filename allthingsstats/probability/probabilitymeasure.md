@@ -122,7 +122,8 @@ $$\pr\left(\bigcup_{N \geq 1} \bigcap_{n > N} A_n\right) \leq \liminf_{N\to\inft
 
 which can be rewritten as:
 
+$$\pr\left(\liminf_{n\to\infty} A_n\right) \leq \liminf_{n\to\infty} \pr(A_n)$$ 
 
-$$\pr\left(\liminf_{n\to\infty} A_n\right) \leq \liminf_{n\to\infty} \pr(A_n)$$ $\tag*{∎}$ 
+This demonstrates the leftmost inequality and the second inequality follows from basic analysis. $\tag*{∎}$ 
 
 **Exercise**: Prove the $\limsup$ relation, (right-most inequality)
