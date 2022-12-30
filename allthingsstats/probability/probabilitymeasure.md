@@ -236,3 +236,4 @@ Thus $\lim X\_n = 0$ with probability 1 so we say $X\_n$ converges to 0 almost s
 
 **Exercise**: Let $X\_1,...,X\_n,...$ be independent random variables. Show that $\sup X\_n < \infty$ almost surely if and only if $\sum \pr(X\_n > M) < \infty$ for some $M$. (Hint: For one direction, the contrapositive may be easier to prove.)
 
+Now that we have a technology for discussing measures of limiting events, we are now ready to talk about expectation and integration, in particular regarding their limiting properties.
