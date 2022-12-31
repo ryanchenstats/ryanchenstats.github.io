@@ -52,7 +52,7 @@ where $a\_i \geq 0$ is a sequence of constants and $A\_i$ is a sequence of disjo
 
 The simple function is peicewise by definition. However it can be used to approximate more general non-negative measurable functions. Specifically, for non-negative general function $f$, it can be approximated from below by a sequence of simple functions $f\_n$ with arbitrary precision. This is called the **simple function approximation theorem**.
 
-_Proof_ : Given a function $f$, we form a simple function $f\_n$ by dividing is co-domain into $2^n +1$ intervals of equal length, so that each interval is of length $1/2^n$. Define the interval $I\_{n,k} = [\frac{k-1}{2^n}, \frac{k}{2^n})$ for $k=1,...,2^{2^n}$. For $k=2^{2^n}}+1$ let the interval $I_{n,k} = [2^n, \infty)$. Now define $A_{n,k} = f^{-1}(I_{n,k})$ - the preimage of $f$ on these intervals. Each $A_{n,k}$ is measurable for each $k$ for any $n$ since $f$ is measurable. 
+_Proof_ : Given a function $f$, we form a simple function $f\_n$ by dividing is co-domain into $2^n +1$ intervals of equal length, so that each interval is of length $1/2^n$. Define the interval $I\_{n,k} = [\frac{k-1}{2^n}, \frac{k}{2^n})$ for $k=1,...,2^{2^n}$. For $k=2^{2^n}+1$ let the interval $I_{n,k} = [2^n, \infty)$. Now define $A_{n,k} = f^{-1}(I_{n,k})$ - the preimage of $f$ on these intervals. Each $A_{n,k}$ is measurable for each $k$ for any $n$ since $f$ is measurable. 
 
 Now we define $f\_n$ as:
 
