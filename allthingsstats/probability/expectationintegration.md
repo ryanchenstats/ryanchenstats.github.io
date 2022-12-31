@@ -32,12 +32,25 @@ Recall the discussion on induced measures from the measure theory and $\sigma$-a
 
 $$\E(X) = \int_\Omega X(\omega) \pr(d\omega) = \int_\reals x \lambda(dx)$$
 
-## Defining Integration
+## Example of where Riemann Breaks, and a Proposed Solution
 
-At this point, integration ought to be defined. In the Riemann sense, integration is not entirely well defined. We see pitfalls of Riemann integration when integrating some pathological functions. This is particularly troublesome because it means Riemann integration is not a general enough technique. For example, let $f(\omega) = \ind_{\omega \in \mathbb{Q}}$. where $\omega \in (0,1)$. It is easy to show the lower and upper Riemann sums do not agree, thus the Riemann integral is not defined. 
+At this point, integration ought to be defined. In the Riemann sense, integration is not entirely well defined as we see pitfalls when Riemann integrating some pathological functions. This is particularly troublesome because it means Riemann integration is not a general enough technique. For example, let $f(\omega) = \ind_{\omega \in \mathbb{Q}}$. where $\omega \in (0,1)$. It is easy to show the lower and upper Riemann sums do not agree, thus the Riemann integral is not defined. 
 
-**Exercise**: Show that Riemann integration is not defined for the function above.
+**Exercise**: Show that Riemann integration is not defined for the function above. (Hint: Riemann integration requires the lower and upper sum to agree, in order for it to exist.)
 
+So clearly, breaking a function up into interval partitions and observing how its upper and lower sum changes is not a general enough method. For a subset of "nice" functions, the Riemann integral is sufficient but for some pathological examples, it does not work. We need another approach to integration.
+
+### Lebesgue Integral
+
+The Riemann integral attempts to partition the region of integration into infinitessimal intervals. The Lebesgue integral aims to look at the possible values of $f: \Omega \to \reals$ and then look at the subsets of $\Omega$ where $k\_{n-1} \leq f(\omega) \leq k\_n$ for some partition of the codomain $\\{k\_n\\}\_{n\geq 1}$. That is, the integral is defined as $\sum\_n k\_n \lambda(\\{\omega : k\_{n-1} \leq f(\omega) \leq k\_n\\})$ for all $k$ in the image of $f$. The integral of $f$ will be the weighted sum, as $\\{k\_n\\}$ becomes a finer partition. Some pictures will help make this more understandable.  
+
+![The Integral](lebesgue-integral.svg)
+
+
+
+_Proof_ : Let $f$ be a function of interest. Then for each $n$, we define the following stepwise
+
+$$f_n(x) = \begin{cases}\end{cases}$$
 
 
 
