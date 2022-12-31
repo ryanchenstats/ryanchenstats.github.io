@@ -36,9 +36,9 @@ $$\E(X) = \int_\Omega X(\omega) \pr(d\omega) = \int_\reals x \lambda(dx)$$
 
 At this point, integration ought to be defined. In the Riemann sense, integration is not entirely well defined as we see pitfalls when Riemann integrating some pathological functions. This is particularly troublesome because it means Riemann integration is not a general enough technique. For example, let $f(\omega) = \ind_{\omega \in \mathbb{Q}}$. where $\omega \in (0,1)$. It is easy to show the lower and upper Riemann sums do not agree, thus the Riemann integral is not defined. 
 
-**Exercise**: Show that Riemann integration is not defined for the function above. (Hint: Riemann integration requires the lower and upper sum to agree, in order for it to exist.)
+**Exercise**: Show that the function above is not Riemann integrable. (Hint: Riemann integration requires the lower and upper sum to agree, in order for it to exist.)
 
-So clearly, breaking a function up into interval partitions and observing how its upper and lower sum changes is not a general enough method. For a subset of "nice" functions, the Riemann integral is sufficient but for some pathological examples, it does not work. We need another approach to integration, but first, we would need to review how we can approximate a function better.
+The integral of the non-Riemann integrable function given above is one formulation of asking the question "what is the probability of picking a rational number from all real numbers in the interval [0,1]?" Since the rational numbers are countable, the probability should be 0. Yet, breaking a function up into interval partitions and observing how its upper and lower sum converges in the Riemann sense will not provide an adequate answer (the function is not Riemann integrable). So the Riemann integral is sufficient for a subset of "nice" functions, but there are functions in which the Riemann integral is not adequate. Thus we need another approach to integration - one even more general to handle more than just the "nice" functions. As Riemann integration relied on forming peicewise functions that approximate the original function from above and below based on interval partions, we would need to estiblish another paradigm of approximating a function. Hopefully this new paradigm will help form a "better" definition of an integral.
 
 ### Simple Functions
 
@@ -46,7 +46,7 @@ We introduce the idea of a simple function. A simple function is a function that
 
 $$f(\omega) := \sum_{i=1}^N a_i \ind_{A_i}(\omega)$$
 
-where $a\_i$ is a sequence of constants and $A\_i$ is a sequence of disjoint sets indexed by $i$. While this may look like the Riemann Integral, where we take $\inf f(x) \Delta x$ or $\sup f(x) \Delta x$, the key difference is that $A\_i$ does not need to be an interval; it could be a union of seperate intervals.  
+where $a\_i$ is a sequence of constants and $A\_i$ is a sequence of disjoint sets indexed by $i$. While this may look like we are approximating the function in a Riemann sense where we take $\inf f(x) \Delta x$ or $\sup f(x) \Delta x$, however the difference is that $A\_i$ does not need to be an interval; it could be a union of seperate intervals. It could even be a single point. The sole requirement is that $A\_i$ must be measurable.  
 
 ### Lebesgue Integral
 
