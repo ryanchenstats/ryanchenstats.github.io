@@ -56,7 +56,7 @@ _Proof_ : Given a function $f$, we form a simple function $f\_n$ by dividing is 
 
 Now we define $f\_n$ as:
 
-$$f_n(\omega) = \sum_{i=1}^{2^{2^n}+1} \frac{i-1}{2^n} \ind_{A_{n,k}}$$
+$$f_n(\omega) = \sum_{i=1}^{2^{2^n}+1} \frac{i-1}{2^n} \ind_{A_{n,i}})(\omega)$$
 
 For any $\omega$, $f(\omega) - f\_n(\omega) < 1/2^n$ by construction of $f\_n$. So when $n$ is large enough, $f\_n \to f$ pointwise with arbitrary precision. If $f$ is bounded, this convergence is uniform almost everywhere since after a large enough $n$, $f^{-1}(I_{n,2^{2^n+1}}) = \nul$ which has measure 0.  $\tag*{∎}$ 
 
