@@ -28,9 +28,7 @@ Thus far, we have defined a random variable as a function. We have also develope
 
 $$\E(X) = \int_\Omega X(\omega) d\pr = \int_\Omega X(\omega) \pr(d\omega)$$
 
-## Revisiting Induced Measure
-
-Suppose we have a random variable $X(\omega) : (\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$ defined on a probability space $(\Omega, \cv{F}, \pr)$. To say $\pr(X \in A)$ for some set $A \in \cv{B}$, we are really taking the probability measure of $\\{\omega : X(\omega) = A\\}$ events. This can be written as $\\{X^{-1}(A)\\}$ so $\pr(X \in A) = \pr(X^{-1}(A))$. Note that this is simply a composition of functions, $(X^{-1}\circ \pr)(A)$. $X^{-1} \circ \pr$ (we can write it as $\lambda$) is also a measure, specifically a measure on sets in $(\reals, \cv{B})$, since we arrived at this measure from $\pr(X^{-1}(A))$. We call this an **induced measure** by $X$ and now the image of the random variable has an induced measure space $(\reals, \cv{B}, \lambda)$. So using an induced measure, we can rewrite the expectation defintion as:
+Recall the discussion on induced measures from the measure theory and $\sigma$-algebra discussion. We can rewrite the integral by changing the variable of integration justified through induced measures by the random variable. $X : (\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$ where $\lambda$ is the induced measure on $(\reals, \cv{B})$:
 
 $$\E(X) = \int_\Omega X(\omega) \pr(d\omega) = \int_\reals x \lambda(dx)$$
 
@@ -39,6 +37,7 @@ $$\E(X) = \int_\Omega X(\omega) \pr(d\omega) = \int_\reals x \lambda(dx)$$
 At this point, integration ought to be defined. In the Riemann sense, integration is not entirely well defined. We see pitfalls of Riemann integration when integrating some pathological functions. This is particularly troublesome because it means Riemann integration is not a general enough technique. For example, let $f(\omega) = \ind_{\omega \in \mathbb{Q}}$. where $\omega \in (0,1)$. It is easy to show the lower and upper Riemann sums do not agree, thus the Riemann integral is not defined. 
 
 **Exercise**: Show that Riemann integration is not defined for the function above.
+
 
 
 
