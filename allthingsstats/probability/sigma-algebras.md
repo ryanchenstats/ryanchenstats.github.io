@@ -259,4 +259,10 @@ As an example, suppose we have an outcome space $\Omega$ of tossing two coins an
 
 **Exercise**: Let $X\_n :(\Omega, \mathcal{F}) \to (\mathbb{R}, \mathcal{B})$ be a sequence of measurable functions and $X_n$ converges to $X$. Show that $X$ is $\mathcal{F}/\mathcal{B}$-measurable. 
 
+## Induced Measures
+
+Suppose we have a random variable $X(\omega) : (\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$ defined on a probability space $(\Omega, \cv{F}, \pr)$. To say $\pr(X \in A)$ for some set $A \in \cv{B}$, we are really taking the probability measure of $\\{\omega : X(\omega) = A\\}$ events. This can be written as $\\{X^{-1}(A)\\}$ so $\pr(X \in A) = \pr(X^{-1}(A))$. Note that this is simply a composition of functions, $(X^{-1}\circ \pr)(A)$. $X^{-1} \circ \pr$ (we can write it as $\lambda$) is also a measure, specifically a measure on sets in $(\reals, \cv{B})$, since we arrived at this measure from $\pr(X^{-1}(A))$. We call this an **induced measure** by $X$ and now the image of the random variable has an induced measure space $(\reals, \cv{B}, \lambda)$.
+
+**Exercise**: Given random variable $X : (\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$, show that the induced measure on $(\reals, \cv{B})$ via $X$ is also a measure. 
+
 At this point, we now rest the measure theory and in the next part, we will begin talking about probability as a measure function and random variables as a measurable function.
