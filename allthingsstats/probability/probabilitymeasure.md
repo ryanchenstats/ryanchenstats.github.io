@@ -96,7 +96,7 @@ An event $\omega$ is in $\limsup A\_n$ if and only if it is in $\cap\_{N\geq 1} 
 
 **Exercise**: Prove $\liminf A\_n \subseteq \limsup A\_n$. 
 
-**Exercise**: Prove $(\limsup A\_n)^C = (\liminf A\_n)$. (Hint: Use De Morgan's laws.)
+**Exercise**: Prove $(\limsup A\_n)^C = (\liminf A\_n^C)$. (Hint: Use De Morgan's laws.)
 
 Note: the last two exercises are important properties of $\liminf$ and $\limsup$ of sets. Make sure you understand them.
 
