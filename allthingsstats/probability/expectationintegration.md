@@ -38,13 +38,24 @@ At this point, integration ought to be defined. In the Riemann sense, integratio
 
 **Exercise**: Show that Riemann integration is not defined for the function above. (Hint: Riemann integration requires the lower and upper sum to agree, in order for it to exist.)
 
-So clearly, breaking a function up into interval partitions and observing how its upper and lower sum changes is not a general enough method. For a subset of "nice" functions, the Riemann integral is sufficient but for some pathological examples, it does not work. We need another approach to integration.
+So clearly, breaking a function up into interval partitions and observing how its upper and lower sum changes is not a general enough method. For a subset of "nice" functions, the Riemann integral is sufficient but for some pathological examples, it does not work. We need another approach to integration, but first, we would need to review how we can approximate a function better.
+
+### Simple Functions
+
+We introduce the idea of a simple function. A simple function is a function that can be expressed as a finite linear combination of indicator functions on disjoint sets. That is:
+
+$$f(\omega) := \sum_{i=1}^N a_i \ind_{A_i}(\omega)$$
+
+where $a\_i$ is a sequence of constants and $A\_i$ is a sequence of disjoint sets indexed by $i$. While this may look like the Riemann Integral, where we take $\inf f(x) \Delta x$ or $\sup f(x) \Delta x$, the key difference is that $A\_i$ does not need to be an interval; it could be a union of seperate intervals.  
 
 ### Lebesgue Integral
 
 The Riemann integral attempts to partition the region of integration into infinitessimal intervals. The Lebesgue integral aims to look at the possible values of $f: \Omega \to \reals$ and then look at the subsets of $\Omega$ where $k\_{n-1} \leq f(\omega) \leq k\_n$ for some partition of the codomain $\\{k\_n\\}\_{n\geq 1}$. That is, the integral is defined as $\sum\_n k\_n \lambda(\\{\omega : k\_{n-1} \leq f(\omega) \leq k\_n\\})$ for all $k$ in the image of $f$. The integral of $f$ will be the weighted sum, as $\\{k\_n\\}$ becomes a finer partition. Some pictures will help make this more understandable.  
 
 ![The Integral](lebesgue-integral.svg)
+
+The above image is the case when $n=3$, where we divide the codomain of the function $f$ into 3 equally spaced intervals $f = a\_1$, $f=a\_2$, and $f=a\_3$. Then we examine the measure of $\\{\omega : f(\omega) = a\_1 \\}$ and multiply it by $a\_1$ and we do the same for $a\_2$ and $a\_3$. Essentially, we are representing the function as a sequence of stepwise functions.
+
 
 
 
