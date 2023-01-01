@@ -172,5 +172,5 @@ Now we can connect this to random variables since random variables are measurabl
 
 **Exercise**: Show that Riemann integrability implies Lebesgue integrability. 
 
-**Exercise**: Integrate $f(x) = x^2$ from $x=0$ to $1$ with Lebesgue integration. Divide the codomain by a factor of 2. Now integrate the same in the Riemann sense, dividing the region of integration by a factor of 2.
+**Exercise**: Integrate $f(x) = x^2$ from $x=0$ to $1$ with Lebesgue integration. Divide the codomain by a factor of 2 each iteration. Now integrate the same in the Riemann sense, dividing the region of integration by a factor of 2 each iteration. Remember to send both iterations to infinity. (Hint: You can write code to do this, but there is an analytic solution in both types of integration. As a sanity check, the answer should be 1/3).
 
