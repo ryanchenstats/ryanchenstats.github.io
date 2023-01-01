@@ -134,15 +134,22 @@ That is, the supremum of the integral of simple $s$ where $s \leq f$.
 
 This is a critical result. If $0\leq f\_n \uparrow f$, then $\lim \int f\_n d\mu = \int \lim f\_n d\mu = \int f d\mu$. Ultimately the proof relies on the monotonicity of measures.
 
-_Proof_ : We already have that $f\_n \uparrow f$ so $\lim \int f\_n d\mu \leq \int f d\mu$. It suffices to show $\lim \int f\_n d\mu \geq \int f d\mu$. We define another simple function $h$ such that $h = \sum a\_i \ind_{A\_i}$. Define $A^n\_{i,\eps} := \\{\omega : h \leq f\_n(\omega)\\}$ for any $\eps > 0$. As $f\_n = \sum a\_i \ind_{A^n\_i}$, we further define $h\_eps = \sum (a\_i - \eps)\ind_{A^n\_{i,\eps}}$. This is a simple function that has distance $\eps$ below $f\_n$ (approximates $f\_n$ from below). 
+_Proof_ : We already have that $f\_n \uparrow f$ so $\lim \int f\_n d\mu \leq \int f d\mu$. It suffices to show $\lim \int f\_n d\mu \geq \int f d\mu$. We define another simple function $h$ that is $0\leq h \leq f$. Furthermore, we take $\alpha \in (0,1)$, and define Borel sets in the domain as 
 
-Now, the partitions for $h$ have the property: $A^n\_{i,\eps} \subseteq A^{n+1}\_{i,\eps}$ since $f\_n \leq f\_{n+1}$ and the set $A^n\_{i,\eps}$ gets larger as $n$ increases for fixed $i, \eps$. We also have $\cup A^n\_{i,\eps} = A_{i,\eps}$ which is a partition for $h$. Thus by continuity of measures, $\mu(A\_i) = \mu(\cup\_n A^n\_i) = \lim\_n \mu(A\_{i,\eps}^n)$. So:
+$$A_n = \{\omega \in \Omega : f_n (\omega) > \alpha h(\omega)\}$$
 
-$$\int h d\mu = \sum_{i=1}^n a_i \mu(A_i) = \sum_{i=1}^N a_i \mu\left(\bigcup_{n\geq 1} A^n_i\right) = \lim_{n\to\infty}\sum_{i=1}^N a_i \mu\left(A^n_i\right) \leq \lim_{n\to\infty} \int f_n d\mu$$   
+$A\_n \subseteq A\_{n+1}$ by the construction of the set above, and $\cup\_n A\_n = \Omega$. By continuity of measures, $\mu(\Omega) = \mu(\cup\_n A\_n) = \lim\_n \mu(A\_n)$. So 
 
-So:
+$$\int_{A_n} \alpha h d\mu \leq \int_\Omega f_n d\mu$$
 
-$$\int f d\mu = \sup\{\int h d\mu : h \leq f\} \leq \lim_{n\to\infty} \int f_n d\mu$$
+We can write the last two expressions with limits as:
 
+$$\alpha \lim_{n\to\infty} \sum_{i=1}^N h \mu(A_{n,i}) = \alpha \sum_{i=1}^N h \mu(\Omega_i) \leq \lim_{n\to\infty} \int f_n d\mu$$
 
+There is abuse of notation above. $A\_{n,i}$ is a partition of $A\_n$ and $\Omega\_i$ is a partition of the whole space $\Omega$. The limit is passed through the sum and we invoke continuity of measures.
 
+Taking the supremum on both sides, $\sup \sum_{i=1}^N h \mu(\Omega_i) = \int f d\mu$ by definition as $0 \leq h \leq f$. We may drop the $\alpha$ as $\alpha \in (0,1)$. Thus: 
+
+$$\int f d\mu \leq \lim_{n\to\infty} \int f_n d\mu$$ 
+
+Therefore, $\int f d\mu = \lim_{n\to\infty} \int f_n d\mu$. $\tag*{∎}$ 
