@@ -153,3 +153,5 @@ Taking the supremum on both sides, $\sup \sum_{i=1}^N h \mu(\Omega_i) = \int f \
 $$\int f \,d\mu \leq \lim_{n\to\infty} \int f_n \,d\mu$$ 
 
 Therefore, $\int f \,d\mu = \lim_{n\to\infty} \int f_n \,d\mu$. $\tag*{∎}$ 
+
+**Exercise**: We relax the condition of $f\_n$ being simple functions. Prove the monotone convergence theorem above, without assuming $f\_n$ is simple. That is, for a general non-negative increasing sequence $f\_n$, such that $f\_n \uparrow f$, prove that $\lim\_n \int f\_n\, d\mu = \int f\, d\mu$. 
