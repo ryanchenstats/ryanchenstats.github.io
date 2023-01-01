@@ -68,7 +68,7 @@ We can represent this simple function as
 
 $$f_n(\omega) = a_1\ind_{A_1} + a_2\ind_{A_2} + a_3\ind_{A_3}$$
 
-Here, we divided the the co-domain at values $a\_1$ to $a\_4$ and the regions in red in the domain is the measurable set $A\_1$, regions in blue is the measurable set $A\_2$ and the regions in green is the measurable set $A\_3$. $f\_{n+1}$ is formed by further subdividing these regions in the codomain to smaller regions, and the number of regions increases, which in turn produces better approximations of $f$. We can see general non-negative functions as completions of simple functions.
+Here, we divided the the co-domain at values $a\_1$ to $a\_4$ and the regions in red in the domain is the measurable set $A\_1$, regions in blue is the measurable set $A\_2$ and the regions in green is the measurable set $A\_3$. $f\_{n+1}$ is formed by further subdividing these regions in the codomain to smaller regions, and the number of regions increases, which in turn produces better approximations of $f$. So by construction $0 \leq f\_n \leq f\_{n+1}$ where $f\_n \upto f$. 
 
 ### General Functions
 
@@ -92,14 +92,57 @@ The Riemann integral attempts to partition the region of integration into infini
 
 The above image is the case when $n=3$, where $f\_n$ is approximated by partitioning the codomain into 3 equally spaced intervals at $f = a\_1$, $f=a\_2$, and $f=a\_3$. Then we examine the measure of $\\{\omega : f(\omega) = a\_1 \\}$ and multiply it by $a\_1$ and we do the same for $a\_2$ and $a\_3$.
 
-## Simple Functions
+So, if the function $f: (\Omega, \cv{F}, \mu) \to (\reals^+, \cv{B})$ is a simple function, then we can write the function as:
 
-If the function $f: (\Omega, \cv{F}, \mu) \to (\reals^+, \cv{B})$ is a simple function, then we can write the function as:
-
-$$f = \sum_{i=1}^N a_i \mu(A_i)$$
+$$f = \sum_{i=1}^N a_i \ind_{A_i}$$
 
 The integral over some measurable set $E \in \cv{F}$ is thus defined as:
 
 $$\int_E f d\mu = \int_E \sum_{i=1}^N a_i \ind_{A_i} d\mu = \sum_{i=1}^N a_i \int_E \ind_{A_i} d\mu = \sum_{i=1}^N a_i \mu(A_i)$$
 
-So the integral is the measure of the preimages $A_i$, multiplied by the value of the step function $a_i$, then summed over all $i$.
+So the integral is the measure of the preimages $A_i \in\cv{F}$, multiplied by the value of the step function value $a_i$, then summed over all $i$. We now can develop a couple properties about integrals of simple functions. The following properties assumes a region of integration with measure $>0$.
+
+### Additivity
+
+For simple $f, g$, $\int f+g d\mu = \int f d\mu + \int g d\mu$.
+
+_Proof_ : Let $f = \sum\_{i=1}^N a\_i \ind\_{A\_i}$ and $g = \sum\_{k=1}^M b\_k \ind\_{B\_k}$ and $f+g = \sum\_{i=1}^N \sum\_{k=1}^M (a\_i + b\_k) \ind\_{A\_i \cap B\_k}$. So we can rewrite each integral as:
+
+$$\int fd\mu = \sum_{k=1}^M \sum_{i=1}^N a_i \mu(A_i \cap B_k)\; \qquad \; \int g d\mu= \sum_{k=1}^M \sum_{i=1}^N b_k \mu(A_i \cap B_k)$$
+
+Thus they are compatible to add:
+
+$$\int f d\mu +  \int g d\mu = \sum_{k=1}^M \sum_{i=1}^N (a_i + b_k) \mu(A_i \cap B_k) = \int f+g d\mu$$
+
+It is easy to see how the integral is closed under scalar multiplication as well, thus also proves linearity of the integral. $\tag*{∎}$ 
+
+### Monotonicity
+
+If $0 \leq f \leq g$ are simple, then $\int f d\mu \leq \int g d\mu$. 
+
+_Proof_ : First we note that if $f \geq 0$ then $\int f d\mu \geq 0$ which is immediately true from the definition of simply function integration. Now if $f \leq g$ then $g-f \geq 0$ so $\int g -f d\mu \geq 0$. Then by additivity $\int g d\mu \geq \int f d\mu$. $\tag*{∎}$
+
+### For General non-Negative Functions
+
+Since $f\_n \upto f$, then we can define the integral of a general $f \geq 0$ as 
+
+$$\sup\left\lbrace \int s d\mu : \text{simple }s \leq f\right\rbrace$$ 
+
+That is, the supremum of the integral of simple $s$ where $s \leq f$.
+
+### Monotone Convergence
+
+This is a critical result. If $0\leq f\_n \upto f$, then $\lim \int f\_n d\mu = \int \lim f\_n d\mu = \int f d\mu$. Ultimately the proof relies on the monotonicity of measures.
+
+_Proof_ : We already have that $f\_n \upto f$ so $\lim \int f\_n d\mu \leq \int f d\mu$. It suffices to show $\lim \int f\_n d\mu \geq \int f d\mu$. We define another simple function $h$ such that $h = \sum a\_i \ind_{A\_i}$. Define $A^n\_{i,\eps} := \sets{\omega : h \leq f\_n(\omega)}$ for any $\eps > 0$. As $f\_n = \sum a\_i \ind_{A^n\_i}$, we define $h = \sum (a\_i - \eps)\ind_{A^n\_{i,\eps}}$. This essentially forms a partition for another simple function $h\_{n,\eps}$ - a simple function that has distance $\eps$ below $f\_n$. 
+
+Now, the partitions for $h\_\eps$ have the property: $A^n\_{i,\eps} \subseteq A^{n+1}\_{i,\eps}$ since $f\_n \leq f\_{n+1}$ and the set $A^n\_{i,\eps}$ gets larger as $n$ increases for fixed $i, \eps$. We also have $\cup A^n\_{i,\eps} = A_{i,\eps}$ which is a partition for $h$. Thus by continuity of measures, $\mu(\cup\_n A^n\_i) = \mu(\lim A\_{i,\eps}^n) = \mu(A\_i)$. So:
+
+$$\int h d\mu = \sum_{i=1}^n a_i \mu(A_i) = \sum_{i=1}^N a_i \mu\left(\bigcup_{n\geq 1} A^n_i\right) = \lim_{n\to\infty}\sum_{i=1}^N a_i \mu\left(A^n_i\right) \leq \int f_n d\mu$$   
+
+So:
+
+$$\int f d\mu = \sup\sets{\int s d\mu : s \leq f} \leq \lim_{n\to\infty} \int f_n d\mu$$
+
+
+
