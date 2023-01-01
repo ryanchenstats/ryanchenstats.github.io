@@ -26,7 +26,7 @@ $\newcommand{\reals}{\mathbb{R}}$ $\newcommand{\nats}{\mathbb{N}}$ $\newcommand{
 
 Thus far, we have defined a random variable as a function. We have also developed a mechanism to help understand how to evaluate probability measures of limiting events and its relationship to continuity. Another important property of a random variable is its expectation or moment, and we can examine higher order moments for random variables which will provide more information about the behavior of the random variable. Moments also help us control certain aspects of the random variable, which allows us to make generalizations of sequences of random variables ad infinitum. Expectation is expressed as an integration. For random variable $X$, we define the expectation as
 
-$$\E(X) = \int_\Omega X(\omega) d\pr = \int_\Omega X(\omega) \pr(d\omega)$$
+$$\E(X) = \int_\Omega X(\omega) \,d\pr = \int_\Omega X(\omega) \pr(d\omega)$$
 
 Recall the discussion on induced measures from the measure theory and $\sigma$-algebra discussion. We can rewrite the integral by changing the variable of integration justified through induced measures by the random variable. $X : (\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$ where $\lambda$ is the induced measure on $(\reals, \cv{B})$:
 
@@ -160,7 +160,7 @@ Therefore, $\int f \,d\mu = \lim_{n\to\infty} \int f_n \,d\mu$. $\tag*{∎}$
 
 We call a function integrable if $\int f^+ \,d\mu$ and $\int f^- d\mu$ are both finite. The integral is infinite if at most one of the two integrals are infinite. The integral is undefined if both are infinite. 
 
-Now we can connect this to random variables since random variables are measurable functions. As defined above, for $X:(\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$, $\E(X) = \int\_\Omega X\, d\pr$. We say $X \in L^1(\Omega, \cv{F}, \pr)$ if $\int_\Omega |X| \, d\pr < \infty$. The space $L^1(\Omega, \cv{F},\pr)$ is the set of all integrable functions in the $L_1$ norm. In general, we have $L^P(\Omega, \cv{F}, \pr)$ space and for $X \in L^P(\Omega, \cv{F}, \pr)$, it must be that $\int_\Omega |X|^p \,d\pr$. 
+Now we can connect this to random variables since random variables are measurable functions. As defined above, for $X:(\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$, $\E(X) = \int\_\Omega X\, \,d\pr$. We say $X \in L^1(\Omega, \cv{F}, \pr)$ if $\int_\Omega |X| \, \,d\pr < \infty$. The space $L^1(\Omega, \cv{F},\pr)$ is the set of all integrable functions in the $L_1$ norm. In general, we have $L^P(\Omega, \cv{F}, \pr)$ space and for $X \in L^P(\Omega, \cv{F}, \pr)$, it must be that $\int_\Omega |X|^p \,d\pr$. 
 
 **Exercise**: Show that if $\int |f| \,d\mu < \infty$ then $\int f\, d\mu$ is finite thus integrable. Does the converse hold?
 
