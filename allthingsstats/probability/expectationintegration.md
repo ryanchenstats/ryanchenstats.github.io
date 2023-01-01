@@ -30,7 +30,7 @@ $$\E(X) = \int_\Omega X(\omega) \,d\pr = \int_\Omega X(\omega)\, \pr(d\omega)$$
 
 Recall the discussion on induced measures from the measure theory and $\sigma$-algebra discussion. We can rewrite the integral by changing the variable of integration justified through induced measures by the random variable. $X : (\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$ where $\lambda$ is the induced measure on $(\reals, \cv{B})$:
 
-$$\E(X) = \int_\Omega X(\omega) \, \pr(d\omega) = \int_\reals x \lambda(dx)$$
+$$\E(X) = \int_\Omega X(\omega) \, \pr(d\omega) = \int_\reals x \,\lambda(dx)$$
 
 ## Riemann-Darboux Function Approximation is not Sufficient, a Proposed Solution
 
