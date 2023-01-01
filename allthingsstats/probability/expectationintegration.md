@@ -82,15 +82,24 @@ $$f = f^+-f^-\; \qquad \; |f| = f^+ + f^-$$
 
 $f^+$ and $f^-$ are both non-negative functions, and thus both can be represented as the limits of sequences of simple functions $\geq 0$.
 
-With measurable functions now defined as a completion of non-negative simple functions and differences thereof, we are now ready to define the Lebesgue integral.
+With measurable functions now defined in terms of a sequence of $f\_n$, we are now ready to talk about the Lebesgue integral.
 
 ## Lebesgue Integral
 
-The Riemann integral attempts to partition the region of integration into infinitessimal intervals.
+The Riemann integral attempts to partition the region of integration into infinitessimal intervals. The Lebesgue integral also partitions the region of integration, but the partitions need not be single intervals, and it need not be sums of infinitessimal partitions. A picture provides how the Lebesuge integral is evaluated.
 
 ![The Integral](lebesgue-integral.svg)
 
-The above image is the case when $n=3$, where we divide the codomain of the function $f$ into 3 equally spaced intervals $f = a\_1$, $f=a\_2$, and $f=a\_3$. Then we examine the measure of $\\{\omega : f(\omega) = a\_1 \\}$ and multiply it by $a\_1$ and we do the same for $a\_2$ and $a\_3$. Essentially, we are representing the function as a sequence of stepwise functions.
+The above image is the case when $n=3$, where $f\_n$ is approximated by partitioning the codomain into 3 equally spaced intervals at $f = a\_1$, $f=a\_2$, and $f=a\_3$. Then we examine the measure of $\\{\omega : f(\omega) = a\_1 \\}$ and multiply it by $a\_1$ and we do the same for $a\_2$ and $a\_3$.
 
+## Simple Functions
 
+If the function $f: (\Omega, \cv{F}, \mu) \to (\reals^+, \cv{B})$ is a simple function, then we can write the function as:
 
+$$f = \sum_{i=1}^N a_i \mu(A_i)$$
+
+The integral over some measurable set $E \in \cv{F}$ is thus defined as:
+
+$$\int_E f d\mu = \int_E \sum_{i=1}^N a_i \ind_{A_i} d\mu = \sum_{i=1}^N a_i \int_E \ind_{A_i} d\mu = \sum_{i=1}^N a_i \mu(A_i)$$
+
+So the integral is the measure of the preimages $A_i$, multiplied by the value of the step function $a_i$, then summed over all $i$.

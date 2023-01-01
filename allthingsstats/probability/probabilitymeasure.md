@@ -68,6 +68,14 @@ So putting it all together $\pr(\cup\_{n\geq 1} A_n) = \pr(\cup\_{n\geq 1} B_n) 
 
 **Exercise**: Consider a sequence of events $A\_1,...,A\_n,... \in \cv{F}$ in probability space $(\Omega, \cv{F}, \pr)$. If for any pair of events $\pr(A\_k \cap A\_j) = 0$ then show $\pr(\cup A\_n) = \sum\_{n=1}^\infty \pr(A\_n)$. Be careful, $\pr(A\_k \cap A\_j) = 0$ does not necessarily imply $A\_k \cap A\_j = \nul$. (Hint: consider the finite case of $n$ events, then send $n$ to $\infty$.)
 
+## Some Terminology
+
+Before we go on to talking about measures of limiting events, we should mention some terminology used when talking about probability and measures. Probability is a measure of sets in the outcome space and $\pr: \cv{F} \to [0,1]$. Suppose we have a set $A \in \cv{F}$ and $A \subseteq \Omega$ but $\pr(A) = 1$, then we say $A$ is an event that happens almost always. Likewise, if $\pr(A)= 0$ we say that $A$ happens almost never, or that $A^C$ happens almost always.
+
+Likewise, if we consider a finite measure $\mu: \cv{F} \to [0,K]$, and for some set $A \in \cv{F}$, $\mu(A) = K$ then we say $A$ happens almost everywhere with respect to $\mu(\cdot)$. It is often written in shorthand where we say $A$ (a.e. $\mu$) to mean the same thing.
+
+**Exercise**: Prove a countable set i.e. $\\{\mathbb{Q}\cap[0,1]\\}$ has measure 0 where $\Omega = [0,1]$ with the Lebesgue measure $\lambda$ defined upon the measurable space. (Hint: Cover the $n$-th rational number with an interval of length $\frac{\eps}{2^{n+1}}$ centered at the rational number. As there are countably many, sum all the interval covers.) 
+
 # Limit Inferior and Limit Superior of Events
 
 The basic laws of probability have been built. There is nothing particularly interesting regarding basic probability laws, but we have now defined it as a measure and showed some basic properties. In the end, we hope to learn something about limiting behavior of these probability measures. Limits not not always defined, but from analysis, we know that $\limsup$ and $\liminf$ are always defined and when they are equivalent, then the limit exists and is defined.
@@ -236,5 +244,7 @@ Thus $\lim X\_n = 0$ with probability 1 so we say $X\_n$ converges to 0 almost s
 **Exercise**: Let $\\{A\_n\\}_{n\geq 1}$ be a sequence of independent events. Prove $\pr(\cup A\_n) = 1$ if and only if $\sum \pr(A\_n) = \infty$ aka $\pr(A\_n \text{ i.o.}) = 1$. (Hint: One direction is trivial. For the other direction, leverage the fact that events are independent.)
 
 **Exercise**: Let $X\_1,...,X\_n,...$ be independent random variables. Show that $\sup X\_n < \infty$ almost surely if and only if $\sum \pr(X\_n > M) < \infty$ for some $M$. (Hint: For one direction, the contrapositive may be easier to prove.)
+
+**Exercise**: Let $X\_n$ be iid with $X\_n = 1$ with probability $\frac{1}{n^2}$ and $X\_n = 0$ with probability $1-\frac{1}{n^2}$. Show that $\sum_{n=1}^\infty X\_n < \infty$ almost surely.  
 
 Now that we have a technology for discussing measures of limiting events, we are now ready to talk about expectation and integration, in particular regarding their limiting properties.
