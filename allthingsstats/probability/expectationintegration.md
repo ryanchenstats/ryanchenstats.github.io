@@ -98,58 +98,58 @@ $$f = \sum_{i=1}^N a_i \ind_{A_i}$$
 
 The integral over some measurable set $E \in \cv{F}$ is thus defined as:
 
-$$\int_E f d\mu = \int_E \sum_{i=1}^N a_i \ind_{A_i} d\mu = \sum_{i=1}^N a_i \int_E \ind_{A_i} d\mu = \sum_{i=1}^N a_i \mu(A_i)$$
+$$\int_E f \,d\mu = \int_E \sum_{i=1}^N a_i \ind_{A_i} \,d\mu = \sum_{i=1}^N a_i \int_E \ind_{A_i} \,d\mu = \sum_{i=1}^N a_i \mu(A_i)$$
 
 So the integral is the measure of the preimages $A_i \in\cv{F}$, multiplied by the value of the step function value $a_i$, then summed over all $i$. We now can develop a couple properties about integrals of simple functions. The following properties assumes a region of integration with measure $>0$.
 
 ### Additivity
 
-For simple $f, g$, $\int f+g d\mu = \int f d\mu + \int g d\mu$.
+For simple $f, g$, $\int f+g \,d\mu = \int f \,d\mu + \int g \,d\mu$.
 
 _Proof_ : Let $f = \sum\_{i=1}^N a\_i \ind\_{A\_i}$ and $g = \sum\_{k=1}^M b\_k \ind\_{B\_k}$ and $f+g = \sum\_{i=1}^N \sum\_{k=1}^M (a\_i + b\_k) \ind\_{A\_i \cap B\_k}$. So we can rewrite each integral as:
 
-$$\int fd\mu = \sum_{k=1}^M \sum_{i=1}^N a_i \mu(A_i \cap B_k)\; \qquad \; \int g d\mu= \sum_{k=1}^M \sum_{i=1}^N b_k \mu(A_i \cap B_k)$$
+$$\int f\,d\mu = \sum_{k=1}^M \sum_{i=1}^N a_i \mu(A_i \cap B_k)\; \qquad \; \int g \,d\mu= \sum_{k=1}^M \sum_{i=1}^N b_k \mu(A_i \cap B_k)$$
 
 Thus they are compatible to add:
 
-$$\int f d\mu +  \int g d\mu = \sum_{k=1}^M \sum_{i=1}^N (a_i + b_k) \mu(A_i \cap B_k) = \int f+g d\mu$$
+$$\int f \,d\mu +  \int g \,d\mu = \sum_{k=1}^M \sum_{i=1}^N (a_i + b_k) \mu(A_i \cap B_k) = \int f+g \,d\mu$$
 
 It is easy to see how the integral is closed under scalar multiplication as well, thus also proves linearity of the integral. $\tag*{∎}$ 
 
 ### Monotonicity
 
-If $0 \leq f \leq g$ are simple, then $\int f d\mu \leq \int g d\mu$. 
+If $0 \leq f \leq g$ are simple, then $\int f \,d\mu \leq \int g \,d\mu$. 
 
-_Proof_ : First we note that if $f \geq 0$ then $\int f d\mu \geq 0$ which is immediately true from the definition of simply function integration. Now if $f \leq g$ then $g-f \geq 0$ so $\int g -f d\mu \geq 0$. Then by additivity $\int g d\mu \geq \int f d\mu$. $\tag*{∎}$
+_Proof_ : First we note that if $f \geq 0$ then $\int f \,d\mu \geq 0$ which is immediately true from the definition of simply function integration. Now if $f \leq g$ then $g-f \geq 0$ so $\int g -f \,d\mu \geq 0$. Then by additivity $\int g \,d\mu \geq \int f \,d\mu$. $\tag*{∎}$
 
 ### For General non-Negative Functions
 
 Since $f\_n \uparrow f$, then we can define the integral of a general $f \geq 0$ as 
 
-$$\sup\left\lbrace \int s d\mu : \text{simple }s \leq f\right\rbrace$$ 
+$$\sup\left\lbrace \int s \,d\mu : \text{simple }s \leq f\right\rbrace$$ 
 
 That is, the supremum of the integral of simple $s$ where $s \leq f$.
 
 ### Monotone Convergence
 
-This is a critical result. If $0\leq f\_n \uparrow f$ for $f\_n$ and $f$ both $(\Omega, \cv{F}) \to (\reals^+, \cv{B})$, then $\lim \int f\_n d\mu = \int \lim f\_n d\mu = \int f d\mu$. Ultimately the proof relies on the monotonicity of measures.
+This is a critical result. If $0\leq f\_n \uparrow f$ for $f\_n$ and $f$ both $(\Omega, \cv{F}) \to (\reals^+, \cv{B})$, then $\lim \int f\_n \,d\mu = \int \lim f\_n \,d\mu = \int f \,d\mu$. Ultimately the proof relies on the monotonicity of measures.
 
-_Proof_ : We already have that $f\_n \uparrow f$ so $\lim \int f\_n d\mu \leq \int f d\mu$. It suffices to show $\lim \int f\_n d\mu \geq \int f d\mu$. We define another simple function $h$ that is $0\leq h \leq f$. Furthermore, we take $\alpha \in (0,1)$, and define Borel sets in the domain as 
+_Proof_ : We already have that $f\_n \uparrow f$ so $\lim \int f\_n \,d\mu \leq \int f \,d\mu$. It suffices to show $\lim \int f\_n \,d\mu \geq \int f \,d\mu$. We define another simple function $h$ that is $0\leq h \leq f$. Furthermore, we take $\alpha \in (0,1)$, and define Borel sets in the domain as 
 
 $$A_n = \{\omega \in \Omega : f_n (\omega) > \alpha h(\omega)\}$$
 
 $A\_n \subseteq A\_{n+1}$ by the construction of the set above, and $\cup\_n A\_n = \Omega$. By continuity of measures, $\mu(\Omega) = \mu(\cup\_n A\_n) = \lim\_n \mu(A\_n)$. Now, 
 
-$$\alpha \int_{A_n} h d\mu \leq \int_\Omega f_n d\mu$$
+$$\alpha \int_{A_n} h \,d\mu \leq \int_\Omega f_n \,d\mu$$
 
 We can write the last two expressions with limits as:
 
-$$\alpha \lim_{n\to\infty} \sum_{i=1}^N h \mu(A_{n,i}) = \alpha \sum_{i=1}^N h \mu(\Omega_i) \leq \lim_{n\to\infty} \int f_n d\mu$$
+$$\alpha \lim_{n\to\infty} \sum_{i=1}^N h \mu(A_{n,i}) = \alpha \sum_{i=1}^N h \mu(\Omega_i) \leq \lim_{n\to\infty} \int f_n \,d\mu$$
 
 There is abuse of notation above. $A\_{n,i}$ is a partition of $A\_n$ and $\Omega\_i$ is a partition of the whole space $\Omega$. The limit is passed through the sum and we invoke continuity of measures.
 
-Taking the supremum on both sides, $\sup \sum_{i=1}^N h \mu(\Omega_i) = \int f d\mu$ by definition as $0 \leq h \leq f$. We may drop the $\alpha$ as $\alpha \in (0,1)$. Thus: 
+Taking the supremum on both sides, $\sup \sum_{i=1}^N h \mu(\Omega_i) = \int f \,d\mu$ by definition as $0 \leq h \leq f$. We may drop the $\alpha$ as $\alpha \in (0,1)$. Thus: 
 
-$$\int f d\mu \leq \lim_{n\to\infty} \int f_n d\mu$$ 
+$$\int f \,d\mu \leq \lim_{n\to\infty} \int f_n \,d\mu$$ 
 
-Therefore, $\int f d\mu = \lim_{n\to\infty} \int f_n d\mu$. $\tag*{∎}$ 
+Therefore, $\int f \,d\mu = \lim_{n\to\infty} \int f_n \,d\mu$. $\tag*{∎}$ 
