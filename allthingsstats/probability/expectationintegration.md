@@ -26,11 +26,11 @@ $\newcommand{\reals}{\mathbb{R}}$ $\newcommand{\nats}{\mathbb{N}}$ $\newcommand{
 
 Thus far, we have defined a random variable as a function. We have also developed a mechanism to help understand how to evaluate probability measures of limiting events and its relationship to continuity. Another important property of a random variable is its expectation or moment, and we can examine higher order moments for random variables which will provide more information about the behavior of the random variable. Moments also help us control certain aspects of the random variable, which allows us to make generalizations of sequences of random variables ad infinitum. Expectation is expressed as an integration. For random variable $X$, we define the expectation as
 
-$$\E(X) = \int_\Omega X(\omega) \,d\pr = \int_\Omega X(\omega) \pr(d\omega)$$
+$$\E(X) = \int_\Omega X(\omega) \,d\pr = \int_\Omega X(\omega)\, \pr(d\omega)$$
 
 Recall the discussion on induced measures from the measure theory and $\sigma$-algebra discussion. We can rewrite the integral by changing the variable of integration justified through induced measures by the random variable. $X : (\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$ where $\lambda$ is the induced measure on $(\reals, \cv{B})$:
 
-$$\E(X) = \int_\Omega X(\omega) \pr(d\omega) = \int_\reals x \lambda(dx)$$
+$$\E(X) = \int_\Omega X(\omega) \, \pr(d\omega) = \int_\reals x \lambda(dx)$$
 
 ## Riemann-Darboux Function Approximation is not Sufficient, a Proposed Solution
 
