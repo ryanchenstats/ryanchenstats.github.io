@@ -142,7 +142,7 @@ $$\int h d\mu = \sum_{i=1}^n a_i \mu(A_i) = \sum_{i=1}^N a_i \mu\left(\bigcup_{n
 
 So:
 
-$$\int f d\mu = \sup\\{\int s d\mu : s \leq f\\} \leq \lim_{n\to\infty} \int f_n d\mu$$
+$$\int f d\mu = \sup\{\int h d\mu : h \leq f\} \leq \lim_{n\to\infty} \int f_n d\mu$$
 
 
 
