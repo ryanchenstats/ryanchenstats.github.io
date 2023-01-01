@@ -132,7 +132,7 @@ That is, the supremum of the integral of simple $s$ where $s \leq f$.
 
 ### Monotone Convergence
 
-This is a critical result. If $0\leq f\_n \uparrow f$, then $\lim \int f\_n d\mu = \int \lim f\_n d\mu = \int f d\mu$. Ultimately the proof relies on the monotonicity of measures.
+This is a critical result. If $0\leq f\_n \uparrow f$ for $f\_n$ and $f$ both $(\Omega, \cv{F}) \to (\reals^+, \cv{B})$, then $\lim \int f\_n d\mu = \int \lim f\_n d\mu = \int f d\mu$. Ultimately the proof relies on the monotonicity of measures.
 
 _Proof_ : We already have that $f\_n \uparrow f$ so $\lim \int f\_n d\mu \leq \int f d\mu$. It suffices to show $\lim \int f\_n d\mu \geq \int f d\mu$. We define another simple function $h$ that is $0\leq h \leq f$. Furthermore, we take $\alpha \in (0,1)$, and define Borel sets in the domain as 
 
