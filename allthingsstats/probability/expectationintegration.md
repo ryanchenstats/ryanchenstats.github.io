@@ -138,9 +138,9 @@ _Proof_ : We already have that $f\_n \uparrow f$ so $\lim \int f\_n d\mu \leq \i
 
 $$A_n = \{\omega \in \Omega : f_n (\omega) > \alpha h(\omega)\}$$
 
-$A\_n \subseteq A\_{n+1}$ by the construction of the set above, and $\cup\_n A\_n = \Omega$. By continuity of measures, $\mu(\Omega) = \mu(\cup\_n A\_n) = \lim\_n \mu(A\_n)$. So 
+$A\_n \subseteq A\_{n+1}$ by the construction of the set above, and $\cup\_n A\_n = \Omega$. By continuity of measures, $\mu(\Omega) = \mu(\cup\_n A\_n) = \lim\_n \mu(A\_n)$. Now, 
 
-$$\int_{A_n} \alpha h d\mu \leq \int_\Omega f_n d\mu$$
+$$\alpha \int_{A_n} h d\mu \leq \int_\Omega f_n d\mu$$
 
 We can write the last two expressions with limits as:
 
