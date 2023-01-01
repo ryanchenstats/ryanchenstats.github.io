@@ -162,9 +162,9 @@ Now we have defined integrals for positive functions of which $f^+$ and $f^-$ ar
 
 We call a function integrable if $\int f^+ \,d\mu$ and $\int f^- d\mu$ are both finite. The integral is infinite if at most one of the two integrals are infinite. The integral is undefined if both are infinite. 
 
-Now we can connect this to random variables since random variables are measurable functions. As defined above, for $X:(\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$, $\E(X) = \int\_\Omega X\, d\pr$. We say $X \in L^1(\Omega, \cv{F}, \pr)$ if $\int_\Omega |X| \,d\pr < \infty$. The space $L^1(\Omega, \cv{F},\pr)$ is the set of all integrable functions in the $L_1$ norm. In general, we have $L^P(\Omega, \cv{F}, \pr)$ space and for $X \in L^P(\Omega, \cv{F}, \pr)$, it must be that $\int_\Omega |X|^p \,d\pr$. 
+Now we can connect this to random variables since random variables are measurable functions. As defined above, for $X:(\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$, $\E(X) = \int\_\Omega X\, d\pr$. We say $X \in L^1(\Omega, \cv{F}, \pr)$ if $\int_\Omega \|X\| \,d\pr < \infty$. The space $L^1(\Omega, \cv{F},\pr)$ is the set of all integrable functions in the $L_1$ norm. In general, we have $L^P(\Omega, \cv{F}, \pr)$ space and for $X \in L^P(\Omega, \cv{F}, \pr)$, it must be that $\int_\Omega \|X\|^p \,d\pr$. 
 
-**Exercise**: Show that if $\int |f| \,d\mu < \infty$ then $\int f\, d\mu$ is finite thus integrable. Does the converse hold?
+**Exercise**: Show that if $\int \|f\| \,d\mu < \infty$ then $\int f\, d\mu$ is finite thus integrable. Does the converse hold?
 
 **Exercise**: Show that if $X \in L^n(\Omega, \cv{F}, \pr)$ then $X \in L^{n-1}(\Omega, \cv{F}, \pr)$ where $(n \geq 2)$. 
 
