@@ -34,7 +34,7 @@ $$\E(X) = \int_\Omega X(\omega) \pr(d\omega) = \int_\reals x \lambda(dx)$$
 
 ## Riemann-Darboux Function Approximation is not Sufficient, a Proposed Solution
 
-At this point, integration ought to be defined. In the Riemann sense, integration is not entirely well defined as we see pitfalls when Riemann integrating some pathological functions. This is particularly troublesome because it means Riemann integration is not a general enough technique. For example, let $f(\omega) = \ind_{\omega \in \mathbb{Q}}$. where $\omega \in (0,1)$. It is easy to show the lower and upper Riemann sums do not agree, thus the Riemann integral is not defined. 
+At this point, integration ought to be defined since expectation is simply an integral. In the Riemann sense, integration is not entirely well defined as we see pitfalls when Riemann integrating some pathological functions. This is particularly troublesome because it means Riemann integration is not a general enough technique. For example, let $f(\omega) = \ind_{\omega \in \mathbb{Q}}$. where $\omega \in (0,1)$. It is easy to show the lower and upper Riemann sums do not agree, thus the Riemann integral is not defined. 
 
 **Exercise**: Show that the function above is not Riemann integrable. (Hint: Riemann integration requires the lower and upper sum to agree in the limit in order to be integrable, in the Riemann sense.)
 
@@ -160,4 +160,13 @@ Therefore, $\int f \,d\mu = \lim_{n\to\infty} \int f_n \,d\mu$. $\tag*{∎}$
 
 We call a function integrable if $\int f^+ \,d\mu$ and $\int f^- d\mu$ are both finite. The integral is infinite if at most one of the two integrals are infinite. The integral is undefined if both are infinite. 
 
+Now we can connect this to random variables since random variables are measurable functions. As defined above, for $X:(\Omega, \cv{F}, \pr) \to (\reals, \cv{B})$, $\E(X) = \int\_\Omega X\, d\pr$. We say $X \in L^1(\Omega, \cv{F}, \pr)$ if $\int_\Omega |X| \, d\pr < \infty$. The space $L^1(\Omega, \cv{F},\pr)$ is the set of all integrable functions in the $L_1$ norm. In general, we have $L^P(\Omega, \cv{F}, \pr)$ space and for $X \in L^P(\Omega, \cv{F}, \pr)$, it must be that $\int_\Omega |X|^p \,d\pr$. 
+
 **Exercise**: Show that if $\int |f| \,d\mu < \infty$ then $\int f\, d\mu$ is finite thus integrable. Does the converse hold?
+
+**Exercise**: Show that if $X \in L^n(\Omega, \cv{F}, \pr)$ then $X \in L^{n-1}(\Omega, \cv{F}, \pr)$ where $(n \geq 2)$. 
+
+**Exercise**: Show that the Cauchy random variable is not in $L^1(\Omega, \cv{F},\pr)$. Is the integral infinite, or undefined?
+
+
+
