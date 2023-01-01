@@ -156,6 +156,8 @@ Therefore, $\int f \,d\mu = \lim_{n\to\infty} \int f_n \,d\mu$. $\tag*{∎}$
 
 **Exercise**: We relax the condition of $f\_n$ being simple functions. Prove the monotone convergence theorem above, without assuming $f\_n$ is simple. That is, for a general non-negative increasing sequence $f\_n$, such that $f\_n \uparrow f$, prove that $\lim\_n \int f\_n\, d\mu = \int f\, d\mu$.
 
+Now we have defined integrals for positive functions of which $f^+$ and $f^-$ are. And since $f = f^+-f^-$, we have also defined integrability for general-valued $f$.
+
 ## Integrability
 
 We call a function integrable if $\int f^+ \,d\mu$ and $\int f^- d\mu$ are both finite. The integral is infinite if at most one of the two integrals are infinite. The integral is undefined if both are infinite. 
@@ -168,5 +170,7 @@ Now we can connect this to random variables since random variables are measurabl
 
 **Exercise**: Show that the Cauchy random variable is not in $L^1(\Omega, \cv{F},\pr)$. Is the integral infinite, or undefined?
 
+**Exercise**: Show that Riemann integrability implies Lebesgue integrability. 
 
+**Exercise**: Integrate $f(x) = x^2$ from $x=0$ to $1$ with Lebesgue integration. Divide the codomain by a factor of 2. Now integrate the same in the Riemann sense, dividing the region of integration by a factor of 2.
 
