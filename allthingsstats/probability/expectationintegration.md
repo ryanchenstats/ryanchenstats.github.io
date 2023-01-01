@@ -134,9 +134,9 @@ That is, the supremum of the integral of simple $s$ where $s \leq f$.
 
 This is a critical result. If $0\leq f\_n \uparrow f$, then $\lim \int f\_n d\mu = \int \lim f\_n d\mu = \int f d\mu$. Ultimately the proof relies on the monotonicity of measures.
 
-_Proof_ : We already have that $f\_n \uparrow f$ so $\lim \int f\_n d\mu \leq \int f d\mu$. It suffices to show $\lim \int f\_n d\mu \geq \int f d\mu$. We define another simple function $h$ such that $h = \sum a\_i \ind_{A\_i}$. Define $A^n\_{i,\eps} := \\{\omega : h \leq f\_n(\omega)\\}$ for any $\eps > 0$. As $f\_n = \sum a\_i \ind_{A^n\_i}$, we define $h = \sum (a\_i - \eps)\ind_{A^n\_{i,\eps}}$. This essentially forms a partition for another simple function $h\_{n,\eps}$ - a simple function that has distance $\eps$ below $f\_n$. 
+_Proof_ : We already have that $f\_n \uparrow f$ so $\lim \int f\_n d\mu \leq \int f d\mu$. It suffices to show $\lim \int f\_n d\mu \geq \int f d\mu$. We define another simple function $h$ such that $h = \sum a\_i \ind_{A\_i}$. Define $A^n\_{i,\eps} := \\{\omega : h \leq f\_n(\omega)\\}$ for any $\eps > 0$. As $f\_n = \sum a\_i \ind_{A^n\_i}$, we further define $h\_eps = \sum (a\_i - \eps)\ind_{A^n\_{i,\eps}}$. This is a simple function that has distance $\eps$ below $f\_n$ (approximates $f\_n$ from below). 
 
-Now, the partitions for $h\_\eps$ have the property: $A^n\_{i,\eps} \subseteq A^{n+1}\_{i,\eps}$ since $f\_n \leq f\_{n+1}$ and the set $A^n\_{i,\eps}$ gets larger as $n$ increases for fixed $i, \eps$. We also have $\cup A^n\_{i,\eps} = A_{i,\eps}$ which is a partition for $h$. Thus by continuity of measures, $\mu(A\_i) = \mu(\cup\_n A^n\_i) = \lim\_n \mu(A\_{i,\eps}^n)$. So:
+Now, the partitions for $h$ have the property: $A^n\_{i,\eps} \subseteq A^{n+1}\_{i,\eps}$ since $f\_n \leq f\_{n+1}$ and the set $A^n\_{i,\eps}$ gets larger as $n$ increases for fixed $i, \eps$. We also have $\cup A^n\_{i,\eps} = A_{i,\eps}$ which is a partition for $h$. Thus by continuity of measures, $\mu(A\_i) = \mu(\cup\_n A^n\_i) = \lim\_n \mu(A\_{i,\eps}^n)$. So:
 
 $$\int h d\mu = \sum_{i=1}^n a_i \mu(A_i) = \sum_{i=1}^N a_i \mu\left(\bigcup_{n\geq 1} A^n_i\right) = \lim_{n\to\infty}\sum_{i=1}^N a_i \mu\left(A^n_i\right) \leq \lim_{n\to\infty} \int f_n d\mu$$   
 
