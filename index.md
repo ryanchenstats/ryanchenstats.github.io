@@ -9,7 +9,6 @@ Page under construction
 
 <> If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
 
-<<<<<<< HEAD
 <> More specifically, the created site:
 =======
 ---
@@ -80,7 +79,6 @@ email, or any other method with the owners of this repository before making a ch
 <> [GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
 <> [use this template]: https://github.com/just-the-docs/just-the-docs-template/generate --->
 
-<<<<<<< HEAD
 =======
 [Jekyll]: https://jekyllrb.com
 [Markdown]: https://daringfireball.net/projects/markdown/
