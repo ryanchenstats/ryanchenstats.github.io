@@ -79,7 +79,7 @@ email, or any other method with the owners of this repository before making a ch
 <> [GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
 <> [use this template]: https://github.com/just-the-docs/just-the-docs-template/generate --->
 
-=======
+<!-- =======
 [Jekyll]: https://jekyllrb.com
 [Markdown]: https://daringfireball.net/projects/markdown/
 [Liquid]: https://github.com/Shopify/liquid/wiki
@@ -94,5 +94,5 @@ email, or any other method with the owners of this repository before making a ch
 [Template README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
 [GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
 [customize]: {% link docs/customization.md %}
-[use the template]: https://github.com/just-the-docs/just-the-docs-template/generate
+[use the template]: https://github.com/just-the-docs/just-the-docs-template/generate -->
 
