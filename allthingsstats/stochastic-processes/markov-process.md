@@ -45,3 +45,5 @@ Using the same collection as previously defined, Suppose $P_n = \prod_{i=1}^n X_
 Markov structure is useful in the sense that calculating probabilities is simplified. Given some initial condition $X_0 = x_0$, we are able to calculate the joint probability of $(X_0,...,X_t)$ in a simple manner, provided that $X_t$ is a Markov process. This is shown through Bayes rule and induction. The base case is trivial: $\pr(X_{1}=x_1, X_0 = x_0) = \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$. Now let the inductive hypothesis be: $\pr(X_t = x_t,...,X_0=x_0) = \pr(X_{t}=x_t\vert X_{t-1}=x_{t-1})\cdots \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$. Then:
 
 $$\pr(X_{t+1}=x_{t+1},...,X_0=x_0) = \pr(X_{t+1}=x_{t+1}\vert X_{t}=x_t,...,X_0=x_0)\pr(X_{t}=x_t,...,X_0=x_0)$$
+
+By the inductive hypothesis, replace $\pr(X_{t}=x_t,...,X_0=x_0)$ with $\pr(X_{t}=x_t\vert X_{t-1}=x_{t-1})\cdots \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$ and by the Markov property, replace $\pr(X_{t+1}=x_{t+1}\vert X_{t}=x_t,...,X_0=x_0) = \pr(X_{t+1}=x_{t+1}\vert X_{t} = x_t)$. 
