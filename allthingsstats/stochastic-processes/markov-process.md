@@ -47,3 +47,5 @@ Markov structure is useful in the sense that calculating probabilities is simpli
 $$\pr(X_{t+1}=x_{t+1},...,X_0=x_0) = \pr(X_{t+1}=x_{t+1}\vert X_{t}=x_t,...,X_0=x_0)\pr(X_{t}=x_t,...,X_0=x_0)$$
 
 By the inductive hypothesis, replace $\pr(X_{t}=x_t,...,X_0=x_0)$ with $\pr(X_{t}=x_t\vert X_{t-1}=x_{t-1})\cdots \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$ and by the Markov property, replace $\pr(X_{t+1}=x_{t+1}\vert X_{t}=x_t,...,X_0=x_0) = \pr(X_{t+1}=x_{t+1}\vert X_{t} = x_t)$. 
+
+Thus when $t=0$, and at $t=k$, the probability of a particular path denoted as $(X_0=x_0,...,X_k = x_k)$, has probability $\pr(X_0 = x_0)\prod_{i=1}^k \pr(X_{i}=x_i \vert X_{i-1}=x_{i-1})$.
