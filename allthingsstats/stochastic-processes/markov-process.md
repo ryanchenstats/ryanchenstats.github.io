@@ -28,6 +28,8 @@ From probability theory, especially towards the law of large numbers and central
 
 A **stochastic process** is a a collection of random variables indexed by some indexing $\cv{T}$ which can be countable or uncountable. The most basic form of a stochastic process is a **Markov Process** which is a sequence of random variables that exhibit the Markov property. 
 
+Stochastic processes are usually defined on a state space $S$. That is, $X_t \in S$ for all $t$. In a coin flipping game, the state space is $\{H,T\}$, and this can be thought of as the same as the outcome space $\Omega$ in probability. For now, we consider finite state spaces.
+
 ## Markov Property
 
 A sequence of random variables exhibit the Markov property when
@@ -48,4 +50,23 @@ $$\pr(X_{t+1}=x_{t+1},...,X_0=x_0) = \pr(X_{t+1}=x_{t+1}\vert X_{t}=x_t,...,X_0=
 
 By the inductive hypothesis, replace $\pr(X_{t}=x_t,...,X_0=x_0)$ with $\pr(X_{t}=x_t\vert X_{t-1}=x_{t-1})\cdots \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$ and by the Markov property, replace $\pr(X_{t+1}=x_{t+1}\vert X_{t}=x_t,...,X_0=x_0) = \pr(X_{t+1}=x_{t+1}\vert X_{t} = x_t)$. 
 
+Therefore:
+
+$$\pr(X_{t+1}=x_{t+1},...,X_0=x_0) = \pr(X_{t+1}=x_{t+1}\vert X_{t}=x_t)... \pr(X_{1} = x_1\vert X_0=x_0)\pr(X_0=x_0)$$
+
 Thus when $t=0$, and at $t=k$, the probability of a particular path denoted as $(X_0=x_0,...,X_k = x_k)$, has probability $\pr(X_0 = x_0)\prod_{i=1}^k \pr(X_{i}=x_i \vert X_{i-1}=x_{i-1})$.
+
+### Transition Probabilities 
+
+Thus we have seen that any joint probability on a Markov process can be reduced into probabilities of going to another state in the next time period, given the current state. These are called transition probabilities. For ease of notation, we denote $p_{ij,t}$ as the probability of arriving at time state $j$ given we started at state $i$ - as evaluated at time $t$. Often times, the Markov process does not depend on $t$, meaning that $p_{ij}$ is constant over time. This is called a **time homogeneous** markov chain, which we restrict our attention to. 
+
+We can specify the transition probabilities going from any two states in $S$. Thus we have $\vert S \vert^2$ probabilities to specify. We can furthermore arrange them into a matrix, called the **transition matrix** $P$. 
+
+$$P = \begin{bmatrix} p_{0,0} & p_{0,1} & ... & p_{0,S} \\
+p_{1,0} & p_{1,1} & ... & p_{1,S}  \\
+\vdots & \vdots & \ddots & \vdots \\
+p_{S, 0} & p_{S,1} & \vdots & p_{S,S}
+\end{bmatrix}$$
+
+The transition matrix $P$ fully categorizes the time-homogeneous Markov chain, when given $X_0$, the initial value of the Markov chain. We can evaluate the joint probabilities given the probabilities entirely contained in the matrix $P$.  
+
