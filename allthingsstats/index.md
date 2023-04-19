@@ -14,6 +14,7 @@ Topics that will be discussed are
 * **Statistical Inference**: provides rigor in the theory of estimation and hypothesis testing, both asymptotic and non-asymptotic [calculus, mathematical statistics]
 * **Linear Regression**: provides a geometrical view of regression [linear algebra, calculus, mathematical statistics]
 * **Probability Theory**: provide rigor and justifications to several asymptotic statements made in statistics such as the law of large numbers and central limit theorem [real analysis, calculus, mathematical statistics]
+* **Stochastic Processes**: provide an introduction to basic stochastic processes, such as Markov chains, martingales, and brownian motion as well as stochastic calculus. [real analysis, calculus, mathematical statistics, probability theory]
 
 The topics surrounded by brackets are the topics in which I assume the reader is familiar. Other topics will be discussed if there is interest.
 
