@@ -32,16 +32,16 @@ A **stochastic process** is a a collection of random variables indexed by some i
 
 A sequence of random variables exhibit the Markov property when
 
-$$\pr(X_{t+1} = x_{t+1} | X_{t} = x_t, \hdots, X_1 = x_1) = \pr(X_{t+1} = x_{t+1} | X_{t} = x_t) $$
+$$\pr(X_{t+1} = x_{t+1} | X_{t} = x_t, ..., X_1 = x_1) = \pr(X_{t+1} = x_{t+1} | X_{t} = x_t) $$
 
 In otherwords, the probability of the future only deends on the present, and does not depend on the past. Speaking in terms of conditional probability, we say that the past and future are conditionally independent, conditioned on the present. A few examples can immediately come to mind.
 
 #### Example
 
-Suppose $X_1, X_2,\hdots$ are a countable collection of random variables. Let $S_n = \sum_{i=1}^n X_n$. Then $S_n$ is a sequence of random variables indexed by $n$ and exhibits the Markov property. (Why?)
+Suppose $X_1, X_2,...$ are a countable collection of random variables. Let $S_n = \sum_{i=1}^n X_n$. Then $S_n$ is a sequence of random variables indexed by $n$ and exhibits the Markov property. (Why?)
 
 Using the same collection as previously defined, Suppose $P_n = \prod_{i=1}^n X_n$ and $X_n > 0$ for all $n$. $P_n$ is Markov. However, if $X_n \geq 0$, $P_n$ need not be Markov. (Why?)
 
-Markov structure is useful in the sense that calculating probabilities is simplified. Given some initial condition $X_0 = x_0$, we are able to calculate the joint probability of $(X_0,\hdots,X_t)$ in a simple manner, provided that $X_t$ is a Markov process. This is shown through Bayes rule and induction. The base case is trivial: $\pr(X_{1}=x_1, X_0 = x_0) = \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$. Now let the inductive hypothesis be: $\pr(X_t = x_t,\hdots,X_0=x_0) = \pr(X_{t}=x_t\vert X_{t-1}=x_{t-1})\cdots \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$. Then:
+Markov structure is useful in the sense that calculating probabilities is simplified. Given some initial condition $X_0 = x_0$, we are able to calculate the joint probability of $(X_0,...,X_t)$ in a simple manner, provided that $X_t$ is a Markov process. This is shown through Bayes rule and induction. The base case is trivial: $\pr(X_{1}=x_1, X_0 = x_0) = \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$. Now let the inductive hypothesis be: $\pr(X_t = x_t,...,X_0=x_0) = \pr(X_{t}=x_t\vert X_{t-1}=x_{t-1})\cdots \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$. Then:
 
-$$\pr(X_{t+1}=x_{t+1},\hdots,X_0=x_0) = \pr(X_{t+1}=x_{t+1}\vert X_{t}=x_t,\hdots,X_0=x_0)\pr(X_{t}=x_t,\hdots,X_0=x_0)$$
+$$\pr(X_{t+1}=x_{t+1},...,X_0=x_0) = \pr(X_{t+1}=x_{t+1}\vert X_{t}=x_t,...,X_0=x_0)\pr(X_{t}=x_t,...,X_0=x_0)$$
