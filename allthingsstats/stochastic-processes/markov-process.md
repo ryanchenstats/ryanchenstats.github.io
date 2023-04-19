@@ -9,7 +9,7 @@ has_children: true
 usemathjax: true
 ---
 
-# Probability as a Measure
+# Markov Processes
 {: .no_toc }
 
 ## Table of contents
@@ -41,6 +41,7 @@ In otherwords, the probability of the future only deends on the present, and doe
 #### Example
 
 Suppose $X_1, X_2,...$ are a countable collection of random variables. Let $S_n = \sum_{i=1}^n X_n$. Then $S_n$ is a sequence of random variables indexed by $n$ and exhibits the Markov property. (Why?)
+
 
 Markov structure is useful in the sense that calculating probabilities is simplified. Given some initial condition $X_0 = x_0$, we are able to calculate the joint probability of $(X_0,...,X_t)$ in a simple manner, provided that $X_t$ is a Markov process. This is shown through Bayes rule and induction. The base case is trivial: $\pr(X_{1}=x_1, X_0 = x_0) = \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$. Now let the inductive hypothesis be: $\pr(X_t = x_t,...,X_0=x_0) = \pr(X_{t}=x_t\vert X_{t-1}=x_{t-1})\cdots \pr(X_{1}=x_1 \vert X_0 = x_0)\pr(X_0 = x_0)$. Then:
 
