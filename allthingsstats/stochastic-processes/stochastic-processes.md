@@ -13,5 +13,5 @@ Stochastic processes are random processes represented as a sequence of random va
 
 The aim of these notes is to provide some basic theories used to develop tools that can help model real-world phenomena. To this end, these notes will be slightly less theoretical and geared towards applications, but will provide some rigor in understanding the essentials of stochastic processes.
 
-
+(This is a WIP, and many topics are skipped as the notes are taken in order of what I am working on recently and what comes to mind.)
 
