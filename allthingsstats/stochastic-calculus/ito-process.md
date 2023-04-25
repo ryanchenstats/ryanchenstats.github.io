@@ -73,9 +73,27 @@ $$
 \end{align*}
 $$
 
-So all that remains in the limit is $QV_I(T) = \int_0^T \Delta^2(u)du$. 
+So all that remains after taking limits, is $QV_I(T) = \int_0^T \Delta^2(u)du$. 
 
+## Ito-Doeblin Theorem for Ito Processes
 
+The Ito-Doeblin theorem for an Ito process is analogous to that in the Brownian motion only case. It states that:
+
+$$
+f(T, X(T)) = f(0, X(0)) + \int_0^T f_t(t,X(t))dt + \int_0^T f_x(t,X(t))dX(t) + \frac{1}{2}\int_0^T f_{xx}(t,X(t))dX(t)dX(t) 
+$$
+
+Note the final $dX(t)dX(t)$ is a product of the quadratic variation on $X(t)$ which is $\int_0^T \Delta^2(u)du$ as opposed to the quadratic variation on $W(t)$ which is $T$.
+
+The proof is as follows, with Taylor expansion:
+
+$$
+\begin{align*}
+f(T,X(T)) - f(0,X(0)) &= \sum_{j=0}^{n-1}f_t(t_j, X(t_j))(t_{j+1}-t_j) + \sum_{j=0}^{n-1}f_x(t_j, X(t_j))(X(t_{j+1})-X(t_j)) + \\
+&\qquad \qquad \frac{1}{2}\sum_{j=0}^{n-1}f_{xx}(t_j, X(t_j))(X(t_{j+1})-X(t_j))^2 + \frac{1}{2}\sum_{j=0}^{n-1}f_{tt}(t_j, X(t_j))(t_{j+1}-t_j)^2 + \\
+&\qquad \qquad \sum_{j=0}^{n-1}f_{tx}(t_j, X(t_j))(t_{j+1}-t_j)(X(t_{j+1})-X(t_j)) + R
+\end{align*}
+$$
 
 
 
