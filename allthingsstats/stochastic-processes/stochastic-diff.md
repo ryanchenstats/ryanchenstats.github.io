@@ -102,7 +102,7 @@ $$[g,g](T) = \lim_{n\to\infty} \sum_{(t_j, t_{j+1})\in \cv{T}_n} (g(t_{j+1}) - g
 
 where $\cv{T}_n$ is the set of subintervals of $[0,T)$ that get finer as $n\to\infty$. This essentially tracks how much movement the process $g$ changes over an interval $T$. There also is first order variation which measures the same limit over the absolute value of differences.
 
-Now define $$\abs{\cv{T}_n}$$ as the maximum interval length of the partition. As $n\to\infty$ then $\vert \cv{T}_n \vert \to 0$. Furthermore, for any interval $[t_j,t_{j+1}) \in \cv{T}_n$, we have $\vert t_{j+1} - t_j\vert \leq \vert \cv{T}_n \vert$. 
+Now define $$ \abs{\cv{T}_n} $$ as the maximum interval length of the partition. As $n\to\infty$ then $$\vert \cv{T}_n \vert \to 0$$. Furthermore, for any interval $[t_j,t_{j+1}) \in \cv{T}_n$, we have $$\vert t_{j+1} - t_j\vert \leq \vert \cv{T}_n \vert$$. 
 
 Back to the quadratic variation of the Ito integral, let $t_k < s_1 < ... < s_n < t_{k+1}$ where $\Delta$ is constant on $[t_k, t_{j+1})$. That is, we partition the regions where $\Delta$ is constant into $m+1$ partitions. Within each partition, the differenced Ito integral is 
 
@@ -116,7 +116,7 @@ $$
 \sum_{k=0}^{m-1} (I(s_{k+1}) - I(s_k))^2 = \sum_{k=0}^{m-1} (\Delta(t_{j+1})(W_{s_{k+1}}- W_{s_k}))^2 = \Delta(t_j)^2 \sum_{k=0}^{m-1} (W_{s_{k+1}}- W_{s_k})^2
 $$
 
-As we send $n\to \infty$, we make $\vert \cv{T}_n\vert \to 0$ thus making the intervals $[t_j, t_{j+1})$ to have length 0, we have the expression above become $\Delta(t_j)^2(t_{j+1} - t_j)$ where the $t_{j+1}-t_j$ is the total variation of Brownian motion $W_{t_{j+1}} - W_{t_j}$. Furthermore, as we sum over the partitions of $\cv{T_n}$, we get the integral:
+As we send $n\to \infty$, we make $$\vert \cv{T}_n\vert \to 0$$ thus making the intervals $[t_j, t_{j+1})$ to have length 0, we have the expression above become $\Delta(t_j)^2(t_{j+1} - t_j)$ where the $t_{j+1}-t_j$ is the total variation of Brownian motion $W_{t_{j+1}} - W_{t_j}$. Furthermore, as we sum over the partitions of $\cv{T_n}$, we get the integral:
 
 $$
 \sum_{k=0}^{m-1} (I(s_{k+1}) - I(s_k))^2 = \int_0^T \Delta^2 (u) du
