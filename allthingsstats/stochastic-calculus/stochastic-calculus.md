@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Stochastc Calculus
+title: Stochastic Calculus
 parent: All Things Statistics
 nav_order: 3
 has_toc: true
