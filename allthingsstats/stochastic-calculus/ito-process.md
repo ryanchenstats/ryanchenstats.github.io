@@ -38,7 +38,7 @@ $$\partial X(t) = \Delta(t) \partial W(t) + \Theta(t)\partial t$$
 
 Here, $W_u$ is a Brownian motion, and $\Delta(u)$ and $\Theta(u)$ are adapted processes. Also $\delta(u)^2$ is integrable and $\Theta(u)$ is absolutely integrable.
 
-The Ito process is defined as a sum of an Ito integral and a Lebesgue intergal. We denote the Ito portion as $I(T) = \int_0^T \Delta(u)dW(u)$ and the Lebesgue portion as $L(T) = \int_0^T \Theta(u)du$. The quadratic variation of such an Ito process is $[X,X](T) = \int_0^T \Delta(u)^2 du$ as demonstrated below.
+The Ito process is defined as a sum of an Ito integral and a Lebesgue intergal. We denote the Ito portion as $I(T) = \int_0^T \Delta(u)dW(u)$ and the Lebesgue portion as $L(T) = \int_0^T \Theta(u)du$. The quadratic variation of such an Ito process is $Q_X(T) = \int_0^T \Delta(u)^2 du$ as demonstrated below.
 
 ## Quadratic Variation for Ito Process
 
