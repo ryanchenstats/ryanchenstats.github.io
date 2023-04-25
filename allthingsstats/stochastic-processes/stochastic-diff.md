@@ -136,14 +136,14 @@ $$
 \frac{1}{n}\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} \E((W_{t_{j+1}} - W_{t_j})^2) = \sum_{j=0}^{n-1} t_{j+1}-t_j = T
 $$
 
-Of course the expectation will be $T$ in the limit as well. By independence of disjoint intervals for Brownian motion, $Var((W_{t_{j+1}}-W_{t_j})^2) = 2(t_{j+1} - t_j)^2$ since $W_{t_{j+1}}-W_{t_j} \sim N(0, t_{j+1}-t_j)$ and $[N(0,\sigma^2)/\sigma]^2 \sim \chi^2_1$ then $\frac{(W_{t_{j+1}}-W_{t_j})^2}{t_{j+1}-t_j} \sim \chi^2_1$ so the variance of just the numerator is $2(t_{j+1}-t_j)\cdot (t_{j+1}-t_j)$.
+Of course the expectation will be $T$ in the limit as well. By independence of disjoint intervals for Brownian motion, $Var((W_{t_{j+1}}-W_{t_j})^2) = 2(t_{j+1} - t_j)^2$ since $W_{t_{j+1}}-W_{t_j} \sim N(0, t_{j+1}-t_j)$ and $(N(0,\sigma^2)/\sigma)^2 \sim \chi^2_1$ then $\frac{(W_{t_{j+1}}-W_{t_j})^2}{t_{j+1}-t_j} \sim \chi^2_1$ so the variance of just the numerator is $2(t_{j+1}-t_j)\cdot (t_{j+1}-t_j)$.
 
 $$
 Var\left(\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (W_{t_{j+1}} - W_{t_j})^2\right) \leq \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} 2 \vert \cv{T}_n \vert (t_{j+1}-t_j)
 $$
 As $n\to \infty$, $\cv{T}_n \to 0$ thus the variance above tends to 0 as well. Thus the quadratic variation of $W_t$ for $t \in [0, T)$ is $T$ itself. This proof can be generalized to any interval $[T_1, T_2)$ so that the quadratic variation on that interval for $W_t$ is $T_2 -T_1$. 
 
-Note the quadratic variation of $t$ on any interval is 0, since $\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j)^2 \leq \vert\cv{T}_n\vert \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j) \to 0$ as $n\to\infty$. By the same rational, it is straightfoward to show $[W_t, t](T) = 0$ too on a bounded set. Quadratic variation has to do with realized volatility when tracking stock prices.
+Note the quadratic variation of $t$ on any interval is 0, since $\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j)^2 \leq \vert\cv{T}_n\vert \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j) \to 0$ as $n\to\infty$. By the same rational, it is straightfoward to show $$ [W_t, t](T) = 0 $$ too on a bounded set. Quadratic variation has to do with realized volatility when tracking stock prices.
 
 In short, we can write quadratic variation in differential notation $dW_t dW_t = dt$ and $dW_t dt = 0$ and $dt dt = 0$ which is an informal notation.
 
