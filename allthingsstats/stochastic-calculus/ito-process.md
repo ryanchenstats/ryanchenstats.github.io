@@ -75,6 +75,16 @@ $$
 
 So all that remains after taking limits, is $QV_I(T) = \int_0^T \Delta^2(u)du$. 
 
+## Definition of Integral of Ito Process
+
+For a given adapted processs $\Gamma(t)$, it can be integrated with respect to the Ito process $X(t)$ as $\int_0^T \Gamma(t)dX(t)$. It is defined as follows:
+
+$$
+\int_0^T \Gamma(t)dX(t) = \int_0^T \Gamma(t)\Delta(t)dW(t) + \int_0^T \Gamma(t) \Theta(t) dt
+$$
+
+That is, we split up the two parts of the Ito process and integrate with respect to the Brownian motion portion, and then again with respect to the Lebesgue portion.
+
 ## Ito-Doeblin Theorem for Ito Processes
 
 The Ito-Doeblin theorem for an Ito process is analogous to that in the Brownian motion only case. It states that:
@@ -94,6 +104,13 @@ f(T,X(T)) - f(0,X(0)) &= \sum_{j=0}^{n-1}f_t(t_j, X(t_j))(t_{j+1}-t_j) + \sum_{j
 &\qquad \qquad \sum_{j=0}^{n-1}f_{tx}(t_j, X(t_j))(t_{j+1}-t_j)(X(t_{j+1})-X(t_j)) + R
 \end{align*}
 $$
+
+The first line are the first order terms, the second line are the quadratic terms, and the third line is the cross term + higher order terms. 
+
+$\frac{1}{2}\sum_{j=0}^{n-1}f_{tt}(t_j, X(t_j))(t_{j+1}-t_j)^2$ converges to 0 in the same manner as discussed before. So does the cross term. The first order terms also converge to their integral counter parts. The quadratic $X(t)$ term results in $\int_0^T f_{xx}(t_j, X_j) d(X,X)t$ and since $QV_X(T) = \int_0^T \Delta^2(u)du$ then $d(QV_X(T)) = \Delta^2(u)du$. Thus the second term becomes $\int_0^T f_{xx}(t,X(t))\Delta^2(u)du$. 
+
+We can further simplify $\int_0^T f_x(t,X(t))dX(t)$ as $\int_0^T f_x(t,X(t))\Delta(t)dW(t) + \int_0^T f_x(t, X(t))\Theta(t)dt$. This is by definition of the integral of Ito processes.
+
 
 
 
