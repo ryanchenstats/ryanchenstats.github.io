@@ -227,4 +227,5 @@ f(T, W_T) - f(0, W_0) &= \sum_{i=0}^{n-1}f_t(t_j,W_j)(t_{j+1}-t_j) + \sum_{i=0}^
 \end{align*} 
 $$
 
-The first time converges to $\int_0^T f_t(t,W_t) dt$ as the partitions get finer. By our definition of Ito's integral, the seoncd and third term converges to $\int_0^T f_x(t_j, W_t)dW_t$ and $\int_0^T f_{xx}(t, W_t)dt$
+The first time converges to $\int_0^T f_t(t,W_t) dt$ as the partitions get finer. By our definition of Ito's integral, the seoncd and third term converges to $\int_0^T f_x(t_j, W_t)dW_t$ and $\int_0^T f_{xx}(t, W_t)dt$. The final two terms converge to 0 by bounding $t_{j+1} - t_j$ with $$\vert \cv{T}_n \vert$$ or $$\vert W_{t-j} - W_{t_j} \vert$$ which is also 0 in the limit. Then as $n\to\infty$, the entire sum goes to 0 as well. The higher order terms also converge to 0 in the same manner. 
+
