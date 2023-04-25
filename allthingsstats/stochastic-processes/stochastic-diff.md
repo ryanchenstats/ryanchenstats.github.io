@@ -136,7 +136,7 @@ $$
 \frac{1}{n}\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} \E((W_{t_{j+1}} - W_{t_j})^2) = \sum_{j=0}^{n-1} t_{j+1}-t_j = T
 $$
 
-Of course the expectation will be $T$ in the limit as well. By independence of disjoint intervals for Brownian motion, $Var((W_{t_{j+1}}-W_{t_j})^2) = 2(t_{j+1} - t_j)^2$ since $W_{t_{j+1}}-W_{t_j} \sim N(0, t_{j+1}-t_j)$ and $(N(0,\sigma^2)/\sigma)^2 \sim \chi^2_1$ then $\frac{(W_{t_{j+1}}-W_{t_j})^2}{t_{j+1}-t_j} \sim \chi^2_1$ so the variance of just the numerator is $2(t_{j+1}-t_j)\cdot (t_{j+1}-t_j)$.
+Of course the expectation will be $T$ in the limit as well. By independence of disjoint intervals for Brownian motion, $Var((W_{t_{j+1}}-W_{t_j})^2) = 2(t_{j+1} - t_j)^2$ since $W_{t_{j+1}}-W_{t_j} \sim N(0, t_{j+1}-t_j)$ and $(N(0,\sigma^2)/\sigma)^2 \sim \chi^2$ with degrees of freedom 1. Then $\frac{(W_{t_{j+1}}-W_{t_j})^2}{t_{j+1}-t_j} \sim \chi_1^2$ so the variance of just the numerator is $2(t_{j+1}-t_j)\cdot (t_{j+1}-t_j)$.
 
 $$
 Var\left(\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (W_{t_{j+1}} - W_{t_j})^2\right) \leq \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} 2 \vert \cv{T}_n \vert (t_{j+1}-t_j)
@@ -186,4 +186,18 @@ $$\int_0^T W(t) dW(t) = \frac{1}{2}W_T^2 - \frac{1}{2}T$$
 
 Compare this with the ordinary calculus expression for $\int_0^T x dx = \frac{1}{2}T^2$. The Ito integral has an additional $\frac{1}{2}T$ due to the expression involving the quadratic variation of the Brownian motion. Essentially, Brownian motion moves so quickly that in infinitesimal time, we still need to account for variability in the Brownian motion which is so high that summing $(W_{t_{j+1}}-W_{t_j})^2$ will not tend to 0 as $t_{j+1} - t_j \to 0$. 
 
-The Stratanovich integral (denoted as $\int_0^T W(t) \circ dW(t)$) provides a result that is consistent with ordinary calculus, however as the integral results in another stochastic process, we are interested in properties of the stochastic process. While the Stratanovich integral provides a nice consistent result, one property that the Stratanovich integral does not have is that the resulting process need not be a martingale. The Ito integral result is a martingale, as the reader should check. Finally, the Stratanovich integral is evaluated by taking midpoint values in each continuous approximation. This is not appropriate in finance as there is more value in pricing earlier i.e. for the smallest $t$ in $[t_j, t_{j+1})$. 
+The Stratonovich integral (denoted as $\int_0^T W(t) \circ dW(t)$) provides a result that is consistent with ordinary calculus, however as the integral results in another stochastic process, we are interested in properties of the stochastic process. While the Stratonovich integral provides a nice consistent result, one property that the Stratonovich integral does not have is that the resulting process need not be a martingale. The Ito integral result is a martingale, as the reader should check. Finally, the Stratonovich integral is evaluated by taking midpoint values in each continuous approximation. This is not appropriate in finance as there is more value in pricing earlier i.e. for the smallest $t$ in $[t_j, t_{j+1})$. 
+
+# Chain Rule and Product Rule
+
+The chain rule and product rule in ordinary calculus are straightforward and can be immediately derived from definitions of the derivative. However as seen above, Ito integration need not obey ordinary calculus rules due to the quadratic variation. The variability in the Brownian motion example demonstrates one situation where Ito integration rules $\neq$ ordinary integration rules. Likewise, for derivatives, there are also differences in the rules of calculus. 
+
+## Ito-Doeblin Formula
+
+We present the Ito formula for differentiation a function of $X(t)$. This is also known as the chain rule analog to Ito calculus. For now, we consider the Brownian motion case.
+
+Suppose $f(t,x)$ is a function of time $t$ and the process $x$ such that partial derivatives $f_x(t,x)$, $f_t(t,x)$, and $f_{xx}(t,x)$ are continuous. Then the **Ito-Doeblin formula for Brownian motion** is:
+
+$$
+\frac{\partial f(t,X_t)}{\partial t} = \frac{\partial f(t,X_t)}{\partial t} + \frac{\partial f(t,X_t)}{\partial X_t} + \frac{1}{2}\frac{\partial^2 f(t,X_t)}{\partial t^2}
+$$
