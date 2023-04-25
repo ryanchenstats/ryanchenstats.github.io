@@ -159,9 +159,19 @@ We should discuss about why such an integral exists.
 
 ### Existence of the Limit of the Ito Integral
 
-Consider the $L_2$ norm of a process $X$ defined as $\vert X \vert = \E\left(\int X^2(t) dt \right)$. 
+For any continuous process $\Delta(t)$, $\Delta(t)$ can be approximated the following way:
 
-That is, the limit of integrating the approximate simple functions. This is convenient as the integral of simple functions has been defined already.
+$$
+\Delta_n(t) = \sum_{k=0}^{n-1} \Delta\left(\frac{k}{T}\right) \ind\left(t \in \left[\frac{k T}{n}, \frac{(k+1)T}{n} \right)\right)
+$$
+
+As $\Delta(t)$ is continuous and $\Delta_n(t)$ is cadlag, then $\Delta_n(t) \to \Delta(t)$ as $n\to\infty$. We can arrive at the same result no matter how we partition $T$. 
+
+Now let $I_n(T) = \int_0^T \Delta_n(t) dW(t)$. Since $I_n(t)$ is the Ito integral of a simple process, then by Ito isometry, $I_n^2(T) = \int_0^T \Delta_n^2(t)dt$. Furthermore, for another $m$, $I_m(t)$ is also the Ito integral of a simple process and by rule of integration $I_n(T)-I_m(t) = \int_0^T \Delta_n(t) - \Delta_m(t) dt$. 
+
+Now $\Delta_n(t)-\Delta_m(t)$ is also simple processes so by Ito isometry $(I_n(T) - I_m(T))^2 = \int_0^T (\Delta_n(t) - \Delta_m(t))^2 dt$. Notice that $\Delta_n(t) - \Delta_m(t)$, for sufficiently large $m,n$, $(I_{n} - I_{m})^2$ will be 0. Thus $I_n$ is Cauchy in $L_2$, so the limit also exists in $L_2$
+
+### Example 
 
 A prime example for Ito integration is to integrate $\int_0^T W_t dW_t$. To do so, consider the ''dyadic'' approximation of $W_t$ which is the following (for simplicity, we divide by $n$ instead of $2^n$):
 $$
@@ -194,13 +204,11 @@ Compare this with the ordinary calculus expression for $\int_0^T x dx = \frac{1}
 
 The Stratonovich integral (denoted as $\int_0^T W(t) \circ dW(t)$) provides a result that is consistent with ordinary calculus, however as the integral results in another stochastic process, we are interested in properties of the stochastic process. While the Stratonovich integral provides a nice consistent result, one property that the Stratonovich integral does not have is that the resulting process need not be a martingale. The Ito integral result is a martingale, as the reader should check. Finally, the Stratonovich integral is evaluated by taking midpoint values in each continuous approximation. This is not appropriate in finance as there is more value in pricing earlier i.e. for the smallest $t$ in $[t_j, t_{j+1})$. 
 
-# Chain Rule and Product Rule
+# Ito-Doeblin Formula
 
 The chain rule and product rule in ordinary calculus are straightforward and can be immediately derived from definitions of the derivative. However as seen above, Ito integration need not obey ordinary calculus rules due to the quadratic variation. The variability in the Brownian motion example demonstrates one situation where Ito integration rules $\neq$ ordinary integration rules. Likewise, for derivatives, there are also differences in the rules of calculus. 
 
-## Ito-Doeblin Formula
-
-We present the Ito formula for differentiation a function of $X(t)$. This is also known as the chain rule analog to Ito calculus. For now, we consider the Brownian motion case.
+We present the Ito formula for differentiation a process of $X(t)$. This is also known as the chain rule analog to Ito calculus. For now, we consider the Brownian motion case.
 
 Suppose $f(t,x)$ is a function of time $t$ and the process $x$ such that partial derivatives $f_x(t,x)$, $f_t(t,x)$, and $f_{xx}(t,x)$ are continuous. Then the **Ito-Doeblin formula for Brownian motion** is:
 
