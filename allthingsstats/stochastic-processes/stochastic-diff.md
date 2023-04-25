@@ -38,7 +38,7 @@ $$
 as in the case of Brownian motion, as $W_t$ is differentiable almost nowhere.
 
 In both cases, the differential and the integral are not defined. To give some meaning to the above we consider the standard form of SDEs written as a function an initial condition, a drift term and a variance term:
-$$\d X_t = f(X_t, t)dt + \sigma(X_t, t)dW_t;\;\; X_0 = x$$
+$$d X_t = f(X_t, t)dt + \sigma(X_t, t)dW_t;\;\; X_0 = x$$
 
 However since $dW_t$ does not exist, we should have a different method of defining the above, which is:
 $$X_T = X_0 + \int_0^T f(X_s, s) ds + \int_0^T \sigma(X_s, s)dW_s$$
@@ -102,7 +102,7 @@ $$[g,g](T) = \lim_{n\to\infty} \sum_{(t_j, t_{j+1})\in \cv{T}_n} (g(t_{j+1}) - g
 
 where $\cv{T}_n$ is the set of subintervals of $[0,T)$ that get finer as $n\to\infty$. This essentially tracks how much movement the process $g$ changes over an interval $T$. There also is first order variation which measures the same limit over the absolute value of differences.
 
-Now define $\vert \cv{T}_n\vert$ as the maximum interval length of the partition. As $n\to\infty$ then $\vert \cv{T}_n \vert \to 0$. Furthermore, for any interval $[t_j,t_{j+1}) \in \cv{T}_n$, we have $\vert t_{j+1} - t_j\vert \leq \vert \cv{T}_n \vert$. 
+Now define $\vert \cv{T}_n \vert$ as the maximum interval length of the partition. As $n\to\infty$ then $\vert \cv{T}_n \vert \to 0$. Furthermore, for any interval $[t_j,t_{j+1}) \in \cv{T}_n$, we have $\vert t_{j+1} - t_j\vert \leq \vert \cv{T}_n \vert$. 
 
 Back to the quadratic variation of the Ito integral, let $t_k < s_1 < ... < s_n < t_{k+1}$ where $\Delta$ is constant on $[t_k, t_{j+1})$. That is, we partition the regions where $\Delta$ is constant into $m+1$ partitions. Within each partition, the differenced Ito integral is 
 
