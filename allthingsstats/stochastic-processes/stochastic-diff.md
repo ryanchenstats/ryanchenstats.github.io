@@ -20,7 +20,7 @@ usemathjax: true
 
 ---
 
-$\renewcommand{\reals}{\mathbb{R}}$ $\newcommand{\nats}{\mathbb{N}}$ $\newcommand{\ind}{\mathbb{1}}$  $\newcommand{\pr}{\mathbb{P}}$ $\newcommand{\cv}[1]{\mathcal{#1}}$ $\newcommand{\nul}{\varnothing}$ $\newcommand{\eps}{\varepsilon}$ $\newcommand{\E}{\mathbb{E}}$ $\newcommand{\d}{\partial}$ $\newcommand{\ab}[1]{\left\lvert\left\lvert #1 \right\rvert\right\rvert}$
+$\renewcommand{\reals}{\mathbb{R}}$ $\newcommand{\nats}{\mathbb{N}}$ $\newcommand{\ind}{\mathbb{1}}$  $\newcommand{\pr}{\mathbb{P}}$ $\newcommand{\cv}[1]{\mathcal{#1}}$ $\newcommand{\nul}{\varnothing}$ $\newcommand{\eps}{\varepsilon}$ $\newcommand{\E}{\mathbb{E}}$
 
 # Motivations
 
@@ -102,7 +102,7 @@ $$[g,g](T) = \lim_{n\to\infty} \sum_{(t_j, t_{j+1})\in \cv{T}_n} (g(t_{j+1}) - g
 
 where $\cv{T}_n$ is the set of subintervals of $[0,T)$ that get finer as $n\to\infty$. This essentially tracks how much movement the process $g$ changes over an interval $T$. There also is first order variation which measures the same limit over the absolute value of differences.
 
-Now define $\ab{\cv{T}_n}$ as the maximum interval length of the partition. As $n\to\infty$ then $\vert \cv{T}_n \vert \to 0$. Furthermore, for any interval $[t_j,t_{j+1}) \in \cv{T}_n$, we have $\vert t_{j+1} - t_j\vert \leq \vert \cv{T}_n \vert$. 
+Now define $\vert \cv{T}_n\vert$ as the maximum interval length of the partition. As $n\to\infty$ then $\vert \cv{T}_n \vert \to 0$. Furthermore, for any interval $[t_j,t_{j+1}) \in \cv{T}_n$, we have $\vert t_{j+1} - t_j\vert \leq \vert \cv{T}_n \vert$. 
 
 Back to the quadratic variation of the Ito integral, let $t_k < s_1 < ... < s_n < t_{k+1}$ where $\Delta$ is constant on $[t_k, t_{j+1})$. That is, we partition the regions where $\Delta$ is constant into $m+1$ partitions. Within each partition, the differenced Ito integral is 
 
@@ -116,7 +116,7 @@ $$
 \sum_{k=0}^{m-1} (I(s_{k+1}) - I(s_k))^2 = \sum_{k=0}^{m-1} (\Delta(t_{j+1})(W_{s_{k+1}}- W_{s_k}))^2 = \Delta(t_j)^2 \sum_{k=0}^{m-1} (W_{s_{k+1}}- W_{s_k})^2
 $$
 
-As we send $n\to \infty$, we make $\ab{\cv{T}_n} \to 0$ thus making the intervals $[t_j, t_{j+1})$ to have length 0, we have the expression above become $\Delta(t_j)^2(t_{j+1} - t_j)$ where the $t_{j+1}-t_j$ is the total variation of Brownian motion $W_{t_{j+1}} - W_{t_j}$. Furthermore, as we sum over the partitions of $\cv{T_n}$, we get the integral:
+As we send $n\to \infty$, we make $\vert \cv{T}_n\vert \to 0$ thus making the intervals $[t_j, t_{j+1})$ to have length 0, we have the expression above become $\Delta(t_j)^2(t_{j+1} - t_j)$ where the $t_{j+1}-t_j$ is the total variation of Brownian motion $W_{t_{j+1}} - W_{t_j}$. Furthermore, as we sum over the partitions of $\cv{T_n}$, we get the integral:
 
 $$
 \sum_{k=0}^{m-1} (I(s_{k+1}) - I(s_k))^2 = \int_0^T \Delta^2 (u) du
@@ -137,11 +137,11 @@ $$
 Of course the expectation will be $T$ in the limit as well. By independence of disjoint intervals for Brownian motion, $Var((W_{t_{j+1}}-W_{t_j})^2) = 2(t_{j+1} - t_j)^2$ since $W_{t_{j+1}}-W_{t_j} \sim N(0, t_{j+1}-t_j)$ and $[N(0,\sigma^2)/\sigma]^2 \sim \chi^2_1$ then $\frac{(W_{t_{j+1}}-W_{t_j})^2}{t_{j+1}-t_j} \sim \chi^2_1$ so the variance of just the numerator is $2(t_{j+1}-t_j)\cdot (t_{j+1}-t_j)$.
 
 $$
-Var\left(\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (W_{t_{j+1}} - W_{t_j})^2\right) \leq \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} 2 \ab{\cv{T}_n}(t_{j+1}-t_j)
+Var\left(\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (W_{t_{j+1}} - W_{t_j})^2\right) \leq \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} 2 \vert \cv{T}_n \vert (t_{j+1}-t_j)
 $$
 As $n\to \infty$, $\cv{T}_n \to 0$ thus the variance above tends to 0 as well. Thus the quadratic variation of $W_t$ for $t \in [0, T)$ is $T$ itself. This proof can be generalized to any interval $[T_1, T_2)$ so that the quadratic variation on that interval for $W_t$ is $T_2 -T_1$. 
 
-Note the quadratic variation of $t$ on any interval is 0, since $\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j)^2 \leq \ab{\cv{T}_n}\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j) \to 0$ as $n\to\infty$. By the same rational, it is straightfoward to show $[W_t, t](T) = 0$ too on a bounded set. Quadratic variation has to do with realized volatility when tracking stock prices.
+Note the quadratic variation of $t$ on any interval is 0, since $\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j)^2 \leq \vert\cv{T}_n\vert \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j) \to 0$ as $n\to\infty$. By the same rational, it is straightfoward to show $[W_t, t](T) = 0$ too on a bounded set. Quadratic variation has to do with realized volatility when tracking stock prices.
 
 In short, we can write quadratic variation in differential notation $dW_t dW_t = dt$ and $dW_t dt = 0$ and $dt dt = 0$ which is an informal notation.
 
