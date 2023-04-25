@@ -42,7 +42,7 @@ The Ito process is defined as a sum of an Ito integral and a Lebesgue intergal. 
 
 ## Quadratic Variation for Ito Process
 
-For a given partition, denote $$\vert \cv{T}_n \vert$$ as the length of the largest partition. For a given $n$, let the partition be $0 < t_1 < ... < T$. Then the quadratic variation without the limit is:
+For a given partition, denote $$\vert \cv{T}_n \vert$$ as the length of the largest partition. For a given $n$, let the partition be $0 < t_1 < ... < T$. Then the quadratic variation without the limit (via expanding squares) is:
 
 $$
 \sum_{j=0}^{n-1}(X(t_{j+1}) - X(t_j))^2 = \sum_{j=0}^{n-1}(I(t_{j+1}) - I({t_j}))^2 + \sum_{j=0}^{n-1}(L(t_{j+1}) - L({t_j}))^2 + 2\sum_{j=0}^{n-1}(I(t_{j+1}) - I({t_j}))(L(t_{j+1}) - L({t_j}))
