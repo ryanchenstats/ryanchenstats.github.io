@@ -65,10 +65,15 @@ $$
 We bound the third term with 
 
 $$
-2\sum_{j=0}^{n-1}(I(t_{j+1}) - I({t_j}))(L(t_{j+1}) - L({t_j}))\leq 2\max_{(t_j, t_{j+1})\in\cv{T}_n}\{(I(t_{j+1}) - I({t_j}))\}\sum_{j=0}^{n-1}(L(t_{j+1}) - L({t_j}))
+\begin{align*}
+2\sum_{j=0}^{n-1}(I(t_{j+1}) - I({t_j}))(L(t_{j+1}) - L({t_j})) &\leq 2\max_{(t_j, t_{j+1})\in\cv{T}_n}\{(I(t_{j+1}) - I({t_j}))\}\sum_{j=0}^{n-1}\vert L(t_{j+1}) - L({t_j})\vert \\
+&= 2\max_{(t_j, t_{j+1})\in\cv{T}_n}\{(I(t_{j+1}) - I({t_j}))\}\left\lvert \int_0^T \Theta(u)du \right\rvert \\
+&\leq 2\max_{(t_j, t_{j+1})\in\cv{T}_n}\{(I(t_{j+1}) - I({t_j}))\} \int_0^T \vert \Theta(u) \vert du \\
+&\to 0
+\end{align*}
 $$
 
-$2\max(I(t_{j+1})-I({t_j}))\sum_{j=0}^{n-1}\vert R(t_{j+1})-R({t_j})\vert = \int_0^T \vert \Theta(u) \vert du$ by definition of $R(\cdot)$. In the limit, this also converges to 0.
+So all that remains in the limit is $QV_I(T) = \int_0^T \Delta^2(u)du$. 
 
 
 
