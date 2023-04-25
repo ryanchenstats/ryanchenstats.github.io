@@ -199,5 +199,7 @@ We present the Ito formula for differentiation a function of $X(t)$. This is als
 Suppose $f(t,x)$ is a function of time $t$ and the process $x$ such that partial derivatives $f_x(t,x)$, $f_t(t,x)$, and $f_{xx}(t,x)$ are continuous. Then the **Ito-Doeblin formula for Brownian motion** is:
 
 $$
-\frac{\partial f(t,X_t)}{\partial t} = \frac{\partial f(t,X_t)}{\partial t} + \frac{\partial f(t,X_t)}{\partial X_t} + \frac{1}{2}\frac{\partial^2 f(t,X_t)}{\partial t^2}
+f(T, X_T) = f(0, X_0) + \int_0^T f_t(t,X_t)dt + \int_0^T f_x(t,X_t) dX_t + \frac{1}{2}\int_0^T f_{xx}(t,X_t)dt
 $$
+
+where $f(0, X_0)$ is a given initialization.
