@@ -48,6 +48,8 @@ $$
 \sum_{j=0}^{n-1}(X(t_{j+1}) - X(t_j))^2 = \sum_{j=0}^{n-1}(I(t_{j+1}) - I({t_j}))^2 + \sum_{j=0}^{n-1}(L(t_{j+1}) - L({t_j}))^2 + 2\sum_{j=0}^{n-1}(I(t_{j+1}) - I({t_j}))(L(t_{j+1}) - L({t_j}))
 $$
 
+We shall see that several terms go to 0 in the limit as required by the definition of QV, and the only term remaining will be $\int_0^T \Delta(t)^2dt$.
+
 In the limit, the $\sum_{j=0}^{n-1}(I(t_{j+1}) - I({t_j}))^2$ term becomes $QV_{I}(T) = \int_0^T \Delta^2(u)du$.
 
 We bound the second term by:
