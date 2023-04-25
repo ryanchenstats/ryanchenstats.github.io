@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Stochastic Calculus Basics
-parent: Stochastic Processes
+parent: Stochastic Calculus
 grand_parent: All Things Statistics
 nav_order: 3
 has_toc: false
@@ -154,6 +154,12 @@ To extend the integral from a elementary function scenario to a continuous funct
 $$
 \int_0^T \Delta(t) dW(t) = \lim_{n\to\infty} \int_0^T \Delta_n(t) dW(t)
 $$
+
+We should discuss about why such an integral exists. 
+
+### Existence of the Limit of the Ito Integral
+
+Consider the $L_2$ norm of a process $X$ defined as $\vert X \vert = \E\left(\int X^2(t) dt \right)$. 
 
 That is, the limit of integrating the approximate simple functions. This is convenient as the integral of simple functions has been defined already.
 
