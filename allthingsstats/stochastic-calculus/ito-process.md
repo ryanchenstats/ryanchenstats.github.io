@@ -3,7 +3,7 @@ layout: default
 title: Ito Process
 parent: Stochastic Calculus
 grand_parent: All Things Statistics
-nav_order: 1
+nav_order: 2
 has_toc: false
 has_children: true
 usemathjax: true
