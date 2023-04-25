@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Stochastic Differentiation
+title: Stochastic Calculus Basics
 parent: Stochastic Processes
 grand_parent: All Things Statistics
 nav_order: 3
@@ -9,7 +9,7 @@ has_children: true
 usemathjax: true
 ---
 
-# Markov Processes
+# Basics of Stochastic Calculus
 {: .no_toc }
 
 ## Table of contents
