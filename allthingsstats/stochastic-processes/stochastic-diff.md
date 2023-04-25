@@ -202,4 +202,8 @@ $$
 f(T, X_T) = f(0, X_0) + \int_0^T f_t(t,X_t)dt + \int_0^T f_x(t,X_t) dX_t + \frac{1}{2}\int_0^T f_{xx}(t,X_t)dt
 $$
 
-where $f(0, X_0)$ is a given initialization.
+where $f(0, X_0)$ is a given initialization. In differential form, we drop the integrals and the initialization term, and add a $\partial$ onto the $f(t,X_t)$ on the LHS. 
+
+$$
+\partial f(t, X_t) = f_t(t, X_t)\partial t + f_x(t,X_t)\partial X_t + \frac{1}{2}f_{xx}(t,X_t)\partial t
+$$
