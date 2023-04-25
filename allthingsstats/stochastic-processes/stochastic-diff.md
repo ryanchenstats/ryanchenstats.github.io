@@ -212,7 +212,8 @@ To see this, consider the Taylor expansion, up to the second order:
 
 $$
 \begin{align*}
-    f(t_{j+1}, t_{j+1}) - f(t_{j}, t_{j}) = f_t(t_j,x_j)(t_{j+1}-t_j) + f_x(t_j,x_j)(x_{j+1}-x_j) + \frac{1}{2}f_{xx}(x_j, t_j)(x_{j+1} - x_j)^2 + f_{tx}(t_j, x_j)(t_{j+1} - t_j)(x_{j+1}-x_j) + \frac{1}{2}f_{tt}(t_j, x_j)(t_{j+1}-t_j)^2
+    f(t_{j+1}, t_{j+1}) - f(t_{j}, t_{j}) &= f_t(t_j,x_j)(t_{j+1}-t_j) + f_x(t_j,x_j)(x_{j+1}-x_j) + \frac{1}{2}f_{xx}(x_j, t_j)(x_{j+1} - x_j)^2 \\
+    &\qquad \qquad + f_{tx}(t_j, x_j)(t_{j+1} - t_j)(x_{j+1}-x_j) + \frac{1}{2}f_{tt}(t_j, x_j)(t_{j+1}-t_j)^2
 \end{align*}
 $$
 
