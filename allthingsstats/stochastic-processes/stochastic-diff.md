@@ -180,7 +180,10 @@ The Ito integral we are interested in uses the above property, where $V_j$ is th
 $$
 \lim_{n\to\infty} \sum_{j=0}^{n-1} V_j(V_{j+1}-V_j) = \frac{1}{2}V_n^2 - \frac{1}{2}\sum_{j=0}^{n-1}(V_{j+1}-V_j)^2 
 $$
-This term involves have the quadratic variation of the Brownian motion, which is $T$ as we are integrating over $[0,T)$. Therefore, as $n \to \infty$, $V_n \to W_T$ and by quadratic variation $\frac{1}{2}\sum_{j=0}^{n-1}(V_{j+1}-V_j)^2 \to \frac{1}{2}T$. So $\int_0^T W(t) dW(t) = \frac{1}{2}W_T^2 - \frac{1}{2}T$. 
+This term involves have the quadratic variation of the Brownian motion, which is $T$ as we are integrating over $[0,T)$. Therefore, as $n \to \infty$, $V_n \to W_T$ and by quadratic variation $\frac{1}{2}\sum_{j=0}^{n-1}(V_{j+1}-V_j)^2 \to \frac{1}{2}T$. So 
+
+$$\int_0^T W(t) dW(t) = \frac{1}{2}W_T^2 - \frac{1}{2}T$$ 
 
 Compare this with the ordinary calculus expression for $\int_0^T x dx = \frac{1}{2}T^2$. The Ito integral has an additional $\frac{1}{2}T$ due to the expression involving the quadratic variation of the Brownian motion. Essentially, Brownian motion moves so quickly that in infinitesimal time, we still need to account for variability in the Brownian motion which is so high that summing $(W_{t_{j+1}}-W_{t_j})^2$ will not tend to 0 as $t_{j+1} - t_j \to 0$. 
 
+The Stratanovich integral (denoted as $\int_0^T W(t) \circ dW(t)$) provides a result that is consistent with ordinary calculus, however as the integral results in another stochastic process, we are interested in properties of the stochastic process. While the Stratanovich integral provides a nice consistent result, one property that the Stratanovich integral does not have is that the resulting process need not be a martingale. The Ito integral result is a martingale, as the reader should check. Finally, the Stratanovich integral is evaluated by taking midpoint values in each continuous approximation. This is not appropriate in finance as there is more value in pricing earlier i.e. for the smallest $t$ in $[t_j, t_{j+1})$. 
