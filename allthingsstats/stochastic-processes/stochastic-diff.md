@@ -207,3 +207,23 @@ where $f(0, X_0)$ is a given initialization. In differential form, we drop the i
 $$
 \partial f(t, X_t) = f_t(t, X_t)\partial t + f_x(t,X_t)\partial X_t + \frac{1}{2}f_{xx}(t,X_t)\partial t
 $$
+
+To see this, consider the Taylor expansion, up to the second order: 
+
+$$
+\begin{align*}
+    f(t_{j+1}, t_{j+1}) - f(t_{j}, t_{j}) = f_t(t_j,x_j)(t_{j+1}-t_j) + f_x(t_j,x_j)(x_{j+1}-x_j) + \frac{1}{2}f_{xx}(x_j, t_j)(x_{j+1} - x_j)^2 + f_{tx}(t_j, x_j)(t_{j+1} - t_j)(x_{j+1}-x_j) + \frac{1}{2}f_{tt}(t_j, x_j)(t_{j+1}-t_j)^2
+\end{align*}
+$$
+
+Taking sums on both sides over the partitioned interval $[0, T)$, we have:
+
+$$
+\begin{align*}
+f(T, W_T) - f(0, W_0) &= \sum_{i=0}^{n-1}f_t(t_j,W_j)(t_{j+1}-t_j) + \sum_{i=0}^{n-1} f_x(t_j,W_j)(W_{j+1}-W_j) + \\
+&\qquad \qquad \frac{1}{2} \sum_{i=0}^{n-1} f_{xx}(W_j, t_j)(W_{j+1} - W_j)^2 + \frac{1}{2} \sum_{i=0}^{n-1}f_{tt}(t_j, W_j)(t_{j+1}-t_j)^2 + \\
+&\qquad \qquad \sum_{i=0}^{n-1} f_{tx}(t_j, W_j)(t_{j+1} - t_j)(W_{j+1}-W_j)
+\end{align*} 
+$$
+
+The first time converges to $\int_0^T f_t(t,W_t) dt$ as the partitions get finer. By our definition of Ito's integral, the seoncd and third term converges to $\int_0^T f_x(t_j, W_t)dW_t$ and $\int_0^T f_{xx}(t, W_t)dt$
