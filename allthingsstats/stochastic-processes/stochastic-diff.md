@@ -125,10 +125,12 @@ $$
 
 ### Quadratic Variation for Brownian Motion
 
-Earlier we made reference to the quadratic variation of Brownian motion $W_t$ to be $t$. Now we prove this. Let $\cv{T}_n$ be a dyadic partition of the interval $[0,T)$ on which Brownian motion is defined. The goal is to show
+Earlier we made reference to the quadratic variation of Brownian motion $W_t$ to be $t$. Now we prove this. Let $$ \cv{T}_n $$ be a dyadic partition of the interval $[0,T)$ on which Brownian motion is defined. The goal is to show
+
 $$
 \lim_{n\to\infty} \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (W_{t_{j+1}} - W_{t_j})^2 \stackrel{\cv{P}}{\to} T
 $$
+
 by taking its expectation and variance and showing the limit of each converges to $T$ and $0$ respectively. As a rough sketch, we know that $W_{t_{j+1}} - W_{t_j} \stackrel{\cv{L}}{=} W_{t_{j+1}-t_j}$ so $\E((W_{t_{j+1}} - W_{t_j})^2) = t_{j+1}-t_j$. 
 $$
 \frac{1}{n}\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} \E((W_{t_{j+1}} - W_{t_j})^2) = \sum_{j=0}^{n-1} t_{j+1}-t_j = T
