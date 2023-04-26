@@ -307,7 +307,7 @@ $$
 The last line converges to 0 due to $\Delta t_i \to 0$ as the partition gets finer when $n\to\infty$. This proves part 2, so that $\E(I_n^2(T)) \to 0$ thereby letting $I_\infty(T) = 0$. Since $I_\infty(T) = 0$, we have:
 
 $$
-\frac{1}{2} \sum_{i=0}^{n-1} f_{xx}(W_j, t_j)(W_{j+1} - W_j)^2 \sim \frac{1}{2} \sum_{i=0}^{n-1} f_{xx}(W_j, t_j)(W_{j+1} - W_j)^2 \stackrel{n\to\infty}{\to} \stackrel{n\to\infty}{\to} \frac{1}{2}\int_0^T f_{xx}(W(t), t)dt
+\frac{1}{2} \sum_{i=0}^{n-1} f_{xx}(W_j, t_j)(W_{j+1} - W_j)^2 \sim \frac{1}{2} \sum_{i=0}^{n-1} f_{xx}(W_j, t_j)(t_{j+1} - t_j) \stackrel{n\to\infty}{\to} \frac{1}{2}\int_0^T f_{xx}(W(t), t)dt
 $$
 
 To make things faster, **Box calculus** is introduced, which simply provides a heuristic of how to handle cases such as $(\partial W_t)^2$. These are not well defined terms, but exist as a heuristic for algebraic convenience. 
