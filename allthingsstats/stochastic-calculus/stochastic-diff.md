@@ -265,18 +265,13 @@ So for point 1, consider $I_n^2(T)$ which will contain $n$ terms of $f(t_i,W(t_i
 We want these cross terms to be 0 before taking any sort of limit. To do so, recall $W(t_j)^2 -  t_j$ is a martingale, by property of Brownian motion. (Prove this by taking a Laplace transform of brownian motion and then deriving). Without loss, assume $i < j$.
 
 $$
-\E\left(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\right) = \E(\E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\vert \cv{F}_{t_j}))
-$$
-
-The only things $$\cv{F}_{j}$$ measurable are $f(t_j, W(t_j))((\Delta W_j)^2 -\Delta t_{j})$.  Now since $(\Delta W_j)^2 - \Delta t_j = W_{j+1}^2 -2W_{j+1}W_j + W_j^2 - t_{j+1}+t_{j}$. As $W(t)^2-t$ is a martingale adapted to the canonical filtration, then conditioning on $\cv{F}_{t_j}$, we have after reordering:
-
-$$
 \begin{align*}
-&\E(f(t_j, W(t_j))(W(t_{j+1})^2 - t_{j+1} - W(t_j)^2 + t_j -2W(t_{j+1})W(t_j)) \vert \cv{F}_{t_j}) \\
-&= f(t_j, W(t_j)) \E(W(t_{j+1})^2 - t_{j+1} - W(t_j)^2 + t_j \vert \cv{F}_{t_j}) -2f(t_j, W(t_j)) W(t_j)\E(W(t_{j+1})\vert \cv{F}_{t_j}) \\
-&= -2f(t_j, W(t_j))W(t_j)\left(\E(W(t_{j+1}) - W(t_j)\vert \cv{F}_{t_j}) + \E(W(t_j)\vert \cv{F}_{t_j})\right)
+&\E\left(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\right) \\
+&= \E(\E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\vert \cv{F}_{t_j}))
 \end{align*}
 $$
+
+As $i < j$, everything is $$\cv{F}_{t_j}$$ measurable except for $\Delta W_j^2 - \Delta t_j$. However, these things are independent of $\cv{F}_{t_j}$ by property of Brownian motion as $\Delta W_j \perp \cv{F}_{t_j}$. 
 
 
 
