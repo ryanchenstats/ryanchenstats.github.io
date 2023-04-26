@@ -241,5 +241,28 @@ f(T, W_T) - f(0, W_0) &= \sum_{i=0}^{n-1}f_t(t_j,W_j)(t_{j+1}-t_j) + \sum_{i=0}^
 \end{align*} 
 $$
 
-The first time converges to $\int_0^T f_t(t,W_t) dt$ as the partitions get finer. By our definition of Ito's integral, the seoncd and third term converges to $\int_0^T f_x(t_j, W_t)dW_t$ and $\int_0^T f_{xx}(t, W_t)dt$. The final two terms converge to 0 by bounding $t_{j+1} - t_j$ with $$\vert \cv{T}_n \vert$$ or $$\vert W_{t-j} - W_{t_j} \vert$$ which is also 0 in the limit. Then as $n\to\infty$, the entire sum goes to 0 as well. The higher order terms also converge to 0 in the same manner. 
+The first time converges to $\int_0^T f_t(t,W_t) dt$ as the partitions get finer. By our definition of Ito's integral, the seoncd and third term converges to $\int_0^T f_x(t_j, W_t)dW_t$ and $\int_0^T f_{xx}(t, W_t)dt$. The final two terms converge to 0 by bounding $t_{j+1} - t_j$ with $$\vert \cv{T}_n \vert$$ or $$\vert W_{t-j} - W_{t_j} \vert$$ which is also 0 in the limit. Then as $n\to\infty$, the entire sum goes to 0 as well. The higher order terms also converge to 0 in the same manner. There should be caution taken when discussin the $f_{xx}$ term as it is not exactly correct to say that $(W(t_{j+1})-W(t_j))^2 \implies dW(t)dW(t) \implies dt$. Instead, to show that 
+
+$$
+\frac{1}{2} \sum_{i=0}^{n-1} f_{xx}(W_j, t_j)(W_{j+1} - W_j)^2 \stackrel{n\to\infty}{\to} \frac{1}{2}\int_0^T f_{xx}(W(t), t)dt
+$$
+
+It would suffice to show that:
+
+$$
+I_n(T) = \sum_{i=0}^{n-1} f_{xx}(W_j, t_j)((W_{j+1} - W_j)^2 -(t_{j+1}-t_j)) \stackrel{n\to\infty}{\to} 0
+$$
+
+This is because we know by continuity of $f_{xx}$ that $\sum_{i=0}^{n-1} f_{xx}(t_{j+1}-t_j) \stackrel{n\to\infty}{\to} \int_0^T f_{xx}(t, W(t))dt$. To show the above the proof is outlined in two steps:
+
+1. Show that $I_n(T)^2 = \sum_{k=0}^{n-1} f_{xx}^2(W(t_k))((W_{j+1} - W_j)^2 -(t_{j+1}-t_j))^2$
+2. Show that $\E(I_n^2(T)) \to 0$
+
+Point number two is sufficient since if $\E(I_n^2(T)) \to 0$ then $I_\infty^2(T) = 0$ a.s. which means $I_\infty (T) = 0$ a.s. For ease of notation, denote $\Delta W_i = (W(t_{i+1}) - W(t_i))$ and $\Delta t_i = (t_{i+1}-t_i)$.
+
+So for point 1, consider $I_n^2(T)$ which will contain $n$ terms of $f(t_i,W(t_i))^2((\Delta W_i)^2 -\Delta t_i)^2$ and also $\binom{n}{2}$ cross terms of $f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)$ for $i\neq j$. 
+
+
+
+
 
