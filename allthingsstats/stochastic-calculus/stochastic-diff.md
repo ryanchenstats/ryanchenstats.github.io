@@ -35,6 +35,7 @@ Traditional integration theory cannot help us, as $W_t$ need not be differentiab
 $$
 \int_0^T X_t dW_t = \int_0^T X_t W_t' dt
 $$
+
 as in the case of Brownian motion, as $W_t$ is differentiable almost nowhere.
 
 In both cases, the differential and the integral are not defined. To give some meaning to the above we consider the standard form of SDEs written as a function an initial condition, a drift term and a variance term:
@@ -141,6 +142,7 @@ Of course the expectation will be $T$ in the limit as well. By independence of d
 $$
 Var\left(\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (W_{t_{j+1}} - W_{t_j})^2\right) \leq \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} 2 \vert \cv{T}_n \vert (t_{j+1}-t_j)
 $$
+
 As $n\to \infty$, $\cv{T}_n \to 0$ thus the variance above tends to 0 as well. Thus the quadratic variation of $W_t$ for $t \in [0, T)$ is $T$ itself. This proof can be generalized to any interval $[T_1, T_2)$ so that the quadratic variation on that interval for $W_t$ is $T_2 -T_1$. 
 
 Note the quadratic variation of $t$ on any interval is 0, since $$\sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j)^2 \leq \vert\cv{T}_n\vert \sum_{(t_j ,t_{j+1}) \in \cv{T}_n} (t_{j+1}- t_j) \to 0$$ as $n\to\infty$. By the same rational, it is straightfoward to show $$ [W_t, t](T) = 0 $$ too on a bounded set. Quadratic variation has to do with realized volatility when tracking stock prices.
@@ -183,6 +185,7 @@ W(2\cdot \frac{T}{n}) & 2T/n < t < 3T/n \\
 W\left((n-1)\cdot \frac{T}{n}\right) & (n-1)T/n < t < T
 \end{cases}
 $$
+
 This uses the left approximation of $W_t$ within each interval of length $T/n$. Then the integral can be worked out where $V(j) = W(j\cdot T/n)$:
 $$
 \begin{align*}
@@ -192,10 +195,12 @@ $$
 &= \frac{1}{2} V_n^2 + \sum_{k=0}^{n-1} V_j(-V_{j+1}+V_j) && \text{factor}
 \end{align*}
 $$
+
 The Ito integral we are interested in uses the above property, where $V_j$ is the shorthand notation of $W(jT/n)$ and by definition of integrating simply processes,
 $$
 \lim_{n\to\infty} \sum_{j=0}^{n-1} V_j(V_{j+1}-V_j) = \frac{1}{2}V_n^2 - \frac{1}{2}\sum_{j=0}^{n-1}(V_{j+1}-V_j)^2 
 $$
+
 This term involves have the quadratic variation of the Brownian motion, which is $T$ as we are integrating over $[0,T)$. Therefore, as $n \to \infty$, $V_n \to W_T$ and by quadratic variation $\frac{1}{2}\sum_{j=0}^{n-1}(V_{j+1}-V_j)^2 \to \frac{1}{2}T$. So 
 
 $$\int_0^T W(t) dW(t) = \frac{1}{2}W_T^2 - \frac{1}{2}T$$ 
