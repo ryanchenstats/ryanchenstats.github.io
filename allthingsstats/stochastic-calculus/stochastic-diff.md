@@ -312,11 +312,11 @@ $$
 
 To make things faster, **Box calculus** is introduced, which simply provides a heuristic of how to handle cases such as $(\partial W_t)^2$. These are not well defined terms, but exist as a heuristic for algebraic convenience. 
 
--| $dW$ | $dt$|
+Heuristic | $dW$ | $dt$|
 ----|------|-----|
 $dW$| $dt$ | 0 |
 $dt$| 0    | 0 |
 
-As mentioned, $\sum f(t_i, W(t_i))(W(t_{i+1})-W_{t_i})^2$ will heuristically converge to $\int f(t, W(t))(dW(t))^2$. So by the above heuristic, $\sum f(t_i, W(t_i))(W(t_{i+1})-W_{t_i})^2 \to \int f(t, W(t))dt$.
+As mentioned, $\sum f(t_i, W(t_i))(W(t_{i+1})-W_{t_i})^2$ will heuristically converge to $\int f(t, W(t))(dW(t))^2$. So by the above heuristic, $\sum f(t_i, W(t_i))(W(t_{i+1})-W_{t_i})^2 \to \int f(t, W(t))dt$. Remember that this heuristic exists solely due to the quadratic variation of Brownian motion.
 
 
