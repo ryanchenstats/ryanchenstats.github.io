@@ -26,7 +26,7 @@ $\renewcommand{\reals}{\mathbb{R}}$ $\newcommand{\nats}{\mathbb{N}}$ $\newcomman
 
 Brownian motion only processes are called diffusion processes. Here we introduce *jump diffusion* processes which are paths that follow the Brownian motion diffusion process but also exhibit finitely many jumps in finite time intervals. There are processes that have infinitely many jumps in a finite time interval however there are some conditions on the size of the jumps. 
 
-The most fundamental *pure* jump process is the Poisson process, which is flat almost everywhere, except for what the process makes a jump which is of size 1. Poisson processes are covered under the stochastic processes sections.
+The most fundamental *pure* jump process is the Poisson process, which is flat almost everywhere, except for what the process makes a jump which is of size 1. Poisson processes are covered under the stochastic processes sections. One property to keep in mind is that Poisson processes are cadlag.
 
 ## Extensions of the Poisson process
 
@@ -73,7 +73,102 @@ $$
 
 which uses Poisson thinning to reduce $N(t) = \sum_{i=1}^m N_i(t)$.
 
-# Jump Processes
+## Jump Processes
+
+The reason why we want to define jump processes are due to the following integral:
+
+$$
+\int_0^T \Delta(t) dX(t)
+$$
+
+where $X(t)$ is a process that has jumps. Perhaps $\Delta(t)$ can be a process denoting the holdings of a particular asset and $X(t)$ the price of the asset. Then the integral tracks the total value of the holding up to time $T$. 
+
+We define a **jump process** as a process that can be represented as the sum of an Ito integral, Riemann integral, and a pure jump process. It is right continuous, due to the jump process, so the continuous portion of the process is soley due to the Ito and Riemann portions.
+
+$$
+X(T) = X_0 + \int_0^T \Gamma(s)dW(s) + \int_0^T \Theta(s)ds + J(t)
+$$
+
+Since $J(t)$ is required to be a pure jump process, $J(t)$ can either be a compound Poisson, or a Poisson process, if restricting our jump processes to the examples above. 
+
+The continuous version of the jump process is:
+
+$$
+X^C(T) = X_0 + \int_0^T \Gamma(s)dW(s) + \int_0^T \Theta(s)ds
+$$
+
+## Integral of Jump Processes
+
+The integral of a jump process is defined as follows. Suppose we want to integrate some adapted process $\Phi(t)$ wrt a jump process $X(t)$, i.e. $\int_0^T \Phi(t)dX(t)$. We define the integral as:
+
+$$
+\int_0^T \Phi(t)dX(t) = \int_0^T \Phi(t)\Gamma(t)dW(t) + \int_0^T \Phi(t)\Theta(t)dt + \sum_{0<t<T}\Phi(t)\Delta J(t)
+$$
+
+We define $\Delta J(t)$ as $J(t)- J(t-)$ which is the jump size for the points in $t$ where $J$ is right continuous. This captures the jump size of the jump process.
 
 
+## Quadratic Variation
 
+The QV of the jump process defined on the continuous portion is $\int_0^T \Gamma^2(s)ds$. The sketch is as follows:
+
+1. Discretize the partitions and treat the integrals as left sums as in the Ito sense
+2. Show cross term is 0, by using the same strategy as in the Ito processes case
+3. Show the cross terms in the $(\sum)^2$ terms are all 0
+4. Show that the sum of $\theta^2(t_k)(t_{k+1}-t_k)^2$ is 0
+5. Show that the sum of $\Gamma^2(t_k)(W(t_{k+1})-W_{t_k})^2 \to \int_0^T \Gamma^2(s)ds$ which was done in the Ito Processes section.
+
+First we discretize the partitions in the Ito sense, 
+
+$$
+\begin{align*}
+[X^C(t_{j+1})-X^C(t_{j})]^2 &= \left(\sum_{k=0}^{n-1} \Gamma(t_k)(W(t_{k+1})-W(t_k)) + \sum_{k=0}^{n-1} \Theta(t_k)(t_{k+1}-t_k)\right)^2 \\
+&= \left(\sum_{k=0}^{n-1} \Gamma(t_k)(W(t_{k+1})-W(t_k)) + \sum_{k=0}^{n-1} \Theta(t_k)(t_{k+1}-t_k)\right)^2\\
+&= \left(\sum_{k=0}^{n-1} \Gamma(t_k)(W(t_{k+1})-W(t_k))\right)^2 + \left(\sum_{k=0}^{n-1} \Theta(t_k)(t_{k+1}-t_k)\right)^2 + \\
+&\qquad \qquad 2 \left(\sum_{k=0}^{n-1} \Gamma(t_k)(W(t_{k+1})-W(t_k))\right)\left(\sum_{k=0}^{n-1} \Theta(t_k)(t_{k+1}-t_k)\right)
+\end{align*}
+$$
+
+The cross-term is shown to be 0 in the same manner as done in the past. Bound the sum by $\max(W(t_{k+1})-W(t_k)) \times \max(t_{k+1} - t_k)$, which converge to 0 as partition sizes shrink. Likewise, the sum involving $\Theta(t_k)$ can also be zeroed in a similar manner. In the exact same manner as done in the Ito-Doeblin thereom under Ito Processes, we can deduce that 
+
+$$
+\left(\sum_{k=0}^{n-1} \Gamma(t_k)(W(t_{k+1})-W(t_k))\right)^2 \stackrel{n\to\infty}{\to} \int_0^T \Gamma^2(s)ds
+$$
+
+which can be heuristically deduced using Box calculus, described in the Ito process section. 
+
+In the jump process $X_1(t)$ and $X_2(t)$, we can also consider the cross variation which is defined as 
+
+$$
+\lim_{n\to\infty} \sum_{j=0}^{n-1} (X_1(t_{j+1})-X_1(t_j))(X_2(t_{j+1})-X_2(t_j))
+$$
+
+We demonstrate that 
+$$
+Q_{X_1}(T) = \int_0^T \Gamma_1^2(s)ds + \sum_{0 < t < T}\Delta J_1(t)
+$$
+
+$$
+C_{X_1,X_2}(T) = \int_0^T \Gamma_1(s)\Gamma_2(s) ds + \sum_{0 < t < T}\Delta J_1(t)\Delta J_2(t)
+$$
+
+The sketch is as follows:
+
+1. We only show the $C_{X_1,X_2}(T)$ result, as $Q_{X_1}$ is a special result of $C_{X_1,X_2}(T)$.
+2. Break up $X_1$ and $X_2$ into $X_1^C, X_2^C, J_1, J_2$
+3. Recall that $C_{X_1^C, X_2^C}(T) = \int_0^T \Gamma_1(t)\Gamma_2(t)dt$
+4. Show that $C_{J_1,J_2}(T) = \sum_{0<t<T}\Delta J_1(t)\Delta J_2(t)$.
+5. Show that $C_{X_k,J_k}(T) = 0$
+
+From Box calculus, step 5 should be clear since $J$ does not involve any Ito integral terms, while $X$ does. Any terms that do not involve Ito integrals, will have a cross variation of 0. 
+
+$$
+\begin{align*}
+\sum_{j=0}^{n-1} (X_1(t_{j+1})-X_1(t_j))(X_2(t_{j+1})-X_2(t_j)) &= \sum_{j=0}^{n-1} (X_1^C(t_{j+1})-X_1^C(t_j) + J_1(t_{j+1}) - J_1(t_j)) \times \\
+&\qquad (X_2^C(t_{j+1})-X_2^C(t_j) + J_2(t_{j+1}) -J_2(t_j)) \\
+&= \sum_{j=0}^{n-1} (X_1^C(t_{j+1})-X_1^C(t_j))(X_2^C(t_{j+1})-X_2^C(t_j)) + \\
+&\qquad \sum_{j=0}^{n-1} (X_1^C(t_{j+1})-X_1^C(t_j))(J_2(t_{j+1}) -J_2(t_j)) + \\
+&\qquad \sum_{j=0}^{n-1} (X_2^C(t_{j+1})-X_2^C(t_j))(J_1(t_{j+1}) -J_1(t_j)) + \\
+&\qquad \sum_{j=0}^{n-1} (J_1(t_{j+1}) -J_1(t_j))(J_2(t_{j+1}) -J_2(t_j))
+\end{align*}
+$$
