@@ -281,6 +281,7 @@ $$
 &= 0
 \end{align*}
 $$
+
 The last line is 0 since $\E((\Delta W_j)^2 -\Delta t_j)$ is the same as taking the variance of $\Delta W_j$ which is $t_{j+1} - t_{j}$. This makes the entire expectation 0. So all cross terms are 0. Thus we have shown that:
 
 $$
@@ -297,6 +298,7 @@ $$
 &\to 0
 \end{align*}
 $$
+
 The last line converges to 0 due to $\Delta t_i \to 0$ as the partition gets finer when $n\to\infty$. This proves part 2, so that $\E(I_n^2(T)) \to 0$ thereby letting $I_\infty(T) = 0$. Since $I_\infty(T) = 0$, we have:
 
 $$
