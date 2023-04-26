@@ -281,8 +281,27 @@ $$
 &= 0
 \end{align*}
 $$
-The last line is 0 since $\E((\Delta W_j)^2 -\Delta t_j)$ is the same as taking the variance of $\Delta W_j$ which is $t_{j+1} - t_{j}$. This makes the entire expectation 0. 
+The last line is 0 since $\E((\Delta W_j)^2 -\Delta t_j)$ is the same as taking the variance of $\Delta W_j$ which is $t_{j+1} - t_{j}$. This makes the entire expectation 0. So all cross terms are 0. Thus we have shown that:
 
+$$
+\E(I_n(T)^2) = \E\left(\sum_{k=0}^{n-1} f_{xx}^2(t_k, W(t_k))((W_{j+1} - W_j)^2 -(t_{j+1}-t_j))^2\right)
+$$
+
+Now, we show the expectation converges to 0 as we increase the partitions. 
+
+$$
+\begin{align*}
+\E\left(\sum_{k=0}^{n-1} f_{xx}^2(W(t_k))((\Delta W_j)^2 -\Delta t_j)^2\right) &\leq \max_{t_k} \vert f_{xx}(t_k, W(t_k))\vert^2 \sum_{k=0}^{n-1} \E\left(((\Delta W_j)^2 -\Delta t_j)^2\right) \\
+& = \max_{t_k} \vert f_{xx}(t_k, W(t_k))\vert^2 \sum_{k=0}^{n-1} \Delta t_i^2 \E\left(((\Delta W_1)^2 -1)^2\right)\\
+&\leq (\max_{i} \Delta t_i) \max_{t_k} \vert f_{xx}(t_k, W(t_k))\vert^2 \sum_{k=0}^{n-1} \Delta t_i \E\left(((\Delta W_1)^2 -1)^2\right) \\
+&\to 0
+\end{align*}
+$$
+The last line converges to 0 due to $\Delta t_i \to 0$ as the partition gets finer when $n\to\infty$. This proves part 2, so that $\E(I_n^2(T)) \to 0$ thereby letting $I_\infty(T) = 0$. Since $I_\infty(T) = 0$, we have:
+
+$$
+\frac{1}{2} \sum_{i=0}^{n-1} f_{xx}(W_j, t_j)(W_{j+1} - W_j)^2 \sim \frac{1}{2} \sum_{i=0}^{n-1} f_{xx}(W_j, t_j)(W_{j+1} - W_j)^2 \stackrel{n\to\infty}{\to} \stackrel{n\to\infty}{\to} \frac{1}{2}\int_0^T f_{xx}(W(t), t)dt
+$$
 
 
 
