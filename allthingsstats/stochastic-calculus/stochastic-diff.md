@@ -271,7 +271,20 @@ $$
 \end{align*}
 $$
 
-As $i < j$, everything is $$\cv{F}_{t_j}$$ measurable except for $\Delta W_j^2 - \Delta t_j$. However, these things are independent of $\cv{F}_{t_j}$ by property of Brownian motion as $\Delta W_j \perp \cv{F}_{t_j}$. 
+As $i < j$, everything is $$\cv{F}_{t_j}$$ measurable except for $\Delta W_j^2 - \Delta t_j$. However, these things are independent of $\cv{F}_{t_j}$ by property of Brownian motion as $\Delta W_j \perp \cv{F}_{t_j}$. Thus,
+
+$$
+\begin{align*}
+&\E(\E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\vert \cv{F}_{t_j})) \\
+&= \E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)\E((\Delta W_j)^2 -\Delta t_j\vert \cv{F}_{t_j})) \\
+&= \E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)\E((\Delta W_j)^2 -\Delta t_j)) \\
+&= 0
+\end{align*}
+$$
+The last line is 0 since $\E((\Delta W_j)^2 -\Delta t_j)$ is the same as taking the variance of $\Delta W_j$ which is $t_{j+1} - t_{j}$. This makes the entire expectation 0. 
+
+
+
 
 
 
