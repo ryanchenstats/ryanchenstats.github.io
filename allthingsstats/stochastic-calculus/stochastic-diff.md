@@ -266,8 +266,8 @@ We want these cross terms to be 0 before taking any sort of limit. To do so, rec
 
 $$
 \begin{align*}
-&\E\left(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\right) \\
-&= \E(\E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\vert \cv{F}_{t_j}))
+&\E\left(f_{xx}(t_i, W(t_i))f_{xx}(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\right) \\
+&= \E(\E(f_{xx}(t_i, W(t_i))f_{xx}(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\vert \cv{F}_{t_j}))
 \end{align*}
 $$
 
@@ -275,9 +275,9 @@ As $i < j$, everything is $$\cv{F}_{t_j}$$ measurable except for $\Delta W_j^2 -
 
 $$
 \begin{align*}
-&\E(\E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\vert \cv{F}_{t_j})) \\
-&= \E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)\E((\Delta W_j)^2 -\Delta t_j\vert \cv{F}_{t_j})) \\
-&= \E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)\E((\Delta W_j)^2 -\Delta t_j)) \\
+&\E(\E(f_{xx}(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\vert \cv{F}_{t_j})) \\
+&= \E(f_{xx}(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)\E((\Delta W_j)^2 -\Delta t_j\vert \cv{F}_{t_j})) \\
+&= \E(f_{xx}(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)\E((\Delta W_j)^2 -\Delta t_j)) \\
 &= 0
 \end{align*}
 $$
