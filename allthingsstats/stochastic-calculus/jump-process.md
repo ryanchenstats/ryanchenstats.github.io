@@ -202,5 +202,8 @@ Now we add the jump term $J(t)$ into the process to get the jump diffusion proce
 If there is a jump, we must incorporate the jump height, which is given by $\Delta J(t_i) = J(t_i) - J(t_i -)$. This is the same as $X(t_i)-X(t_i-)$ so 
 
 $$
-f(X(T)) = f(X(0)) + \int_0^T f_x(X^C(0))\Gamma(t)d W(t) + \int_0^T f_x(X^C(s))\Theta(s)ds + \frac{1}{2}\int_0^T f_{xx}(X^C(t))\Gamma^2(s)\partial s + \sum_{0<t<T} (f(X(t)) - f(X(t-)))
+\begin{align*}
+f(X(T)) &= f(X(0)) + \int_0^T f_x(X^C(0))\Gamma(t)d W(t) + \int_0^T f_x(X^C(s))\Theta(s)ds + \\
+&\qquad \frac{1}{2}\int_0^T f_{xx}(X^C(t))\Gamma^2(s)\partial s + \sum_{0<t<T} (f(X(t)) - f(X(t-)))
+\end{align*}
 $$
