@@ -172,3 +172,35 @@ $$
 &\qquad \sum_{j=0}^{n-1} (J_1(t_{j+1}) -J_1(t_j))(J_2(t_{j+1}) -J_2(t_j))
 \end{align*}
 $$
+
+By continuity of $X^C$, the second and third terms are 0. The argument is the same for both terms. The key is that $\sum \Delta J_i < \infty$ in finite time. 
+
+$$
+\begin{align*}
+&\sum_{j=0}^{n-1} (X_1^C(t_{j+1})-X_1^C(t_j))(J_2(t_{j+1}) -J_2(t_j)) \\
+&\leq \max\{(X_1^C(t_{j+1})-X_1^C(t_j))\}\sum_{j=0}^{n-1}(J_2(t_{j+1}) -J_2(t_j)) \\
+&\to 0
+\end{align*}
+$$
+
+Finally,
+
+$$
+\sum_{j=0}^{n-1} (J_1(t_{j+1}) -J_1(t_j))(J_2(t_{j+1}) -J_2(t_j)) = \sum_{0<t<T} \Delta J_1(t) \Delta J_2(t)
+$$
+
+# Stochastic Calculus for Jump Processes
+
+The jump process has a continuous portion and a jump portion, where the continuous portion is identical to the diffusion Ito process. So if $X(t)$ is a jump diffusion process, then $X^C(t)$ follows:
+
+$$
+\partial f(X^C(t)) = f_x(X^C(0))\Gamma(t)\partial W(t) + f_x(X^C(s))\Theta(s)ds + \frac{1}{2}f_{xx}(X^C(t))\Gamma^2(s)\partial s
+$$
+
+Now we add the jump term $J(t)$ into the process to get the jump diffusion process. Jumps are finite on the interval, so for times $t$ where there is no jump, the Ito lemma above holds.
+
+If there is a jump, we must incorporate the jump height, which is given by $\Delta J(t_i) = J(t_i) - J(t_i -)$. This is the same as $X(t_i)-X(t_i-)$ so 
+
+$$
+f(X(T)) = f(X(0)) + \int_0^T f_x(X^C(0))\Gamma(t)d W(t) + \int_0^T f_x(X^C(s))\Theta(s)ds + \frac{1}{2}\int_0^T f_{xx}(X^C(t))\Gamma^2(s)\partial s + \sum_{0<t<T} (f(X(t)) - f(X(t-)))
+$$
