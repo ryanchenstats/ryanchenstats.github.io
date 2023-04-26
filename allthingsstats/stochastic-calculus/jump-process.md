@@ -194,7 +194,7 @@ $$
 The jump process has a continuous portion and a jump portion, where the continuous portion is identical to the diffusion Ito process. So if $X(t)$ is a jump diffusion process, then $X^C(t)$ follows:
 
 $$
-\partial f(X^C(t)) = f_x(X^C(0))\Gamma(t)\partial W(t) + f_x(X^C(s))\Theta(s)ds + \frac{1}{2}f_{xx}(X^C(t))\Gamma^2(s)\partial s
+\partial f(t, X^C(t)) = f_x(t, X^C(0))\Gamma(t)\partial W(t) + f_t(X^C(t))\Theta(t)dt + \frac{1}{2}f_{xx}(t, X^C(t))\Gamma^2(t)dt
 $$
 
 Now we add the jump term $J(t)$ into the process to get the jump diffusion process. Jumps are finite on the interval, so for times $t$ where there is no jump, the Ito lemma above holds.
@@ -203,7 +203,10 @@ If there is a jump, we must incorporate the jump height, which is given by $\Del
 
 $$
 \begin{align*}
-f(X(T)) &= f(X(0)) + \int_0^T f_x(X^C(0))\Gamma(t)d W(t) + \int_0^T f_x(X^C(s))\Theta(s)ds + \\
-&\qquad \frac{1}{2}\int_0^T f_{xx}(X^C(t))\Gamma^2(s)\partial s + \sum_{0<t<T} (f(X(t)) - f(X(t-)))
+f(T, X(T)) &= f(0, X(0)) + \int_0^T f_x(t, X^C(0))\Gamma(t)d W(t) + \int_0^T f_t(t, X^C(t))\Theta(t)dt + \\
+&\qquad \frac{1}{2}\int_0^T f_{xx}(t, X^C(t))\Gamma^2(s)ds + \sum_{0<t<T} (f(t, X(t)) - f(t, X(t-)))
 \end{align*}
 $$
+
+This forms the Ito-Doeblin lemma for jump diffusion processes with one jump process. 
+
