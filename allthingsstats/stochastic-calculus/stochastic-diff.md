@@ -268,7 +268,7 @@ $$
 \E\left(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\right) = \E(\E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\vert \cv{F}_{t_j}))
 $$
 
-The only things $$\cv{F}_{j}$$ measurable are $f(t_j, W(t_j))((\Delta W_j)^2 -\Delta t_{j})$.  Now since $(\Delta W_j)^2 - \Delta t_j = W_{j+1}^2 -2W_{j+1}W_j + W_j^2 - t_{j+1}+t_{j}$. As $W(t)^2-t$ is a martingale, then conditioning on $\cv{F}_{t_j}$, we have after reordering:
+The only things $$\cv{F}_{j}$$ measurable are $f(t_j, W(t_j))((\Delta W_j)^2 -\Delta t_{j})$.  Now since $(\Delta W_j)^2 - \Delta t_j = W_{j+1}^2 -2W_{j+1}W_j + W_j^2 - t_{j+1}+t_{j}$. As $W(t)^2-t$ is a martingale adapted to the canonical filtration, then conditioning on $\cv{F}_{t_j}$, we have after reordering:
 
 $$
 \begin{align*}
