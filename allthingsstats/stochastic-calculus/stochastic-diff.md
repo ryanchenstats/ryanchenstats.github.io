@@ -271,7 +271,7 @@ $$
 \end{align*}
 $$
 
-As $i < j$, everything is $$\cv{F}_{t_j}$$ measurable except for $\Delta W_j^2 - \Delta t_j$. However, these things are independent of $\cv{F}_{t_j}$ by property of Brownian motion as $\Delta W_j \perp \cv{F}_{t_j}$. Thus,
+As $i < j$, everything is $$\cv{F}_{t_j}$$ measurable except for $\Delta W_j^2 - \Delta t_j$. However, these things are independent of $$\cv{F}_{t_j}$$ by property of Brownian motion as $\Delta W_j \perp \cv{F}_{t_j}$. Thus,
 
 $$
 \begin{align*}
