@@ -272,8 +272,9 @@ The only things $\cv{F}_{j}$ measurable are $f(t_j, W(t_j))((\Delta W_j)^2 -\Del
 
 $$
 \begin{align*}
-\E(f(t_j, W(t_j))(W(t_{j+1})^2 - t_{j+1} - W(t_j)^2 + t_j -2W(t_{j+1})W(t_j)) \vert \cv{F}_{t_j}) &= \\
-= f(t_j, W(t_j)) \E(W(t_{j+1})^2 - t_{j+1} - W(t_j)^2 + t_j \vert \cv{F}_{t_j}) -2W(t_j)\E(W(t_{j+1})\vert \cv{F}_{t_j}) & 
+&\E(f(t_j, W(t_j))(W(t_{j+1})^2 - t_{j+1} - W(t_j)^2 + t_j -2W(t_{j+1})W(t_j)) \vert \cv{F}_{t_j}) \\
+&= f(t_j, W(t_j)) \E(W(t_{j+1})^2 - t_{j+1} - W(t_j)^2 + t_j \vert \cv{F}_{t_j}) -2W(t_j)\E(W(t_{j+1})\vert \cv{F}_{t_j}) \\
+&= -2W(t_j)\left(\E(W_{t_{j+1}} - W_{t_j}\vert \cv{F}_{t_j}) + \E(W_{t_j}\vert \cv{F}_{t_j})\right)
 \end{align*}
 $$
 
