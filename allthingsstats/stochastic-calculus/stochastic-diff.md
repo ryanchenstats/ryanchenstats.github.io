@@ -255,14 +255,26 @@ $$
 
 This is because we know by continuity of $f_{xx}$ that $\sum_{i=0}^{n-1} f_{xx}(t_{j+1}-t_j) \stackrel{n\to\infty}{\to} \int_0^T f_{xx}(t, W(t))dt$. To show the above the proof is outlined in two steps:
 
-1. Show that $I_n(T)^2 = \sum_{k=0}^{n-1} f_{xx}^2(W(t_k))((W_{j+1} - W_j)^2 -(t_{j+1}-t_j))^2$
+1. Show that $\E(I_n(T)^2) = \E\left(\sum_{k=0}^{n-1} f_{xx}^2(W(t_k))((W_{j+1} - W_j)^2 -(t_{j+1}-t_j))^2\right)$
 2. Show that $\E(I_n^2(T)) \to 0$
 
 Point number two is sufficient since if $\E(I_n^2(T)) \to 0$ then $I_\infty^2(T) = 0$ a.s. which means $I_\infty (T) = 0$ a.s. For ease of notation, denote $\Delta W_i = (W(t_{i+1}) - W(t_i))$ and $\Delta t_i = (t_{i+1}-t_i)$.
 
 So for point 1, consider $I_n^2(T)$ which will contain $n$ terms of $f(t_i,W(t_i))^2((\Delta W_i)^2 -\Delta t_i)^2$ and also $\binom{n}{2}$ cross terms of $f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)$ for $i\neq j$. 
 
+We want these cross terms to be 0 before taking any sort of limit. To do so, recall $W(t_j)^2 -  t_j$ is a martingale, by property of Brownian motion. (Prove this by taking a Laplace transform of brownian motion and then deriving). Without loss, assume $i > j$.
 
+$$
+\E\left(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\right) = \E(\E(f(t_i, W(t_i))f(t_j, W(t_j))((\Delta W_i)^2 -\Delta t_i)((\Delta W_j)^2 -\Delta t_j)\vert \cv{F}_{t_j}))
+$$
+
+The only things $\cv{F}_j$ measurable are $f(t_j, W(t_j))((\Delta W_j)^2 -\Delta t_j)$.  Now since $(\Delta W_j)^2 - \Delta t_j = W_{j+1}^2 -2W_{j+1}W_j + W_j^2 - t_{j+1}+t_{j}$. As $W(t)^2-t$ is a martingale, then conditioning on $\cv{F}_{t_j}$, we have after reordering:
+
+$$
+\begin{align*}
+\E(f(t_j, W(t_j))(W(t_{j+1})^2 - t_{j+1} - W(t_j)^2 + t_j -2W(t_{j+1})W(t_j)) \vert \cv{F}_{t_j}) &= f(t_j, W(t_j)) \E(W(t_{j+1})^2 - t_{j+1} - W(t_j)^2 + t_j \vert \cv{F}_{t_j}) -2W(t_j)\E(W(t_{j+1})\vert \cv{F}_{t_j})
+\end{align*}
+$$
 
 
 
