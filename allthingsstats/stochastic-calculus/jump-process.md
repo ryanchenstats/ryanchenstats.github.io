@@ -204,7 +204,7 @@ If there is a jump, we must incorporate the jump height, which is given by $\Del
 $$
 \begin{align*}
 f(T, X(T)) &= f(0, X(0)) + \int_0^T f_x(t, X^C(0))\Gamma(t)d W(t) + \int_0^T f_t(t, X^C(t))\Theta(t)dt + \\
-&\qquad \frac{1}{2}\int_0^T f_{xx}(t, X^C(t))\Gamma^2(s)ds + \sum_{0<t<T} (f(t, X(t)) - f(t, X(t-)))
+&\qquad \frac{1}{2}\int_0^T f_{xx}(t, X^C(t))\Gamma^2(t)dt + \sum_{0<t<T} (f(t, X(t)) - f(t, X(t-)))
 \end{align*}
 $$
 
