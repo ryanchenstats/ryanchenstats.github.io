@@ -87,10 +87,14 @@ That is, we split up the two parts of the Ito process and integrate with respect
 
 ## Ito-Doeblin Theorem for Ito Processes
 
-The Ito-Doeblin theorem for an Ito process is analogous to that in the Brownian motion only case. It states that:
+The Ito-Doeblin theorem for an Ito process is analogous to that in the Brownian motion only case. It states that (in both integral and differential form):
 
 $$
 f(T, X(T)) = f(0, X(0)) + \int_0^T f_t(t,X(t))dt + \int_0^T f_x(t,X(t))dX(t) + \frac{1}{2}\int_0^T f_{xx}(t,X(t))dX(t)dX(t) 
+$$
+
+$$
+df(t,X(t)) = f_t(t,X(t))dt + f_x(t,X(t))dX(t) + \frac{1}{2}f_{xx}(t,X(t))dX(t)dX(t)
 $$
 
 Note the final $dX(t)dX(t)$ is a product of the quadratic variation on $X(t)$ which is $\int_0^T \Delta^2(u)du$ as opposed to the quadratic variation on $W(t)$ which is $T$.
@@ -100,7 +104,7 @@ The proof is as follows, with Taylor expansion:
 $$
 \begin{align*}
 f(T,X(T)) - f(0,X(0)) &= \sum_{j=0}^{n-1}f_t(t_j, X(t_j))(t_{j+1}-t_j) + \sum_{j=0}^{n-1}f_x(t_j, X(t_j))(X(t_{j+1})-X(t_j)) + \\
-&\qquad \qquad \frac{1}{2}\sum_{j=0}^{n-1}f_{xx}(t_j, X(t_j))(X(t_{j+1})-X(t_j))^2 + \frac{1}{2}\sum_{j=0}^{n-1}f_{tt}(t_j, X(t_j))(t_{j+1}-t_j)^2 + \\
+&\qquad \qquad \frac{1}{2}\sum_{j=0}^{n-1}f_{xx}(t_j, X(t_j))(X(t_{j+1})-X(t_j))^2 + \frac{1}{2}\sum_{j=0}^{n-1}f_{tt}(t_j, X(t_j))(t_{j-+1}-t_j)^2 + \\
 &\qquad \qquad \sum_{j=0}^{n-1}f_{tx}(t_j, X(t_j))(t_{j+1}-t_j)(X(t_{j+1})-X(t_j)) + R
 \end{align*}
 $$
@@ -111,7 +115,64 @@ $\frac{1}{2}\sum_{j=0}^{n-1}f_{tt}(t_j, X(t_j))(t_{j+1}-t_j)^2$ converges to 0 i
 
 We can further simplify $\int_0^T f_x(t,X(t))dX(t)$ as $\int_0^T f_x(t,X(t))\Delta(t)dW(t) + \int_0^T f_x(t, X(t))\Theta(t)dt$. This is by definition of the integral of Ito processes.
 
+# Usages of Ito-Doeblin
 
+We can use Ito-Doeblin to solve stochastic integrals and also stochastic differential equations. 
+
+
+## Stochastic Integration 
+
+While we solved $\int_0^T W_t dW_t$ by way of sums, we can also solve it using Ito-Doeblin, and in general, it is easier to solve it this way. Let $g(W_t) = \frac{1}{2}W_t^2$ so that $g' = W_t$ and $g'' =1$. Then we have:
+$$
+\begin{align*}
+dg(W_t) &= g'(W_t) dW_t + \frac{1}{2}g''(W_t)dt \\
+&= W_t dW_t + \frac{1}{2}dt \\
+\int_0^T dg(W_t) &=  \int_0^T  W_t dW_t + \frac{1}{2}\int_0^T dt \\
+\int_0^T W_t dW_t &= \int_0^T dg(W_t)  - \frac{1}{2}\int_0^T dt \\
+&= \frac{1}{2}W_T^2 - \frac{1}{2}T
+\end{align*}
+$$
+This result agrees with what we have above.
+
+It is important to note that the resulting integral is a stochastic process evaluate at time $T$ and is not a ``numeric'' solution in the Lebesgue sense, even though this is a definite integral. Say we wish to evaluate $\int_0^T W_t^2 dW_t$. First, let $g(W_t) = \frac{1}{3}W_t^3$ which is what we would expect from ordinary calculus, or the Stratanovich integral. Then $g'(W_t) = W_t^2$ and $g''(W_t) = 2W_t$.
+
+$$
+\begin{align*}
+d\left(\frac{1}{3}W_t^3\right) &= g'(W_t) dW_t + \frac{1}{2}g''(W_t) dt \\
+&= W_t^2 dW_t + 2W_t dt \\
+\frac{1}{3}W_t^3 &= \int_0^T W_t^2 dW_t + 2\int_0^T W_t dt \\
+\int_0^T W_t^2 dW_t &= \frac{1}{3}W_T^3 - 2\int_0^T W_t dt  
+\end{align*}
+$$
+
+Here, $\int_0^T W_t dt$ is a stochastic process evaluated at time $T$.
+
+## Stochastic Differential Equations
+
+A standard Ito process can be an asset price obeying:
+
+$$
+d S_t = \mu S_t dt + \sigma S_t dW_t
+$$
+
+That is, the stochastic process tracking the stock price at time $t$ given by $S_t$ changes by some multiplicative drift term and some random noise term supplied by $W_t$, Brownian motion. Then to find $S_t$, we can use a candidate function. It turns out $g(S_t) = \log S_t$. Then $g'(S_t) = \frac{1}{S_t}$ and $g''(S_t) = =\frac{1}{S_t^2}$. By Ito-Doeblin:
+
+$$
+\begin{align*}
+d\log S_t &= \frac{1}{S_t} dS_t - \frac{1}{2S_t^2}(dS_t)^2 \\
+&= \frac{1}{S_t} dS_t - \frac{1}{2S_t^2}(dS_t)^2 \\
+&= \frac{1}{S_t} (\mu S_t dt + \sigma S_t dW_t) - \frac{1}{2S_t^2}(\mu S_t dt + \sigma S_t dW_t)^2 \\
+&= \mu dt + \sigma dW_t - \frac{1}{2S_t^2}(\mu^2 S_t^2 dtdt + 2\mu\sigma S_t^2 dt dW_t + \sigma^2 S_t^2 dW_t dW_t) \\
+&= \mu dt + \sigma dW_t - \frac{1}{2}(\sigma^2 dW_t dW_t) \\
+&= \mu dt + \sigma dW_t - \frac{1}{2} \sigma^2 dt \\
+&= \left(\mu - \frac{1}{2}\sigma^2\right)dt + \sigma dW_t \\
+\int_0^T d\log S_t &= \left(\mu - \frac{1}{2}\sigma^2\right)\int_0^T dt + \sigma \int_0^T dW_t \\
+\log S_T &= \log S_0 + \left(\mu - \frac{1}{2}\sigma^2\right) T + \sigma W_T \\
+S_T &= S_0\exp\left(\left(\mu - \frac{1}{2}\sigma^2\right) T + \sigma W_T\right)
+\end{align*}
+$$
+
+Thus the solution to the differential equation provides the formula for the stochastic process tracking the stock price that obeys the differential equation above. 
 
 
 
