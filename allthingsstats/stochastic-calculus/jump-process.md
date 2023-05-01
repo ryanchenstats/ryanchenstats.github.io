@@ -208,5 +208,54 @@ f(T, X(T)) &= f(0, X(0)) + \int_0^T f_x(t, X^C(0))\Gamma(t)d W(t) + \int_0^T f_t
 \end{align*}
 $$
 
-This forms the Ito-Doeblin lemma for jump diffusion processes with one jump process. 
+This forms the Ito-Doeblin lemma for jump diffusion processes with one jump process albeit without rigorous proof. 
+
+533 486
+
+Note we do not write the above into differential form because it is not always possible to find a differential form for sums of jumps. The following is an example of when it is possible to use differential forms to express a jump process.
+
+## Example
+
+Consider the geometric Poisson process which is given by:
+
+$$
+S_T = S_0 \exp\left(N(t)\log (\sigma + 1) -\lambda \sigma T \right) = S_0 e^{-\lambda \sigma T}(\sigma + 1)e^{N(T)}
+$$
+
+This is a process that has a pure jump portion and a continuous portion. The pure jump portion is $\exp(N(T) \log (\sigma + 1))$ where $N(\cdot)$ is a Poisson process with rate $\lambda$. The continuous portion is $\exp(-\lambda \sigma T)$. 
+
+We may write $S_T = S_0 f(X(T))$ where $f(x) = e^{x}$ and $X(T) = N(T)\log(\sigma + 1) - \lambda \sigma T$. The continuous portion is $X^C(T) = -\lambda \sigma T$ and a jump portion $N(t)\log (\sigma + 1)$. There is no portion involving Brownian motion, so $\Gamma(t) = 0$ however $\Theta(t) = -\lambda \sigma t$. Then by the Ito-Doeblin lemma for jump diffusion:
+
+$$
+\begin{align*}
+S_0 f(X(T)) &= S_0 \left[f(X(0)) - \int_0^T f'(X(s)) \lambda \sigma ds +  \sum_{0 < s< T} f(X(s))-f(X(s-))\right] \\
+&= S(0) - \lambda \sigma \int_0^T S_0 e^{X(s)} ds + S_0 \sum_{0 < s< T} f(X(s))-f(X(s-)) \\ 
+&= S(0) - \lambda \sigma \int_0^T S(s) ds + \sum_{0 < s< T} S(s)-S(s-) 
+\end{align*}
+$$
+
+Note that $\int_0^T \lambda \sigma ds = \lambda \sigma T$ so $\Theta(s) = \lambda \sigma$. This allows us to have $\int_0^T \Theta(s)ds = \lambda \sigma T$. $\Theta(s)$ is defined so that we may fit the integral definition of the jump process.
+
+Now $S(s)-S(s-)$ is the jump in $S$ at time $s$. If there is no jump, this difference is 0. If there is a jump, the jump will be exactly $(\sigma+1)S(s-)$ as the jump increases the process by a factor of $\sigma+1$. 
+
+So $S(s)-S(s-) = (\sigma+1)S(s-) - S(s-) = \sigma S(s-)$. Recall that $N(t)$ is a Poisson process with jump size 1 if there is a jump. Then $\Delta N(t) = 0$ or $1$, $1$ when there is a jump at $t$. Then $S(s)-S(s-) = \sigma S(s-) \Delta N(s)$ which captures both the continuous and jump cases. Thus we can rewrite the sum as an integral:
+
+$$
+\sum_{0 < s< T} S(s)-S(s-) = \sum_{0 < s< T} \sigma S(s-)\Delta N(s) = \sigma \int_0^T S(s-) dN(s) \stackrel{\text{a.s.}}{=} \sigma \int_0^T S(s)dN(s)
+$$
+
+The last equality almost surely is because $S(s) \neq S(s-)$ at only finitely many places, due to the finite number of jumps assumption.
+
+Thus:
+
+$$
+\begin{align*}
+S(T) &= S(0) f(X(T)) = S_(0) - \lambda \sigma \int_0^T S(s)ds + \sum_{0 < s< T} S(s)-S(s-) \\
+&= S_(0) - \lambda \sigma \int_0^T S(s)ds + \sigma \int_0^T S(s)dN(s) \\
+dS(t) &= -\lambda \sigma S(t)dt +  \sigma S(t) dN(t) \\
+&\stackrel{\text{a.s.}}{=} -\lambda \sigma S(t)dt +  \sigma S(t-) dN(t) 
+\end{align*}
+$$
+
+So the stochastic process $S(T) = S(0)\exp(e^{N(T)\log(\sigma + 1) - \lambda\sigma T})$ has a differential form which is $dS(T) = -\lambda \sigma S(t)dt +  \sigma S(t-) dN(t) $
 
