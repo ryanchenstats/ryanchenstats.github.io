@@ -214,7 +214,11 @@ This forms the Ito-Doeblin lemma for jump diffusion processes with one jump proc
 
 Note we do not write the above into differential form because it is not always possible to find a differential form for sums of jumps. The following is an example of when it is possible to use differential forms to express a jump process.
 
-## Example
+## Examples
+
+The following examples show a process in which the jump process can be modelled in differential form, and another example which shows how a jump process differential equation is solved.
+
+### Geometric Poisson process
 
 Consider the geometric Poisson process which is given by:
 
@@ -258,4 +262,24 @@ dS(t) &= -\lambda \sigma S(t)dt +  \sigma S(t) dN(t) \\
 $$
 
 So the stochastic process $S(T) = S(0)\exp(e^{N(T)\log(\sigma + 1) - \lambda\sigma T})$ has a differential form which is $dS(T) = -\lambda \sigma S(t)dt +  \sigma S(t-) dN(t) $
+
+### Jump Diffusion Pricing Scheme
+
+Suppose we have a stock price $S(T)$ which is modelled with a process that has jumps. Specifically, these jumps are compound Poisson, so that:
+
+$$
+Q(t) = \sum_{i=1}^{N(t)} Y_i
+$$
+
+where $N(t)$ is a Poisson process with rate $\lambda$. We let this stock obey the following jump-diffuions process:
+
+$$
+dS(t) = \alpha S(t) dt + \sigma S(t)dW(t) + S(t-)d(Q(t)-\beta\lambda t)
+$$
+
+$$
+dS(t) = (\alpha - \beta \lambda) S(t) dt + \sigma S(t)dW(t) + S(t-)dQ(t)
+$$
+
+This roughly means that the change of the stock price is related to some rate of return $\alpha$ that is compensated by some jump rate (as we are concerned with the rate of return), some variance with white noise, and a pure jump process, that is the compound Poisson process.
 
